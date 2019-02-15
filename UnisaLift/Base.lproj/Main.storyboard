@@ -49,7 +49,7 @@
                                         <rect key="frame" x="0.0" y="200" width="300" height="30"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <segue destination="yIa-km-j4G" kind="show" id="gIG-nv-Edd"/>
+                                            <segue destination="yIa-km-j4G" kind="show" id="rTd-Y0-4zr"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="947.82608695652186" y="-564.50892857142856"/>
         </scene>
-        <!--Table View Controller-->
+        <!--UnisaLift-->
         <scene sceneID="tsN-9Q-rvn">
             <objects>
-                <tableViewController id="yIa-km-j4G" sceneMemberID="viewController">
+                <tableViewController title="UnisaLift" id="yIa-km-j4G" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y82-c5-KQC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
