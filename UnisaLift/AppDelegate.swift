@@ -12,12 +12,7 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var Carmine1 = "Carmine"
-
-    var window: UIWindow?
     
-    var ProvaMerge : String = "ProvaDi  PULL"
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
