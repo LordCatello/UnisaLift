@@ -42,7 +42,7 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let mycell=myTableView.dequeueReusableCell(withIdentifier: "OfferteCell", for: indexPath)
+        let mycell=myTableView.dequeueReusableCell(withIdentifier: "OfferteCell", for: indexPath) as! OffertaTableViewCell
         
        // mycell.textLabel?.text=DataSource[indexPath.row]
         
@@ -50,7 +50,11 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         switch (OfferteSegment.selectedSegmentIndex){
             
         case 0:
-            mycell.textLabel!.text = DataSource[indexPath.row]
+            mycell.OffertaNameLabel.text = "Luca"
+            mycell.NumeroPostiLabel.text = "4 posti rimanenti"
+            mycell.PartenzaLabel.text = "7:55 Salerno"
+            mycell.ArrivoLabel.text = "Fisciano"
+            mycell.ImageOfferta.image = #imageLiteral(resourceName: "ImagineProva.jpg")
         case 1:
             mycell.textLabel!.text = mieOfferte[indexPath.row]
         default:
@@ -68,6 +72,8 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        myTableView.rowHeight = UITableView.automaticDimension;
+        myTableView.estimatedRowHeight = 200.0;
         
         
         // Do any additional setup after loading the view, typically from a nib.

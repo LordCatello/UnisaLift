@@ -17,6 +17,8 @@
 		3360A9E62216B93200AA801A /* UnisaLiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360A9E52216B93200AA801A /* UnisaLiftUITests.swift */; };
 		5D225F13221985AB0000BE75 /* RichiesteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D225F12221985AB0000BE75 /* RichiesteViewController.swift */; };
 		5D3CA47C2219B67900010A9B /* DettagliOffertaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3CA47B2219B67900010A9B /* DettagliOffertaViewController.swift */; };
+		5D738B6B221AF5E700ADD750 /* OffertaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */; };
+		5D738B6D221AF97B00ADD750 /* ImagineProva.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D738B6C221AF97B00ADD750 /* ImagineProva.jpg */; };
 		5DDBD5712218A4B5005BD270 /* OFFERSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDBD5702218A4B5005BD270 /* OFFERSViewController.swift */; };
 		5DE616A8221AD755007C0C15 /* ImpostazioniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE616A7221AD755007C0C15 /* ImpostazioniViewController.swift */; };
 		5DF965FE221ACB3600624246 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF965FD221ACB3600624246 /* UserLoginViewController.swift */; };
@@ -56,6 +58,8 @@
 		3360A9E72216B93200AA801A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D225F12221985AB0000BE75 /* RichiesteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiesteViewController.swift; sourceTree = "<group>"; };
 		5D3CA47B2219B67900010A9B /* DettagliOffertaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettagliOffertaViewController.swift; sourceTree = "<group>"; };
+		5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffertaTableViewCell.swift; sourceTree = "<group>"; };
+		5D738B6C221AF97B00ADD750 /* ImagineProva.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ImagineProva.jpg; path = ../../../Documents/ImagineProva.jpg; sourceTree = "<group>"; };
 		5DDBD5702218A4B5005BD270 /* OFFERSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFERSViewController.swift; sourceTree = "<group>"; };
 		5DE616A7221AD755007C0C15 /* ImpostazioniViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostazioniViewController.swift; sourceTree = "<group>"; };
 		5DF965FD221ACB3600624246 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
@@ -109,11 +113,13 @@
 		3360A9C12216B93100AA801A /* UnisaLift */ = {
 			isa = PBXGroup;
 			children = (
+				5D738B6C221AF97B00ADD750 /* ImagineProva.jpg */,
 				3360A9C22216B93100AA801A /* AppDelegate.swift */,
 				5DE616A7221AD755007C0C15 /* ImpostazioniViewController.swift */,
 				5DF965FD221ACB3600624246 /* UserLoginViewController.swift */,
 				3360A9C42216B93100AA801A /* ViewController.swift */,
 				3360A9C62216B93100AA801A /* Main.storyboard */,
+				5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */,
 				5D3CA47B2219B67900010A9B /* DettagliOffertaViewController.swift */,
 				5D225F12221985AB0000BE75 /* RichiesteViewController.swift */,
 				5DDBD5702218A4B5005BD270 /* OFFERSViewController.swift */,
@@ -248,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3360A9D02216B93200AA801A /* LaunchScreen.storyboard in Resources */,
+				5D738B6D221AF97B00ADD750 /* ImagineProva.jpg in Resources */,
 				3360A9CD2216B93200AA801A /* Assets.xcassets in Resources */,
 				3360A9C82216B93100AA801A /* Main.storyboard in Resources */,
 			);
@@ -277,6 +284,7 @@
 				5DE616A8221AD755007C0C15 /* ImpostazioniViewController.swift in Sources */,
 				5DF965FE221ACB3600624246 /* UserLoginViewController.swift in Sources */,
 				5D225F13221985AB0000BE75 /* RichiesteViewController.swift in Sources */,
+				5D738B6B221AF5E700ADD750 /* OffertaTableViewCell.swift in Sources */,
 				5DDBD5712218A4B5005BD270 /* OFFERSViewController.swift in Sources */,
 				5D3CA47C2219B67900010A9B /* DettagliOffertaViewController.swift in Sources */,
 				3360A9C52216B93100AA801A /* ViewController.swift in Sources */,
