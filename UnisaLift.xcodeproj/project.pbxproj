@@ -15,7 +15,10 @@
 		3360A9D02216B93200AA801A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3360A9CE2216B93200AA801A /* LaunchScreen.storyboard */; };
 		3360A9DB2216B93200AA801A /* UnisaLiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360A9DA2216B93200AA801A /* UnisaLiftTests.swift */; };
 		3360A9E62216B93200AA801A /* UnisaLiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360A9E52216B93200AA801A /* UnisaLiftUITests.swift */; };
-		5D9C84A82216CAC3002A9EFE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9C84A72216CAC3002A9EFE /* LoginViewController.swift */; };
+		5D225F13221985AB0000BE75 /* RichiesteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D225F12221985AB0000BE75 /* RichiesteViewController.swift */; };
+		5D3CA47C2219B67900010A9B /* DettagliOffertaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3CA47B2219B67900010A9B /* DettagliOffertaViewController.swift */; };
+		5DDBD5712218A4B5005BD270 /* OFFERSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDBD5702218A4B5005BD270 /* OFFERSViewController.swift */; };
+		5DF965FE221ACB3600624246 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF965FD221ACB3600624246 /* UserLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +53,10 @@
 		3360A9E12216B93200AA801A /* UnisaLiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnisaLiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3360A9E52216B93200AA801A /* UnisaLiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnisaLiftUITests.swift; sourceTree = "<group>"; };
 		3360A9E72216B93200AA801A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D9C84A72216CAC3002A9EFE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5D225F12221985AB0000BE75 /* RichiesteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiesteViewController.swift; sourceTree = "<group>"; };
+		5D3CA47B2219B67900010A9B /* DettagliOffertaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettagliOffertaViewController.swift; sourceTree = "<group>"; };
+		5DDBD5702218A4B5005BD270 /* OFFERSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFERSViewController.swift; sourceTree = "<group>"; };
+		5DF965FD221ACB3600624246 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +108,12 @@
 			isa = PBXGroup;
 			children = (
 				3360A9C22216B93100AA801A /* AppDelegate.swift */,
+				5DF965FD221ACB3600624246 /* UserLoginViewController.swift */,
 				3360A9C42216B93100AA801A /* ViewController.swift */,
 				3360A9C62216B93100AA801A /* Main.storyboard */,
-				5D9C84A72216CAC3002A9EFE /* LoginViewController.swift */,
+				5D3CA47B2219B67900010A9B /* DettagliOffertaViewController.swift */,
+				5D225F12221985AB0000BE75 /* RichiesteViewController.swift */,
+				5DDBD5702218A4B5005BD270 /* OFFERSViewController.swift */,
 				3360A9CC2216B93200AA801A /* Assets.xcassets */,
 				3360A9CE2216B93200AA801A /* LaunchScreen.storyboard */,
 				3360A9D12216B93200AA801A /* Info.plist */,
@@ -262,7 +271,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D9C84A82216CAC3002A9EFE /* LoginViewController.swift in Sources */,
+				5DF965FE221ACB3600624246 /* UserLoginViewController.swift in Sources */,
+				5D225F13221985AB0000BE75 /* RichiesteViewController.swift in Sources */,
+				5DDBD5712218A4B5005BD270 /* OFFERSViewController.swift in Sources */,
+				5D3CA47C2219B67900010A9B /* DettagliOffertaViewController.swift in Sources */,
 				3360A9C52216B93100AA801A /* ViewController.swift in Sources */,
 				3360A9C32216B93100AA801A /* AppDelegate.swift in Sources */,
 				3360A9CB2216B93100AA801A /* UnisaLift.xcdatamodeld in Sources */,

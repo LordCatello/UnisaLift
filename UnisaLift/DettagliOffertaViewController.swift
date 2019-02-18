@@ -1,14 +1,16 @@
 //
-//  LoginViewController.swift
+//  DettagliOffertaViewController.swift
 //  UnisaLift
 //
-//  Created by Cuomo Luca on 15/02/2019.
+//  Created by Cuomo Luca on 17/02/2019.
 //  Copyright © 2019 RottenApples. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class DettagliOffertaViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
