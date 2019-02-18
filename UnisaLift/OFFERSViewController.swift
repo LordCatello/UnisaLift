@@ -54,13 +54,13 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             mycell.NumeroPostiLabel.text = "4 posti rimanenti"
             mycell.PartenzaLabel.text = "7:55 Salerno"
             mycell.ArrivoLabel.text = "Fisciano"
-            mycell.ImageOfferta.image = #imageLiteral(resourceName: "ImagineProva.jpg")
+            mycell.ImageOfferta.image = nil
         case 1:
             mycell.OffertaNameLabel.text = "Luca"
             mycell.NumeroPostiLabel.text = nil
             mycell.PartenzaLabel.text = nil
             mycell.ArrivoLabel.text = nil
-            mycell.ImageOfferta.image = #imageLiteral(resourceName: "ImagineProva.jpg")
+            mycell.ImageOfferta.image = nil
         default:
           break
             
