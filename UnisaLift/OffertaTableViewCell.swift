@@ -16,6 +16,8 @@ class OffertaTableViewCell: UITableViewCell {
     @IBOutlet weak var PartenzaLabel: UILabel!
     @IBOutlet weak var ArrivoLabel: UILabel!
     
+ 
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

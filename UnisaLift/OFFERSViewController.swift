@@ -56,7 +56,11 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             mycell.ArrivoLabel.text = "Fisciano"
             mycell.ImageOfferta.image = #imageLiteral(resourceName: "ImagineProva.jpg")
         case 1:
-            mycell.textLabel!.text = mieOfferte[indexPath.row]
+            mycell.OffertaNameLabel.text = "Luca"
+            mycell.NumeroPostiLabel.text = nil
+            mycell.PartenzaLabel.text = nil
+            mycell.ArrivoLabel.text = nil
+            mycell.ImageOfferta.image = #imageLiteral(resourceName: "ImagineProva.jpg")
         default:
           break
             
@@ -72,8 +76,9 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myTableView.rowHeight = UITableView.automaticDimension;
-        myTableView.estimatedRowHeight = 200.0;
+        
+        //myTableView.rowHeight = UITableView.automaticDimension;
+        //myTableView.estimatedRowHeight = 200.0;
         
         
         // Do any additional setup after loading the view, typically from a nib.
