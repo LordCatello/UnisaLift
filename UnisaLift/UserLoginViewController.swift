@@ -15,9 +15,12 @@ class UserLoginViewController: UIViewController {
     @IBOutlet weak var EmailTextField: UITextField!
     
     @IBAction func LoginButtonPressed(_ sender: Any) {
-        
+        if(EmailTextField.text!.description == ""){
+        return
+        }
         
         if(DataBaseStudenti.contains(EmailTextField.text!.description)){
+            
             
             performSegue(withIdentifier: "Home", sender: nil)
             

@@ -73,6 +73,23 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch (OfferteSegment.selectedSegmentIndex){
+            
+        case 0:
+            performSegue(withIdentifier: "DettagliOfferta", sender: nil)
+        case 1:
+           performSegue(withIdentifier: "DettagliMiaOfferta", sender: nil)
+        default:
+            break
+            
+        }
+        
+        
+        
+    }
+    
 
     /*
     // MARK: - Navigation
