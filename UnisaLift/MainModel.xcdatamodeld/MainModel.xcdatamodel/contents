@@ -3,11 +3,11 @@
     <entity name="Application" representedClassName="Application" syncable="YES" codeGenerationType="class">
         <attribute name="applicationID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="applicant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="applications" inverseEntity="User" syncable="YES"/>
-        <relationship name="lift" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Offer" inverseName="applications" inverseEntity="Offer" syncable="YES"/>
+        <relationship name="offer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Offer" inverseName="applications" inverseEntity="Offer" syncable="YES"/>
     </entity>
     <entity name="Notification" representedClassName="Notification" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notificationID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -26,7 +26,8 @@
         <attribute name="startPoint" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="totalSpots" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="applications" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Application" inverseName="lift" inverseEntity="Application" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="applications" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Application" inverseName="offer" inverseEntity="Application" syncable="YES"/>
         <relationship name="offerer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="offers" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Review" representedClassName="Review" syncable="YES" codeGenerationType="class">
@@ -58,9 +59,9 @@
         <relationship name="offers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Offer" inverseName="offerer" inverseEntity="Offer" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Application" positionX="-129.3359375" positionY="108.78125" width="128" height="120"/>
-        <element name="Notification" positionX="-182.7109375" positionY="312.37890625" width="128" height="120"/>
-        <element name="Offer" positionX="-103.19140625" positionY="-211.80078125" width="128" height="240"/>
+        <element name="Application" positionX="-129.3359375" positionY="108.78125" width="128" height="105"/>
+        <element name="Notification" positionX="-182.7109375" positionY="312.37890625" width="128" height="135"/>
+        <element name="Offer" positionX="-103.19140625" positionY="-211.80078125" width="128" height="255"/>
         <element name="Review" positionX="-253.23828125" positionY="-287.9453125" width="128" height="120"/>
         <element name="User" positionX="-445.02734375" positionY="0.58984375" width="128" height="330"/>
     </elements>
