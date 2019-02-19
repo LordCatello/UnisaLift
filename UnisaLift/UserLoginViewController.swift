@@ -8,6 +8,16 @@
 
 import UIKit
 
+extension UITextField{
+    func setBottomBorder(){
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 0.7)
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowRadius = 0.0
+    
+    }
+}
+
 class UserLoginViewController: UIViewController, UITextFieldDelegate {
     
     var DataBaseStudenti = ["Carmine","Emanuele"]
@@ -40,6 +50,8 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.EmailTextField.delegate = self
         self.PasswordTextField.delegate = self
+        EmailTextField.setBottomBorder()
+        PasswordTextField.setBottomBorder()
         // Do any additional setup after loading the view.
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
