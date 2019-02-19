@@ -69,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="4718.840579710145" y="-573.21428571428567"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Barprincipale View Controller-->
         <scene sceneID="yM0-Dz-xGH">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarPrincipale" automaticallyAdjustsScrollViewInsets="NO" id="2N2-aE-1he" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarPrincipale" automaticallyAdjustsScrollViewInsets="NO" id="2N2-aE-1he" customClass="TabBarprincipaleViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GRm-lt-aYu">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -83,6 +83,7 @@
                         <segue destination="0Eb-oj-cIy" kind="relationship" relationship="viewControllers" id="xy9-2M-XN5"/>
                         <segue destination="aG1-r8-Kfb" kind="relationship" relationship="viewControllers" id="PJ5-cV-t4e"/>
                         <segue destination="b8A-Vi-1Gz" kind="relationship" relationship="viewControllers" id="I37-jI-1G1"/>
+                        <segue destination="b8A-Vi-1Gz" kind="show" identifier="Prova" id="4t9-b3-Rc6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPO-Oy-IQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -160,4 +161,7 @@
             <point key="canvasLocation" x="7326" y="199"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4t9-b3-Rc6"/>
+    </inferredMetricsTieBreakers>
 </document>

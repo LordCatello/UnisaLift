@@ -21,7 +21,7 @@
         <!--Impostazioni-->
         <scene sceneID="wOz-Vr-WYo">
             <objects>
-                <viewController title="Impostazioni" id="SlF-06-Fsb" sceneMemberID="viewController">
+                <viewController title="Impostazioni" id="SlF-06-Fsb" customClass="ImpostazioniViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g8H-dP-cjd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Modifica" id="nKq-ND-5OH">
                             <connections>
-                                <segue destination="gqQ-P8-Hnc" kind="showDetail" animates="NO" id="Lug-81-L4h"/>
+                                <segue destination="gqQ-P8-Hnc" kind="show" identifier="ModificaProfilo" id="ga3-Ye-hQx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -86,6 +86,16 @@
             </objects>
             <point key="canvasLocation" x="8274" y="199"/>
         </scene>
+        <!--TabBarPrincipale-->
+        <scene sceneID="OzR-Is-7Ds">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="TabBarPrincipale" id="ydH-pi-D5O" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="86Q-kZ-fmH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mPG-d9-ldT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9452" y="-330"/>
+        </scene>
         <!--Modifica Profilo-->
         <scene sceneID="gUF-Y3-ZvR">
             <objects>
@@ -93,36 +103,20 @@
                     <view key="view" contentMode="scaleToFill" id="VRf-oT-IMC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dE9-Yc-KDl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Modifica Impostazioni" id="SpA-Ib-Uh0">
-                                        <barButtonItem key="leftBarButtonItem" title="Indietro" id="fg1-wk-G4N">
-                                            <connections>
-                                                <segue destination="JzN-3J-hre" kind="show" animates="NO" id="igt-LZ-1Zy"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Fatto" id="8YE-HN-TZW">
-                                            <connections>
-                                                <action selector="FattoButtonPressed:" destination="gqQ-P8-Hnc" id="5nl-yC-7vp"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SsZ-Wq-bpA"/>
                     </view>
-                    <connections>
-                        <segue destination="JzN-3J-hre" kind="show" identifier="Impostazioni" animates="NO" id="0Iw-bj-pgd"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Modifica Profilo" id="oLU-dG-B50">
+                        <barButtonItem key="rightBarButtonItem" title="Fatto" id="fag-zh-BIa">
+                            <connections>
+                                <action selector="FattoButtonPressed:" destination="gqQ-P8-Hnc" id="7jM-L5-Ly1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghD-sP-UZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9238" y="199"/>
+            <point key="canvasLocation" x="9200" y="199"/>
         </scene>
         <!--Impostazioni-->
         <scene sceneID="JEo-K4-gpe">
@@ -144,7 +138,4 @@
             <point key="canvasLocation" x="7326" y="199"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="igt-LZ-1Zy"/>
-    </inferredMetricsTieBreakers>
 </document>
