@@ -45,6 +45,7 @@
         <attribute name="fiscalCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="logged" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="serialNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -57,10 +58,10 @@
         <relationship name="offers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Offer" inverseName="offerer" inverseEntity="Offer" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-445.02734375" positionY="0.58984375" width="128" height="315"/>
-        <element name="Offer" positionX="-103.19140625" positionY="-211.80078125" width="128" height="240"/>
-        <element name="Review" positionX="-253.23828125" positionY="-287.9453125" width="128" height="120"/>
         <element name="Application" positionX="-129.3359375" positionY="108.78125" width="128" height="120"/>
         <element name="Notification" positionX="-182.7109375" positionY="312.37890625" width="128" height="120"/>
+        <element name="Offer" positionX="-103.19140625" positionY="-211.80078125" width="128" height="240"/>
+        <element name="Review" positionX="-253.23828125" positionY="-287.9453125" width="128" height="120"/>
+        <element name="User" positionX="-445.02734375" positionY="0.58984375" width="128" height="330"/>
     </elements>
 </model>
