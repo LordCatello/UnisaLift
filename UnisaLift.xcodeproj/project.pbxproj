@@ -20,6 +20,7 @@
 		5D738B6B221AF5E700ADD750 /* OffertaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */; };
 		5D747611221BF08500CA2035 /* RichiesteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747610221BF08500CA2035 /* RichiesteTableViewCell.swift */; };
 		5D747613221C096F00CA2035 /* ModificaProfiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747612221C096F00CA2035 /* ModificaProfiloViewController.swift */; };
+		5D747656221C493D00CA2035 /* TabBarprincipaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747655221C493D00CA2035 /* TabBarprincipaleViewController.swift */; };
 		5DDBD5712218A4B5005BD270 /* OFFERSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDBD5702218A4B5005BD270 /* OFFERSViewController.swift */; };
 		5DE616A8221AD755007C0C15 /* ImpostazioniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE616A7221AD755007C0C15 /* ImpostazioniViewController.swift */; };
 		5DF965FE221ACB3600624246 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF965FD221ACB3600624246 /* UserLoginViewController.swift */; };
@@ -68,6 +69,7 @@
 		5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffertaTableViewCell.swift; sourceTree = "<group>"; };
 		5D747610221BF08500CA2035 /* RichiesteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiesteTableViewCell.swift; sourceTree = "<group>"; };
 		5D747612221C096F00CA2035 /* ModificaProfiloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModificaProfiloViewController.swift; sourceTree = "<group>"; };
+		5D747655221C493D00CA2035 /* TabBarprincipaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarprincipaleViewController.swift; sourceTree = "<group>"; };
 		5DDBD5702218A4B5005BD270 /* OFFERSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFERSViewController.swift; sourceTree = "<group>"; };
 		5DE616A7221AD755007C0C15 /* ImpostazioniViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostazioniViewController.swift; sourceTree = "<group>"; };
 		5DF965FD221ACB3600624246 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				5DF965FD221ACB3600624246 /* UserLoginViewController.swift */,
 				3360A9C42216B93100AA801A /* ViewController.swift */,
 				3360A9C62216B93100AA801A /* Main.storyboard */,
+				5D747655221C493D00CA2035 /* TabBarprincipaleViewController.swift */,
 				5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */,
 				5D3CA47B2219B67900010A9B /* DettagliOffertaViewController.swift */,
 				5D225F12221985AB0000BE75 /* RichiesteViewController.swift */,
@@ -316,6 +319,7 @@
 				5DDBD5712218A4B5005BD270 /* OFFERSViewController.swift in Sources */,
 				5D3CA47C2219B67900010A9B /* DettagliOffertaViewController.swift in Sources */,
 				3360A9C52216B93100AA801A /* ViewController.swift in Sources */,
+				5D747656221C493D00CA2035 /* TabBarprincipaleViewController.swift in Sources */,
 				3360A9C32216B93100AA801A /* AppDelegate.swift in Sources */,
 				3360A9CB2216B93100AA801A /* UnisaLift.xcdatamodeld in Sources */,
 			);
