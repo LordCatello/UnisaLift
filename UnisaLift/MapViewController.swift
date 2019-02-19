@@ -47,7 +47,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 
                 if let r = response {
                     let route = r.routes[0]
-                    print(route.distance, "CALCOLATA TUTT APPOST")
                     self.mapView.addOverlay(route.polyline)
                 }
                 
@@ -59,7 +58,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 //                }
                 
             } else {
-                let alert = UIAlertController(title: "ERROR", message: "Error in calculating the directions. Please try again later.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Check internet connection", message: "Error in calculating the directions. Please try again later.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
@@ -70,7 +69,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     // function called from the mapView as this is its delegate in order to render the directions
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if let overlay = overlay as? MKPolyline {
-                print("SWAG?")
+
                 let polylineRenderer = MKPolylineRenderer(polyline: overlay)
                 polylineRenderer.strokeColor = UIColor.init(red: 218/255, green: 83/255, blue: 18/255, alpha: 1.0)
                 return polylineRenderer
@@ -93,7 +92,24 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 //        centerMapOnLocation(location: locationToDisplay)
         centerMapOnLocation(location: debugLocation)
         
+        let sourcePoint = MKPointAnnotation()
+        let destinationPoint = MKPointAnnotation()
+        
+//        sourcePoint.coordinate = source.coordinate
+        sourcePoint.coordinate = debugLocation.coordinate
+        sourcePoint.title = NSLocalizedString("Starting point", comment: "English")
+        
+//        destinationPoint.coordinate = destination.coordinate
+        destinationPoint.coordinate = CLLocation(latitude: 40.774001, longitude: 14.793703).coordinate
+        destinationPoint.title = NSLocalizedString("Destination point", comment: "English")
+        
+        self.mapView.addAnnotations([sourcePoint, destinationPoint])
+        
         requestDirectionsTo(from: debugLocation, to: CLLocation(latitude: 40.774001, longitude: 14.793703))
+//        requestDirectionsTo(from: source, to: destination)
+        
+        
+        
     }
     
 
