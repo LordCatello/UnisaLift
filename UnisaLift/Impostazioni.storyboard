@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JzN-3J-hre">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main-->
+        <scene sceneID="2xY-yj-PwY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="oDH-vl-DVb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yEU-Cf-Xfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8092" y="-306"/>
+        </scene>
+        <!--Impostazioni-->
+        <scene sceneID="wOz-Vr-WYo">
+            <objects>
+                <viewController title="Impostazioni" id="SlF-06-Fsb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g8H-dP-cjd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eY2-8e-A41">
+                                <rect key="frame" x="0.0" y="143" width="191" height="194"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aez-Kd-nM7">
+                                <rect key="frame" x="259" y="143" width="74" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cognome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffN-ia-sCp">
+                                <rect key="frame" x="246" y="220" width="75" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Auto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBA-n6-bdB">
+                                <rect key="frame" x="259" y="347" width="117" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Valutazione" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYD-j5-L6f">
+                                <rect key="frame" x="239" y="288" width="89" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Piccola descrizione del profilo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UOO-Uk-OZv">
+                                <rect key="frame" x="65" y="445" width="285" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="VwH-1K-2ph"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Impostazioni" id="N9q-aT-5Ue">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="KHq-1X-9Gq">
+                            <connections>
+                                <segue destination="oDH-vl-DVb" kind="showDetail" animates="NO" id="yhK-Aj-H9q"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Modifica" id="nKq-ND-5OH">
+                            <connections>
+                                <segue destination="gqQ-P8-Hnc" kind="showDetail" animates="NO" id="Lug-81-L4h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rgP-rQ-tcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8274" y="199"/>
+        </scene>
+        <!--Modifica Profilo-->
+        <scene sceneID="gUF-Y3-ZvR">
+            <objects>
+                <viewController title="Modifica Profilo" id="gqQ-P8-Hnc" customClass="ModificaProfiloViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VRf-oT-IMC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dE9-Yc-KDl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Modifica Impostazioni" id="SpA-Ib-Uh0">
+                                        <barButtonItem key="leftBarButtonItem" title="Indietro" id="fg1-wk-G4N">
+                                            <connections>
+                                                <segue destination="JzN-3J-hre" kind="show" animates="NO" id="igt-LZ-1Zy"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Fatto" id="8YE-HN-TZW">
+                                            <connections>
+                                                <action selector="FattoButtonPressed:" destination="gqQ-P8-Hnc" id="5nl-yC-7vp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SsZ-Wq-bpA"/>
+                    </view>
+                    <connections>
+                        <segue destination="JzN-3J-hre" kind="show" identifier="Impostazioni" animates="NO" id="0Iw-bj-pgd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghD-sP-UZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9238" y="199"/>
+        </scene>
+        <!--Impostazioni-->
+        <scene sceneID="JEo-K4-gpe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JzN-3J-hre" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Impostazioni" id="CAM-3v-PNf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xv3-nU-DaU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SlF-06-Fsb" kind="relationship" relationship="rootViewController" id="IZu-0g-THn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Syu-fk-gud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7326" y="199"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="igt-LZ-1Zy"/>
+    </inferredMetricsTieBreakers>
+</document>
