@@ -79,8 +79,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         }
 
-    
+    // yet another helper function to make descriptions for the Annotation Points
+    func setGeolocalizedDescription(pointToLabelize: MKPointAnnotation) {
         
+        CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: pointToLabelize.coordinate.latitude, longitude: pointToLabelize.coordinate.longitude), completionHandler: { (placemarks, error) in
+            if let error = error {
+                print("Error while geocoding: ", error.localizedDescription)
+                return
+            }
+            pointToLabelize.subtitle = placemarks?[0].thoroughfare
+        })
+        
+    }
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -98,10 +108,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 //        sourcePoint.coordinate = source.coordinate
         sourcePoint.coordinate = debugLocation.coordinate
         sourcePoint.title = NSLocalizedString("Starting point", comment: "English")
+        setGeolocalizedDescription(pointToLabelize: sourcePoint)
         
 //        destinationPoint.coordinate = destination.coordinate
         destinationPoint.coordinate = CLLocation(latitude: 40.774001, longitude: 14.793703).coordinate
         destinationPoint.title = NSLocalizedString("Destination point", comment: "English")
+        setGeolocalizedDescription(pointToLabelize: destinationPoint)
         
         self.mapView.addAnnotations([sourcePoint, destinationPoint])
         
