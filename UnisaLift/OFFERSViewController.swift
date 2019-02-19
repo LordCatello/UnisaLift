@@ -22,6 +22,7 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         
         
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch (OfferteSegment.selectedSegmentIndex){
@@ -57,7 +58,7 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             mycell.ImageOfferta.image = nil
         case 1:
             mycell.OffertaNameLabel.text = "Luca"
-            mycell.NumeroPostiLabel.text = nil
+            mycell.NumeroPostiLabel.text = "prova"
             mycell.PartenzaLabel.text = nil
             mycell.ArrivoLabel.text = nil
             mycell.ImageOfferta.image = nil
@@ -89,6 +90,7 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         switch (OfferteSegment.selectedSegmentIndex){
             
         case 0:
+            
             performSegue(withIdentifier: "DettagliOfferta", sender: nil)
         case 1:
            performSegue(withIdentifier: "DettagliMiaOfferta", sender: nil)
@@ -99,6 +101,10 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        myTableView.reloadData()
     }
     
 

@@ -25,12 +25,12 @@
                                     <navigationItem title="Title" id="038-Yg-4n8">
                                         <barButtonItem key="leftBarButtonItem" title="Indietro" id="vra-Zn-nd6">
                                             <connections>
-                                                <segue destination="Atx-Sa-jqs" kind="show" id="EFP-Dx-FiX"/>
+                                                <segue destination="Atx-Sa-jqs" kind="show" animates="NO" id="EFP-Dx-FiX"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Fine" id="0Xh-Qh-boM">
                                             <connections>
-                                                <segue destination="dyu-XD-gd1" kind="show" id="7Xr-dg-xkd"/>
+                                                <segue destination="dyu-XD-gd1" kind="show" animates="NO" id="7Xr-dg-xkd"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
