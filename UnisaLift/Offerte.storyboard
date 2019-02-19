@@ -112,11 +112,11 @@
             </objects>
             <point key="canvasLocation" x="8273.9130434782619" y="-1300.4464285714284"/>
         </scene>
-        <!--Offerte-->
+        <!--Lifts-->
         <scene sceneID="72q-Ca-tuB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wVb-4l-dJ9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Offerte" id="j1a-dO-6vP"/>
+                    <tabBarItem key="tabBarItem" title="Lifts" image="offers" landscapeImage="offers" largeContentSizeImage="offers" id="j1a-dO-6vP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wbO-cW-wBN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -156,4 +156,7 @@
             <point key="canvasLocation" x="9054" y="-2011"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="offers" width="45" height="45"/>
+    </resources>
 </document>

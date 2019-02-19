@@ -95,7 +95,7 @@
                         <viewLayoutGuide key="safeArea" id="9ir-jb-Stn"/>
                     </view>
                     <navigationItem key="navigationItem" title="Richieste" id="pbo-k7-guF">
-                        <barButtonItem key="backBarButtonItem" title="Richieste" id="gWI-NV-oJg"/>
+                        <barButtonItem key="backBarButtonItem" title="Requests" image="requests" landscapeImage="requests" largeContentSizeImage="requests" id="gWI-NV-oJg"/>
                     </navigationItem>
                     <connections>
                         <outlet property="RichiesteSegmentedControl" destination="LV8-39-241" id="Fzc-kc-zKL"/>
@@ -134,4 +134,7 @@
             <point key="canvasLocation" x="10813" y="-573"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="requests" width="45" height="45"/>
+    </resources>
 </document>

@@ -129,7 +129,7 @@
         <scene sceneID="wVQ-30-ABj">
             <objects>
                 <viewControllerPlaceholder storyboardName="Offerte" id="0Eb-oj-cIy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Lifts" image="car_30px.png" id="jAS-lS-pVP"/>
+                    <tabBarItem key="tabBarItem" title="" id="jAS-lS-pVP"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lhj-NA-kG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,7 +163,7 @@
         <scene sceneID="Zlv-0c-vQT">
             <objects>
                 <viewControllerPlaceholder storyboardName="Richieste" id="aG1-r8-Kfb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Requests" image="icons8-questions-filled-30.png" id="We2-uT-xZP"/>
+                    <tabBarItem key="tabBarItem" title="" id="We2-uT-xZP"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AJd-V2-9fO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,16 +181,11 @@
         <scene sceneID="0rw-y7-nm5">
             <objects>
                 <viewControllerPlaceholder storyboardName="Impostazioni" id="b8A-Vi-1Gz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="setting_30px.png" id="FHz-sT-hIq"/>
+                    <tabBarItem key="tabBarItem" title="" id="FHz-sT-hIq"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06P-dO-gyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7326" y="199"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="car_30px.png" width="30" height="30"/>
-        <image name="icons8-questions-filled-30.png" width="30" height="30"/>
-        <image name="setting_30px.png" width="30" height="30"/>
-    </resources>
 </document>
