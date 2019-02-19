@@ -8,9 +8,10 @@
 
 import UIKit
 
-class UserLoginViewController: UIViewController {
+class UserLoginViewController: UIViewController, UITextFieldDelegate {
     
     var DataBaseStudenti = ["Carmine","Emanuele"]
+    
 
     @IBOutlet weak var EmailTextField: UITextField!
     
@@ -34,10 +35,12 @@ class UserLoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.EmailTextField.delegate = self
         // Do any additional setup after loading the view.
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation
