@@ -13,8 +13,10 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
     var DataBaseStudenti = ["Carmine","Emanuele"]
     
 
+    @IBOutlet weak var LabelTopColor: UILabel!
     @IBOutlet weak var EmailTextField: UITextField!
     
+    @IBOutlet weak var PasswordTextField: UITextField!
     @IBAction func LoginButtonPressed(_ sender: Any) {
         if(EmailTextField.text!.description == ""){
         return
@@ -37,6 +39,7 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.EmailTextField.delegate = self
+        self.PasswordTextField.delegate = self
         // Do any additional setup after loading the view.
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
