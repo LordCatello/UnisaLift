@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Maps-->
+        <scene sceneID="F1c-Mb-Zb8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Maps" id="Fjb-0c-df0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="266-Oo-NYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4170" y="-624"/>
+        </scene>
         <!--User Login View Controller-->
         <scene sceneID="ejm-JO-LLP">
             <objects>
@@ -52,6 +60,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="LoginButtonPressed:" destination="pz1-Sy-VAy" eventType="touchUpInside" id="OG1-WJ-xL5"/>
+                                    <segue destination="Fjb-0c-df0" kind="show" id="s9E-ft-H5C"/>
                                 </connections>
                             </button>
                         </subviews>
