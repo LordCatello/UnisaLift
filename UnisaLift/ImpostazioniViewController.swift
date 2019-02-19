@@ -1,15 +1,16 @@
 //
-//  LoginViewController.swift
+//  ImpostazioniViewController.swift
 //  UnisaLift
 //
-//  Created by Cuomo Luca on 15/02/2019.
+//  Created by Cuomo Luca on 18/02/2019.
 //  Copyright © 2019 RottenApples. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class ImpostazioniViewController: UIViewController {
 
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
