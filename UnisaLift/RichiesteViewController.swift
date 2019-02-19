@@ -8,12 +8,12 @@
 
 import UIKit
 
-class RichiesteViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
+class RichiesteViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
    
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let mycell=myTableView.dequeueReusableCell(withIdentifier: "RichiesteCell", for: indexPath)
+        let mycell=myTableView.dequeueReusableCell(withIdentifier: "RichiesteCell", for: indexPath) as! RichiesteTableViewCell
         
         // mycell.textLabel?.text=DataSource[indexPath.row]
         
@@ -21,10 +21,18 @@ class RichiesteViewController: UIViewController, UITableViewDelegate,UITableView
         switch (RichiesteSegmentedControl.selectedSegmentIndex){
             
         case 0:
-            mycell.textLabel!.text = DataSource[indexPath.row]
+            mycell.RichiesteNomeLabel.text = "Luca"
+            mycell.RichiesteNumeroPostiLabel.text = "4 posti rimanenti"
+            mycell.RichiestePartenzaLabel.text = "7:55 Salerno"
+            mycell.RichiesteArrivoLabel.text = "Fisciano"
+            mycell.RichiesteImageCell.image = nil
         case 1:
-            mycell.textLabel!.text = RichiesteAccettate[indexPath.row]
-        default:
+            mycell.RichiesteNomeLabel.text = "Luca"
+            mycell.RichiesteNumeroPostiLabel.text = "prova"
+            mycell.RichiestePartenzaLabel.text = nil
+            mycell.RichiesteArrivoLabel.text = nil
+            mycell.RichiesteImageCell.image = nil
+    default:
             break
             
         }
@@ -62,12 +70,6 @@ class RichiesteViewController: UIViewController, UITableViewDelegate,UITableView
     }
     
    
-
-        func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
 
     /*
@@ -81,5 +83,16 @@ class RichiesteViewController: UIViewController, UITableViewDelegate,UITableView
     */
 
 }
+    
+    
+    
+    
+    
+   override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        
+        // Do any additional setup after loading the view.
+    }
 
 }

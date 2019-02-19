@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Main-->
+        <scene sceneID="2xY-yj-PwY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="oDH-vl-DVb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yEU-Cf-Xfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8092" y="-306"/>
+        </scene>
         <!--Impostazioni-->
         <scene sceneID="wOz-Vr-WYo">
             <objects>
@@ -62,10 +70,14 @@
                         <viewLayoutGuide key="safeArea" id="VwH-1K-2ph"/>
                     </view>
                     <navigationItem key="navigationItem" title="Impostazioni" id="N9q-aT-5Ue">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="KHq-1X-9Gq"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="KHq-1X-9Gq">
+                            <connections>
+                                <segue destination="oDH-vl-DVb" kind="showDetail" animates="NO" id="yhK-Aj-H9q"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Modifica" id="nKq-ND-5OH">
                             <connections>
-                                <segue destination="gqQ-P8-Hnc" kind="show" identifier="ModificaProfilo" id="Da2-Od-V3o"/>
+                                <segue destination="gqQ-P8-Hnc" kind="showDetail" animates="NO" id="Lug-81-L4h"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -77,13 +89,36 @@
         <!--Modifica Profilo-->
         <scene sceneID="gUF-Y3-ZvR">
             <objects>
-                <viewController title="Modifica Profilo" id="gqQ-P8-Hnc" sceneMemberID="viewController">
+                <viewController title="Modifica Profilo" id="gqQ-P8-Hnc" customClass="ModificaProfiloViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VRf-oT-IMC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dE9-Yc-KDl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Modifica Impostazioni" id="SpA-Ib-Uh0">
+                                        <barButtonItem key="leftBarButtonItem" title="Indietro" id="fg1-wk-G4N">
+                                            <connections>
+                                                <segue destination="JzN-3J-hre" kind="show" animates="NO" id="igt-LZ-1Zy"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Fatto" id="8YE-HN-TZW">
+                                            <connections>
+                                                <action selector="FattoButtonPressed:" destination="gqQ-P8-Hnc" id="5nl-yC-7vp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SsZ-Wq-bpA"/>
                     </view>
+                    <connections>
+                        <segue destination="JzN-3J-hre" kind="show" identifier="Impostazioni" animates="NO" id="0Iw-bj-pgd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghD-sP-UZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,4 +144,7 @@
             <point key="canvasLocation" x="7326" y="199"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="igt-LZ-1Zy"/>
+    </inferredMetricsTieBreakers>
 </document>
