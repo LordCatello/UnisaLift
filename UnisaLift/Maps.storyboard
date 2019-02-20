@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2b5-uw-YbV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cJJ-Cd-V7c">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Map Path View Controller-->
         <scene sceneID="pq6-MG-2Yb">
             <objects>
-                <viewController id="2b5-uw-YbV" customClass="MapViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2b5-uw-YbV" customClass="MapPathViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qxe-tP-zSH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,6 +38,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XDF-ty-RgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-170" y="78"/>
+        </scene>
+        <!--Map Set Position View Controller-->
+        <scene sceneID="TDm-1A-mKD">
+            <objects>
+                <viewController id="cJJ-Cd-V7c" customClass="MapSetPositionViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mc4-yE-5Ch">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OAZ-Mo-2RO">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="T1W-Ot-UmI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2g-ep-GuA">
+                                <rect key="frame" x="109" y="760" width="196" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.85313507720000004" green="0.33373212540000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.85313507720000004" green="0.33373212540000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="FATTO"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OAZ-Mo-2RO" firstAttribute="top" secondItem="T1W-Ot-UmI" secondAttribute="bottom" id="29D-Gf-vuz"/>
+                            <constraint firstItem="T1W-Ot-UmI" firstAttribute="trailing" secondItem="fbw-sT-2Uq" secondAttribute="trailing" id="3ae-CI-JQw"/>
+                            <constraint firstItem="OAZ-Mo-2RO" firstAttribute="leading" secondItem="fbw-sT-2Uq" secondAttribute="leading" id="Bl6-82-fMv"/>
+                            <constraint firstItem="T1W-Ot-UmI" firstAttribute="top" secondItem="fbw-sT-2Uq" secondAttribute="top" id="MBQ-0D-CIx"/>
+                            <constraint firstItem="T1W-Ot-UmI" firstAttribute="leading" secondItem="fbw-sT-2Uq" secondAttribute="leading" id="NZJ-d9-O3K"/>
+                            <constraint firstItem="fbw-sT-2Uq" firstAttribute="bottom" secondItem="OAZ-Mo-2RO" secondAttribute="bottom" id="l23-JI-wPe"/>
+                            <constraint firstItem="fbw-sT-2Uq" firstAttribute="trailing" secondItem="OAZ-Mo-2RO" secondAttribute="trailing" id="uU2-3g-dMI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fbw-sT-2Uq"/>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="C2g-ep-GuA" id="5Nv-KV-NaV"/>
+                        <outlet property="mapView" destination="OAZ-Mo-2RO" id="DJJ-u2-Oyf"/>
+                        <outlet property="searchBar" destination="T1W-Ot-UmI" id="Vzo-yc-fec"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o39-cH-Mpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-195.6521739130435" y="787.5"/>
         </scene>
     </scenes>
 </document>
