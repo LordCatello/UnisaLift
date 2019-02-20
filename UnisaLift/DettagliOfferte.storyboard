@@ -13,10 +13,20 @@
         <!--Create-->
         <scene sceneID="nWn-GD-MPV">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-siI-qV-Fah" title="Create" id="siI-qV-Fah" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-siI-qV-Fah" title="Create" id="siI-qV-Fah" customClass="NewOfferViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IT3-59-gMv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6g4-Ef-miD">
+                                <rect key="frame" x="150" y="678" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Aggiungi Offerta"/>
+                                <connections>
+                                    <action selector="AddOfferButtonPressed:" destination="siI-qV-Fah" eventType="touchUpInside" id="foE-cS-FsI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="AzA-un-aps"/>
                     </view>

@@ -17,8 +17,10 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     */
     
     @IBAction func addOfferButtonPressed(_ sender: Any) {
-        let offer = PersistenceManager.newDefaultOffer()
+        
+        /*let offer = PersistenceManager.newDefaultOffer()
         offers.append(offer)
+        myTableView.reloadData()*/
     }
     
     @IBOutlet weak var OfferteSegment: UISegmentedControl!
@@ -97,6 +99,7 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        offers = PersistenceManager.fetchOffers()
         myTableView.reloadData()
     }
     

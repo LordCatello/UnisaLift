@@ -100,6 +100,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WVa-eH-hp7">
                             <connections>
                                 <action selector="addOfferButtonPressed:" destination="77A-Mn-MZd" id="tf6-3W-aT3"/>
+                                <segue destination="ZRZ-xb-ODC" kind="show" id="oj8-PY-cJE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -158,13 +159,13 @@
         <!--UIViewController-siI-qV-Fah-->
         <scene sceneID="IsD-Ui-5jw">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UIViewController-siI-qV-Fah" id="ZRZ-xb-ODC" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DettagliOfferte" referencedIdentifier="UIViewController-siI-qV-Fah" id="ZRZ-xb-ODC" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Imd-f2-Pu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9054" y="-2011"/>
         </scene>
     </scenes>
     <resources>
-        <image name="offers" width="30" height="30"/>
+        <image name="offers" width="45" height="45"/>
     </resources>
 </document>
