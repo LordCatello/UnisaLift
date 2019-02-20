@@ -14,6 +14,7 @@ class NewOfferViewController: UIViewController {
 
     @IBAction func AddOfferButtonPressed(_ sender: Any) {
         PersistenceManager.newDefaultOffer()
+         self.navigationController?.popViewController(animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

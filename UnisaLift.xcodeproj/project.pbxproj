@@ -30,6 +30,7 @@
 		5D225F13221985AB0000BE75 /* RichiesteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D225F12221985AB0000BE75 /* RichiesteViewController.swift */; };
 		5D3CA47C2219B67900010A9B /* DettagliOffertaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3CA47B2219B67900010A9B /* DettagliOffertaViewController.swift */; };
 		5D67E84B221D79A10034BDEB /* NewOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D67E84A221D79A10034BDEB /* NewOfferViewController.swift */; };
+		5D714337221D91CB00534160 /* DettagliMiaOffertaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D714336221D91CB00534160 /* DettagliMiaOffertaViewController.swift */; };
 		5D738B6B221AF5E700ADD750 /* OffertaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */; };
 		5D747611221BF08500CA2035 /* RichiesteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747610221BF08500CA2035 /* RichiesteTableViewCell.swift */; };
 		5D747613221C096F00CA2035 /* ModificaProfiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747612221C096F00CA2035 /* ModificaProfiloViewController.swift */; };
@@ -91,6 +92,7 @@
 		5D225F12221985AB0000BE75 /* RichiesteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiesteViewController.swift; sourceTree = "<group>"; };
 		5D3CA47B2219B67900010A9B /* DettagliOffertaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettagliOffertaViewController.swift; sourceTree = "<group>"; };
 		5D67E84A221D79A10034BDEB /* NewOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOfferViewController.swift; sourceTree = "<group>"; };
+		5D714336221D91CB00534160 /* DettagliMiaOffertaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DettagliMiaOffertaViewController.swift; sourceTree = "<group>"; };
 		5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffertaTableViewCell.swift; sourceTree = "<group>"; };
 		5D747610221BF08500CA2035 /* RichiesteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiesteTableViewCell.swift; sourceTree = "<group>"; };
 		5D747612221C096F00CA2035 /* ModificaProfiloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModificaProfiloViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				C109D307221B17CE006B75C4 /* Registrazione.storyboard */,
 				5D747610221BF08500CA2035 /* RichiesteTableViewCell.swift */,
 				C109D30B221B18F3006B75C4 /* DettagliOfferte.storyboard */,
+				5D714336221D91CB00534160 /* DettagliMiaOffertaViewController.swift */,
 				C109D309221B17EA006B75C4 /* Offerte.storyboard */,
 				5D67E84A221D79A10034BDEB /* NewOfferViewController.swift */,
 				3360A9C22216B93100AA801A /* AppDelegate.swift */,
@@ -367,6 +370,7 @@
 				33F3BB25221AF51300EC3559 /* MainModel.xcdatamodeld in Sources */,
 				5D67E84B221D79A10034BDEB /* NewOfferViewController.swift in Sources */,
 				3360A9C32216B93100AA801A /* AppDelegate.swift in Sources */,
+				5D714337221D91CB00534160 /* DettagliMiaOffertaViewController.swift in Sources */,
 				330DE0A6221D5EBD00BB3FDA /* Review+CoreDataClass.swift in Sources */,
 				330DE0A9221D5EBD00BB3FDA /* Application+CoreDataProperties.swift in Sources */,
 				330DE0A7221D5EBD00BB3FDA /* Review+CoreDataProperties.swift in Sources */,

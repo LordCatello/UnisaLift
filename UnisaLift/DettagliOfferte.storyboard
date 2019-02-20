@@ -38,7 +38,7 @@
         <!--Details-->
         <scene sceneID="Ofe-bU-FPA">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-t7V-SH-zxD" title="Details" id="t7V-SH-zxD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-t7V-SH-zxD" title="Details" id="t7V-SH-zxD" customClass="DettagliMiaOffertaViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y6I-8p-9TX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,7 @@
         <!--Details-->
         <scene sceneID="wdZ-KK-Rsk">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-gnL-dr-7fY" title="Details" id="gnL-dr-7fY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-gnL-dr-7fY" title="Details" id="gnL-dr-7fY" customClass="DettagliOffertaViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JcR-lb-uQ7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
