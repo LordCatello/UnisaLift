@@ -15,9 +15,7 @@ extension UIStackView : UITextFieldDelegate{
 }
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
-
     var email : String!
-    
     
     @IBOutlet weak var TableViewElementi: UITableView!
     
@@ -26,6 +24,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var surnameField: UITextField!
     
     @IBOutlet weak var StackViewElementi: UIStackView!
+    
     @IBOutlet weak var emailField: UITextField!
     
     @IBOutlet weak var carModelField: UITextField!
@@ -36,22 +35,67 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.emailField.delegate = StackViewElementi
         self.nameField.delegate = StackViewElementi
         self.surnameField.delegate = StackViewElementi
-      nameField.setBottomBorder()
-      emailField.setBottomBorder()
+        
+        nameField.setBottomBorder()
+        emailField.setBottomBorder()
         surnameField.setBottomBorder()
         carModelField.setBottomBorder()
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        emailField.text = email
     }
-    */
 
 }
+
+/*
+class SignUpViewController: UIViewController, UITextFieldDelegate {
+
+@IBAction func signUpButton(_ sender: Any) {
+    let name = nameField.text
+    let surname = surnameField.text
+    let carModel = carModelField.text
+    
+    if(name == "" || surname == "" || carModel == "") {
+        // dovrei mostrare un messaggio in cui avverto che tutti i campi devono essere compilati
+    }
+    else {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.userLogged = PersistenceManager.newUser(carModel: carModel!, email: email, name: name!, surname: surname!)
+        performSegue(withIdentifier: "homeFromSignUp", sender: nil)
+    }
+}
+
+
+@IBOutlet weak var TableViewElementi: UITableView!
+
+@IBOutlet weak var nameField: UITextField!
+
+@IBOutlet weak var surnameField: UITextField!
+
+@IBOutlet weak var StackViewElementi: UIStackView!
+
+@IBOutlet weak var emailField: UITextField!
+
+@IBOutlet weak var carModelField: UITextField!
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    self.carModelField.delegate = StackViewElementi
+    self.emailField.delegate = StackViewElementi
+    self.nameField.delegate = StackViewElementi
+    self.surnameField.delegate = StackViewElementi
+    
+    nameField.setBottomBorder()
+    emailField.setBottomBorder()
+    surnameField.setBottomBorder()
+    carModelField.setBottomBorder()
+    // Do any additional setup after loading the view.
+}
+
+override func viewWillAppear(_ animated: Bool) {
+    emailField.text = email
+}
+
+}
+*/
