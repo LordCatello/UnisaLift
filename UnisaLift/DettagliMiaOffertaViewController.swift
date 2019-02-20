@@ -1,32 +1,23 @@
 //
-//  DettagliOffertaViewController.swift
+//  DettagliMiaOffertaViewController.swift
 //  UnisaLift
 //
-//  Created by Cuomo Luca on 17/02/2019.
+//  Created by Cuomo Luca on 20/02/2019.
 //  Copyright © 2019 RottenApples. All rights reserved.
 //
 
 import UIKit
 
-class DettagliOffertaViewController: UIViewController {
-    
-    
-    @IBOutlet weak var nomePassaggio: UILabel!
-    
-    @IBOutlet weak var foto: UIImageView!
+class DettagliMiaOffertaViewController: UIViewController {
+
+    @IBOutlet weak var deleteOfferButton: UIButton!
     
     @IBOutlet weak var postiRimasti: UILabel!
     
-    @IBOutlet weak var partenza: UILabel!
-    
     @IBOutlet weak var arrivo: UILabel!
-    
+    @IBOutlet weak var partenza: UILabel!
     @IBOutlet weak var itineraryButton: UIButton!
-    
-    @IBOutlet weak var messaggioAutista: UITextView!
-    
-    @IBOutlet weak var requestButton: UIButton!
-    
+    @IBOutlet weak var message: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

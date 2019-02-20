@@ -1,34 +1,25 @@
 //
-//  DettagliOffertaViewController.swift
+//  NewOfferViewController.swift
 //  UnisaLift
 //
-//  Created by Cuomo Luca on 17/02/2019.
+//  Created by Cuomo Luca on 20/02/2019.
 //  Copyright © 2019 RottenApples. All rights reserved.
 //
 
 import UIKit
 
-class DettagliOffertaViewController: UIViewController {
+class NewOfferViewController: UIViewController {
     
-    
-    @IBOutlet weak var nomePassaggio: UILabel!
-    
-    @IBOutlet weak var foto: UIImageView!
-    
-    @IBOutlet weak var postiRimasti: UILabel!
-    
-    @IBOutlet weak var partenza: UILabel!
-    
-    @IBOutlet weak var arrivo: UILabel!
-    
-    @IBOutlet weak var itineraryButton: UIButton!
-    
-    @IBOutlet weak var messaggioAutista: UITextView!
-    
-    @IBOutlet weak var requestButton: UIButton!
-    
+    //var departurePlace, arrivePlace: String
+
+
+    @IBAction func AddOfferButtonPressed(_ sender: Any) {
+        PersistenceManager.newDefaultOffer()
+         self.navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }

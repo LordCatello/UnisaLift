@@ -1,32 +1,25 @@
 //
-//  DettagliOffertaViewController.swift
+//  ModificaProfiloViewController.swift
 //  UnisaLift
 //
-//  Created by Cuomo Luca on 17/02/2019.
+//  Created by Cuomo Luca on 19/02/2019.
 //  Copyright © 2019 RottenApples. All rights reserved.
 //
 
 import UIKit
 
-class DettagliOffertaViewController: UIViewController {
-    
-    
-    @IBOutlet weak var nomePassaggio: UILabel!
-    
-    @IBOutlet weak var foto: UIImageView!
-    
-    @IBOutlet weak var postiRimasti: UILabel!
-    
-    @IBOutlet weak var partenza: UILabel!
-    
-    @IBOutlet weak var arrivo: UILabel!
-    
-    @IBOutlet weak var itineraryButton: UIButton!
-    
-    @IBOutlet weak var messaggioAutista: UITextView!
-    
-    @IBOutlet weak var requestButton: UIButton!
-    
+class ModificaProfiloViewController: UIViewController {
+
+    @IBAction func FattoButtonPressed(_ sender: Any) {
+        
+   /*
+        self.tabBarController?.selectedIndex = 2
+        */
+        self.navigationController?.popViewController(animated: true)
+       // self.dismiss(animated: true, completion: nil)
+        
+        //performSegue(withIdentifier: "Impostazioni", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,14 +35,17 @@ class DettagliOffertaViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+     
+        
+        
+    
+    
     }
-    */
-
 }
