@@ -40,8 +40,6 @@ extension UITextField{
 
 class UserLoginViewController: UIViewController, UITextFieldDelegate {
     
-    var DataBaseStudenti = ["Carmine","Emanuele"]
-    
     @IBOutlet weak var LoginButton: UIButton!
     
     var user: User!
@@ -76,24 +74,6 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
 
     }
 
-    
-  
-    
-    
-//    @IBAction func ButtonAnimation(_ sender: UIButton) {
-//
-//        UIButton.animate(withDuration: 0.02,
-//                         animations: {
-//                            sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)
-//        },
-//                         completion: { finish in
-//                            UIButton.animate(withDuration: 0.01, animations: {
-//                                sender.transform = CGAffineTransform.identity
-//                            })
-//
-//        })
-//
-//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.EmailTextField.delegate = self
@@ -115,7 +95,7 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
     
 
     
-    /*
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -124,7 +104,7 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
         switch segue.identifier{
             
         case "Registrazione":
-            let destView = segue.destination as! RegistrazioneViewController
+            let destView = segue.destination as! SignUpViewController
             destView.email = emailField
         default:
             return

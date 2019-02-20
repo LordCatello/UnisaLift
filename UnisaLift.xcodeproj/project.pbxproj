@@ -26,7 +26,6 @@
 		3360A9D02216B93200AA801A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3360A9CE2216B93200AA801A /* LaunchScreen.storyboard */; };
 		3360A9DB2216B93200AA801A /* UnisaLiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360A9DA2216B93200AA801A /* UnisaLiftTests.swift */; };
 		3360A9E62216B93200AA801A /* UnisaLiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360A9E52216B93200AA801A /* UnisaLiftUITests.swift */; };
-		33D49B39221DA0A20045BD3D /* RegistrazioneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D49B38221DA0A20045BD3D /* RegistrazioneViewController.swift */; };
 		33D49B40221DB2EA0045BD3D /* Id+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D49B3E221DB2EA0045BD3D /* Id+CoreDataClass.swift */; };
 		33D49B41221DB2EA0045BD3D /* Id+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D49B3F221DB2EA0045BD3D /* Id+CoreDataProperties.swift */; };
 		33F3BB25221AF51300EC3559 /* MainModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33F3BB23221AF51300EC3559 /* MainModel.xcdatamodeld */; };
@@ -91,7 +90,6 @@
 		3360A9E12216B93200AA801A /* UnisaLiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnisaLiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3360A9E52216B93200AA801A /* UnisaLiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnisaLiftUITests.swift; sourceTree = "<group>"; };
 		3360A9E72216B93200AA801A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33D49B38221DA0A20045BD3D /* RegistrazioneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrazioneViewController.swift; sourceTree = "<group>"; };
 		33D49B3E221DB2EA0045BD3D /* Id+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Id+CoreDataClass.swift"; sourceTree = "<group>"; };
 		33D49B3F221DB2EA0045BD3D /* Id+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Id+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		33F3BB24221AF51300EC3559 /* MainModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MainModel.xcdatamodel; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 				3360A9C22216B93100AA801A /* AppDelegate.swift */,
 				5DE616A7221AD755007C0C15 /* ImpostazioniViewController.swift */,
 				5DF965FD221ACB3600624246 /* UserLoginViewController.swift */,
-				33D49B38221DA0A20045BD3D /* RegistrazioneViewController.swift */,
 				3360A9C42216B93100AA801A /* ViewController.swift */,
 				3360A9C62216B93100AA801A /* Main.storyboard */,
 				1DBCDC11221D6E200069BD28 /* SignUpViewController.swift */,
@@ -381,7 +378,6 @@
 				5D67E84B221D79A10034BDEB /* NewOfferViewController.swift in Sources */,
 				33D49B41221DB2EA0045BD3D /* Id+CoreDataProperties.swift in Sources */,
 				3360A9C32216B93100AA801A /* AppDelegate.swift in Sources */,
-				33D49B39221DA0A20045BD3D /* RegistrazioneViewController.swift in Sources */,
 				5D714337221D91CB00534160 /* DettagliMiaOffertaViewController.swift in Sources */,
 				330DE0A6221D5EBD00BB3FDA /* Review+CoreDataClass.swift in Sources */,
 				330DE0A9221D5EBD00BB3FDA /* Application+CoreDataProperties.swift in Sources */,

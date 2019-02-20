@@ -10,12 +10,18 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    var email : String!
+    @IBOutlet weak var emailField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        emailField.text = email
+    }
 
     /*
     // MARK: - Navigation
