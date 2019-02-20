@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G5019" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Application" representedClassName="Application" syncable="YES" codeGenerationType="class">
+    <entity name="Application" representedClassName="Application" syncable="YES">
         <attribute name="applicationID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pointDesc" optional="YES" attributeType="String" syncable="YES"/>
@@ -9,7 +9,7 @@
         <relationship name="applicant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="applications" inverseEntity="User" syncable="YES"/>
         <relationship name="offer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Offer" inverseName="applications" inverseEntity="Offer" syncable="YES"/>
     </entity>
-    <entity name="Notification" representedClassName="Notification" syncable="YES" codeGenerationType="class">
+    <entity name="Notification" representedClassName="Notification" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notificationID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -17,7 +17,7 @@
         <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="notifications" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="Offer" representedClassName="Offer" syncable="YES" codeGenerationType="class">
+    <entity name="Offer" representedClassName="Offer" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="endPointDesc" optional="YES" attributeType="String" syncable="YES"/>
@@ -36,14 +36,14 @@
         <relationship name="applications" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Application" inverseName="offer" inverseEntity="Application" syncable="YES"/>
         <relationship name="offerer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="offers" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="Review" representedClassName="Review" syncable="YES" codeGenerationType="class">
+    <entity name="Review" representedClassName="Review" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="reviewID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="reviewed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="aboutMeReviews" inverseEntity="User" syncable="YES"/>
         <relationship name="reviewer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="byMeReviews" inverseEntity="User" syncable="YES"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+    <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="carModel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="degreeCourse" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
