@@ -28,7 +28,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         else {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.userLogged = PersistenceManager.newUser(carModel: carModel!, email: email, name: name!, surname: surname!)
-            // performSegue(withIdentifier: "homeFromSignUp", sender: nil)
+            performSegue(withIdentifier: "homeFromSignUp", sender: nil)
         }
     }
     
