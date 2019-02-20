@@ -8,6 +8,26 @@
 
 import UIKit
 
+
+extension UIButton{
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        UIButton.animate(withDuration: 0.02,
+                         animations: {
+                            self.transform = CGAffineTransform(scaleX: 0.900, y: 0.900)
+                            self.alpha = 0.7
+        })
+    }
+    
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIButton.animate(withDuration: 0.02, animations: {
+            super.touchesEnded(touches, with: event)
+            self.transform = CGAffineTransform.identity
+            self.alpha = 1.0
+        })
+    }
+}
+
 extension UITextField{
     func setBottomBorder(){
         self.layer.shadowColor = UIColor.darkGray.cgColor
@@ -19,7 +39,10 @@ extension UITextField{
 }
 
 class UserLoginViewController: UIViewController, UITextFieldDelegate {
-    //var DataBaseStudenti = ["Carmine","Emanuele"]
+    
+    var DataBaseStudenti = ["Carmine","Emanuele"]
+    
+    @IBOutlet weak var LoginButton: UIButton!
     
     var user: User!
     var emailField: String!
@@ -52,7 +75,25 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
+
     
+  
+    
+    
+//    @IBAction func ButtonAnimation(_ sender: UIButton) {
+//
+//        UIButton.animate(withDuration: 0.02,
+//                         animations: {
+//                            sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)
+//        },
+//                         completion: { finish in
+//                            UIButton.animate(withDuration: 0.01, animations: {
+//                                sender.transform = CGAffineTransform.identity
+//                            })
+//
+//        })
+//
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.EmailTextField.delegate = self
@@ -72,6 +113,9 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     
+
+    
+    /*
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
