@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DBCDC12221D6E200069BD28 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCDC11221D6E200069BD28 /* SignUpViewController.swift */; };
 		330DE0A0221D5EBD00BB3FDA /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DE096221D5EBD00BB3FDA /* User+CoreDataClass.swift */; };
 		330DE0A1221D5EBD00BB3FDA /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DE097221D5EBD00BB3FDA /* User+CoreDataProperties.swift */; };
 		330DE0A2221D5EBD00BB3FDA /* Offer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DE098221D5EBD00BB3FDA /* Offer+CoreDataClass.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DBCDC11221D6E200069BD28 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		330DE096221D5EBD00BB3FDA /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		330DE097221D5EBD00BB3FDA /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		330DE098221D5EBD00BB3FDA /* Offer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Offer+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				5DF965FD221ACB3600624246 /* UserLoginViewController.swift */,
 				3360A9C42216B93100AA801A /* ViewController.swift */,
 				3360A9C62216B93100AA801A /* Main.storyboard */,
+				1DBCDC11221D6E200069BD28 /* SignUpViewController.swift */,
 				5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */,
 				5D3CA47B2219B67900010A9B /* DettagliOffertaViewController.swift */,
 				5D225F12221985AB0000BE75 /* RichiesteViewController.swift */,
@@ -341,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DBCDC12221D6E200069BD28 /* SignUpViewController.swift in Sources */,
 				330DE0A2221D5EBD00BB3FDA /* Offer+CoreDataClass.swift in Sources */,
 				5D747613221C096F00CA2035 /* ModificaProfiloViewController.swift in Sources */,
 				5DE616A8221AD755007C0C15 /* ImpostazioniViewController.swift in Sources */,

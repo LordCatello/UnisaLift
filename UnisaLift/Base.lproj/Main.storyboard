@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--User Login View Controller-->
+        <!--Sign in-->
         <scene sceneID="ejm-JO-LLP">
             <objects>
                 <viewController storyboardIdentifier="UIViewController-pz1-Sy-VAy" id="pz1-Sy-VAy" customClass="UserLoginViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,6 +29,7 @@
                                 <rect key="frame" x="74" y="238" width="267" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -48,7 +49,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amt-6X-zl8">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amt-6X-zl8">
                                 <rect key="frame" x="74" y="516" width="267" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.89089655876159668" green="0.40929615497589111" blue="0.07796236127614975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,32 +63,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="LoginButtonPressed:" destination="pz1-Sy-VAy" eventType="touchUpInside" id="OG1-WJ-xL5"/>
+                                    <action selector="LoginButtonPressed:" destination="pz1-Sy-VAy" eventType="touchUpInside" id="Ji7-Pf-vtd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEu-IM-NSX">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.89089655876159668" green="0.40929615497589111" blue="0.07796236127614975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Sign in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrS-gj-EMW">
-                                <rect key="frame" x="0.0" y="95" width="375" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SB2-fz-wi4"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PIS-My-Mpg"/>
+                    <navigationItem key="navigationItem" title="Sign in" largeTitleDisplayMode="always" id="PIS-My-Mpg"/>
                     <connections>
                         <outlet property="EmailTextField" destination="K75-Xp-X5X" id="a3r-SJ-xoT"/>
-                        <outlet property="LabelTopColor" destination="qEu-IM-NSX" id="NXZ-hp-9Tv"/>
+                        <outlet property="LoginButton" destination="Amt-6X-zl8" id="abZ-Md-LGo"/>
                         <outlet property="PasswordTextField" destination="dBx-6C-ewq" id="QSw-El-4X2"/>
                         <segue destination="2N2-aE-1he" kind="show" identifier="Home" id="nWs-XM-P4O"/>
                         <segue destination="L8l-4Q-kZa" kind="show" identifier="Registrazione" id="fvC-sp-caJ"/>
@@ -97,17 +83,17 @@
             </objects>
             <point key="canvasLocation" x="5626.0869565217399" y="-573.88392857142856"/>
         </scene>
-        <!--Registrazione-->
+        <!--Sign Up-->
         <scene sceneID="RrF-aB-mCd">
             <objects>
-                <viewController id="L8l-4Q-kZa" sceneMemberID="viewController">
+                <viewController title="Sign Up" id="L8l-4Q-kZa" customClass="SignUpViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XrV-PD-wrn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="faB-Vh-ZIm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Registrazione" id="MOU-Xd-qJk">
+                    <navigationItem key="navigationItem" title="Sign up" id="MOU-Xd-qJk">
                         <barButtonItem key="rightBarButtonItem" title="Fine" id="NWz-4L-YXl">
                             <connections>
                                 <segue destination="2N2-aE-1he" kind="showDetail" id="7Yt-qF-5yP"/>
@@ -208,9 +194,15 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Tw-ax-oFD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UoL-DG-DNj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="UoL-DG-DNj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -224,6 +216,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4t9-b3-Rc6"/>
-        <segue reference="7Yt-qF-5yP"/>
+        <segue reference="nWs-XM-P4O"/>
     </inferredMetricsTieBreakers>
 </document>
