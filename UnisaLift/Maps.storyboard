@@ -59,7 +59,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.85313507720000004" green="0.33373212540000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.85313507720000004" green="0.33373212540000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="FATTO"/>
+                                <state key="normal" title="Set as starting position"/>
+                                <connections>
+                                    <action selector="startDoneButtonPressed:" destination="cJJ-Cd-V7c" eventType="touchUpInside" id="HIm-Cv-gwz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,11 +81,60 @@
                         <outlet property="doneButton" destination="C2g-ep-GuA" id="5Nv-KV-NaV"/>
                         <outlet property="mapView" destination="OAZ-Mo-2RO" id="DJJ-u2-Oyf"/>
                         <outlet property="searchBar" destination="T1W-Ot-UmI" id="Vzo-yc-fec"/>
+                        <segue destination="nC0-Gm-1zT" kind="show" identifier="showMapAgain" id="X7T-OF-Gpz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o39-cH-Mpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-195.6521739130435" y="787.5"/>
+        </scene>
+        <!--Map Set Position View Controller-->
+        <scene sceneID="P0d-Mw-NYr">
+            <objects>
+                <viewController id="nC0-Gm-1zT" customClass="MapSetPositionViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zKr-bJ-xdp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vE3-J9-VgY">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tsi-Eb-g3Y">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUQ-L3-ya8">
+                                <rect key="frame" x="109" y="760" width="196" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.85313507720000004" green="0.33373212540000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.85313507720000004" green="0.33373212540000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Set as arriving position"/>
+                                <connections>
+                                    <action selector="endDoneButtonPressed:" destination="nC0-Gm-1zT" eventType="touchUpInside" id="P6v-9M-tt0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vE3-J9-VgY" firstAttribute="top" secondItem="tsi-Eb-g3Y" secondAttribute="bottom" id="0Pn-tY-UNs"/>
+                            <constraint firstItem="tsi-Eb-g3Y" firstAttribute="trailing" secondItem="QX3-ci-zON" secondAttribute="trailing" id="1ZE-eR-HGc"/>
+                            <constraint firstItem="vE3-J9-VgY" firstAttribute="leading" secondItem="QX3-ci-zON" secondAttribute="leading" id="IRt-cZ-hwY"/>
+                            <constraint firstItem="QX3-ci-zON" firstAttribute="trailing" secondItem="vE3-J9-VgY" secondAttribute="trailing" id="IoJ-pJ-wGR"/>
+                            <constraint firstItem="tsi-Eb-g3Y" firstAttribute="leading" secondItem="QX3-ci-zON" secondAttribute="leading" id="VCW-OM-RWE"/>
+                            <constraint firstItem="tsi-Eb-g3Y" firstAttribute="top" secondItem="QX3-ci-zON" secondAttribute="top" id="lHe-zV-iS7"/>
+                            <constraint firstItem="QX3-ci-zON" firstAttribute="bottom" secondItem="vE3-J9-VgY" secondAttribute="bottom" id="zQq-cU-P57"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QX3-ci-zON"/>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="PUQ-L3-ya8" id="irP-DQ-P7D"/>
+                        <outlet property="mapView" destination="vE3-J9-VgY" id="N6m-V5-sa6"/>
+                        <outlet property="searchBar" destination="tsi-Eb-g3Y" id="HCV-a7-44A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGG-8l-tAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="788"/>
         </scene>
     </scenes>
 </document>

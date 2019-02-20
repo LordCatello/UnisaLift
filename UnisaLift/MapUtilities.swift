@@ -9,6 +9,8 @@
 import Foundation
 import MapKit
 
+
+
 // helper function which centers the view zooming with a neat animation based on regionRadius
 func centerMapOnLocation(map mapView: MKMapView, location: CLLocation) {
     let regionRadius: CLLocationDistance = 1000 // zooming distance
@@ -23,8 +25,23 @@ func setGeolocalizedDescription(pointToLabelize: MKPointAnnotation) {
     CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: pointToLabelize.coordinate.latitude, longitude: pointToLabelize.coordinate.longitude), completionHandler: { (placemarks, error) in
         if let error = error {
             print("Error while geocoding: ", error.localizedDescription)
+            pointToLabelize.subtitle = NSLocalizedString("Street not found - try again later", comment: "Error in geocoding, english")
             return
         }
+        pointToLabelize.subtitle = placemarks?[0].thoroughfare
+    })
+    
+}
+
+func setGeolocalizedDescription(pointToLabelize: MKPointAnnotation, locality: StringWrapper) {
+    
+    CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: pointToLabelize.coordinate.latitude, longitude: pointToLabelize.coordinate.longitude), completionHandler: { (placemarks, error) in
+        if let error = error {
+            print("Error while geocoding: ", error.localizedDescription)
+            pointToLabelize.subtitle = NSLocalizedString("Street not found - try again later", comment: "Error in geocoding, english")
+            return
+        }
+        locality.string = placemarks?[0].locality
         pointToLabelize.subtitle = placemarks?[0].thoroughfare
     })
     

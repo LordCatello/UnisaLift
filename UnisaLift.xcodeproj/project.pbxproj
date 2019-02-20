@@ -31,6 +31,7 @@
 		C10A4076221C2B0B00AA395C /* MapPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10A4075221C2B0B00AA395C /* MapPathViewController.swift */; };
 		C169B999221D582400D1A8C6 /* MapSetPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169B998221D582400D1A8C6 /* MapSetPositionViewController.swift */; };
 		C169B99B221D738000D1A8C6 /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169B99A221D738000D1A8C6 /* MapUtilities.swift */; };
+		C1BA917C221DB80200CED629 /* StringWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BA917B221DB80200CED629 /* StringWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		C10A4075221C2B0B00AA395C /* MapPathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPathViewController.swift; sourceTree = "<group>"; };
 		C169B998221D582400D1A8C6 /* MapSetPositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSetPositionViewController.swift; sourceTree = "<group>"; };
 		C169B99A221D738000D1A8C6 /* MapUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtilities.swift; sourceTree = "<group>"; };
+		C1BA917B221DB80200CED629 /* StringWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				C10A4073221C242A00AA395C /* Maps.storyboard */,
 				C169B998221D582400D1A8C6 /* MapSetPositionViewController.swift */,
 				C169B99A221D738000D1A8C6 /* MapUtilities.swift */,
+				C1BA917B221DB80200CED629 /* StringWrapper.swift */,
 				C10A4075221C2B0B00AA395C /* MapPathViewController.swift */,
 				C109D309221B17EA006B75C4 /* Offerte.storyboard */,
 				C109D307221B17CE006B75C4 /* Registrazione.storyboard */,
@@ -321,6 +324,7 @@
 				C10A4076221C2B0B00AA395C /* MapPathViewController.swift in Sources */,
 				5D738B6B221AF5E700ADD750 /* OffertaTableViewCell.swift in Sources */,
 				5DDBD5712218A4B5005BD270 /* OFFERSViewController.swift in Sources */,
+				C1BA917C221DB80200CED629 /* StringWrapper.swift in Sources */,
 				C169B99B221D738000D1A8C6 /* MapUtilities.swift in Sources */,
 				5D3CA47C2219B67900010A9B /* DettagliOffertaViewController.swift in Sources */,
 				3360A9C52216B93100AA801A /* ViewController.swift in Sources */,
