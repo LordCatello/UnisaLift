@@ -61,7 +61,7 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
         
         if( user != nil) {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.userLoggedEmail = user.email
+            appDelegate.userLogged = user
             performSegue(withIdentifier: "Home", sender: nil)
             
         } else {
@@ -81,7 +81,7 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
         EmailTextField.setBottomBorder()
         PasswordTextField.setBottomBorder()
         
-        var id = PersistenceManager.fetchProgressiveID()
+        let id = PersistenceManager.fetchProgressiveID()
         
         // creo un id progressivo che inizia con 0
         if(id == nil) {
