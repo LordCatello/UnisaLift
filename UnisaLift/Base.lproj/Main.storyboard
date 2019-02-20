@@ -95,12 +95,12 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <stackView key="tableFooterView" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" id="NG9-y5-QEU">
+                                <stackView key="tableFooterView" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-80" id="NG9-y5-QEU">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="729"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLr-Ji-Qzc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="146"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  Image Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avk-hT-4dE">
                                                     <rect key="frame" x="0.0" y="39" width="131" height="68"/>
@@ -110,18 +110,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffT-6X-C0r">
-                                                    <rect key="frame" x="209" y="8" width="130" height="130"/>
+                                                    <rect key="frame" x="213" y="8" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fn-cg-pdd">
-                                            <rect key="frame" x="0.0" y="146" width="414" height="145.5"/>
+                                            <rect key="frame" x="0.0" y="130" width="414" height="209.5"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QhN-Az-xEu">
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QhN-Az-xEu">
                                                     <rect key="frame" x="139" y="38" width="267" height="68"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -137,7 +138,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3V-Nw-E2w">
-                                            <rect key="frame" x="0.0" y="291.5" width="414" height="146"/>
+                                            <rect key="frame" x="0.0" y="259.5" width="414" height="210"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xi0-VA-Jxa">
                                                     <rect key="frame" x="0.0" y="39" width="107" height="68"/>
@@ -146,9 +147,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3a-Tw-fHl">
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3a-Tw-fHl">
                                                     <rect key="frame" x="140" y="39" width="266" height="68"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -157,7 +159,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grd-Vf-Ie0">
-                                            <rect key="frame" x="0.0" y="437.5" width="414" height="145.5"/>
+                                            <rect key="frame" x="0.0" y="389.5" width="414" height="209.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fld-aj-yp3">
                                                     <rect key="frame" x="0.0" y="42" width="115" height="62"/>
@@ -166,11 +168,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="example.n@studenti.unisa.it" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K5z-l2-NId">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="example.n@studenti.unisa.it" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K5z-l2-NId">
                                                     <rect key="frame" x="140" y="37" width="266" height="68"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <accessibility key="accessibilityConfiguration" label="mjjkk">
                                                         <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                        <bool key="isElement" value="NO"/>
                                                     </accessibility>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -180,7 +184,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4E-om-3xK">
-                                            <rect key="frame" x="0.0" y="583" width="414" height="146"/>
+                                            <rect key="frame" x="0.0" y="519" width="414" height="210"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  Car Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1S-YB-AUk">
                                                     <rect key="frame" x="0.0" y="44" width="106" height="59"/>
@@ -189,9 +193,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Seq-Vb-t2s">
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Seq-Vb-t2s">
                                                     <rect key="frame" x="140" y="34" width="266" height="69"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -214,6 +219,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="carModelField" destination="Seq-Vb-t2s" id="qJt-Ti-igw"/>
+                        <outlet property="emailField" destination="K5z-l2-NId" id="VmC-Cc-0Iu"/>
+                        <outlet property="nameField" destination="QhN-Az-xEu" id="vZf-mu-ffE"/>
+                        <outlet property="surnameField" destination="K3a-Tw-fHl" id="UQd-UC-Z0p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oXJ-U9-rF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
