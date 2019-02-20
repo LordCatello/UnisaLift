@@ -10,6 +10,14 @@ import UIKit
 
 class DettagliMiaOffertaViewController: UIViewController {
 
+    @IBOutlet weak var deleteOfferButton: UIButton!
+    
+    @IBOutlet weak var postiRimasti: UILabel!
+    
+    @IBOutlet weak var arrivo: UILabel!
+    @IBOutlet weak var partenza: UILabel!
+    @IBOutlet weak var itineraryButton: UIButton!
+    @IBOutlet weak var message: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

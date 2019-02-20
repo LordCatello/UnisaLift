@@ -10,6 +10,7 @@ import UIKit
 
 class NewOfferViewController: UIViewController {
     
+    //var departurePlace, arrivePlace: String
 
 
     @IBAction func AddOfferButtonPressed(_ sender: Any) {

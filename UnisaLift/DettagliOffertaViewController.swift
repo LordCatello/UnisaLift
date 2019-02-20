@@ -11,7 +11,22 @@ import UIKit
 class DettagliOffertaViewController: UIViewController {
     
     
-
+    @IBOutlet weak var nomePassaggio: UILabel!
+    
+    @IBOutlet weak var foto: UIImageView!
+    
+    @IBOutlet weak var postiRimasti: UILabel!
+    
+    @IBOutlet weak var partenza: UILabel!
+    
+    @IBOutlet weak var arrivo: UILabel!
+    
+    @IBOutlet weak var itineraryButton: UIButton!
+    
+    @IBOutlet weak var messaggioAutista: UITextView!
+    
+    @IBOutlet weak var requestButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
