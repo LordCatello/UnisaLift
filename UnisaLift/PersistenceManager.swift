@@ -36,6 +36,22 @@ class PersistenceManager {
         return user
     }
     
+    static func newDefaultOffer () -> Offer {
+        let context = getContext()
+        
+        let offer = NSEntityDescription.insertNewObject(forEntityName: "Offer", into: context) as! Offer
+        
+        // let empty = NSLocalizedString("empty", comment: "emptyitem")
+        // è utile per la localizzazione
+        // serve per cambiare lingua in maniera dinamica
+        
+        offer.offerID = 10
+        offer.desc = "defaultOffer"
+        offer.totalSpots = 10
+        
+        return offer
+    }
+    
     // prendo tutti gli utenti
     static func fetchUsers() -> [User] {
         var users = [User]()
@@ -57,6 +73,26 @@ class PersistenceManager {
         return users
     }
     
+    static func fetchOffers() -> [Offer] {
+        var offers = [Offer]()
+        
+        let context = getContext()
+        
+        let fetchRequest = NSFetchRequest<Offer>(entityName: "Offer")
+        
+        // esempio di utilizzo dei predicati
+        // let number = “2"
+        // fetchRequest.predicate = NSPredicate(format: “quantity > %@“, number)
+        
+        do {
+            try offers = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Errore in fetch \(error.code)")
+        }
+        
+        return offers
+    }
+    
     
     static func saveContext() {
         let context = getContext()
@@ -72,6 +108,12 @@ class PersistenceManager {
         let context = getContext()
         
         context.delete(user)
+    }
+    
+    static func deleteOffer(offer: Offer) {
+        let context = getContext()
+        
+        context.delete(offer)
     }
     
     /*
