@@ -17,6 +17,7 @@
 		330DE0A7221D5EBD00BB3FDA /* Review+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DE09D221D5EBD00BB3FDA /* Review+CoreDataProperties.swift */; };
 		330DE0A8221D5EBD00BB3FDA /* Application+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DE09E221D5EBD00BB3FDA /* Application+CoreDataClass.swift */; };
 		330DE0A9221D5EBD00BB3FDA /* Application+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DE09F221D5EBD00BB3FDA /* Application+CoreDataProperties.swift */; };
+		330DE0AB221D6C3800BB3FDA /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DE0AA221D6C3800BB3FDA /* PersistenceManager.swift */; };
 		3360A9C32216B93100AA801A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360A9C22216B93100AA801A /* AppDelegate.swift */; };
 		3360A9C52216B93100AA801A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360A9C42216B93100AA801A /* ViewController.swift */; };
 		3360A9C82216B93100AA801A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3360A9C62216B93100AA801A /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 		330DE09D221D5EBD00BB3FDA /* Review+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Review+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		330DE09E221D5EBD00BB3FDA /* Application+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+CoreDataClass.swift"; sourceTree = "<group>"; };
 		330DE09F221D5EBD00BB3FDA /* Application+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Application+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		330DE0AA221D6C3800BB3FDA /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		3360A9BF2216B93100AA801A /* UnisaLift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnisaLift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3360A9C22216B93100AA801A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3360A9C42216B93100AA801A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				3360A9D12216B93200AA801A /* Info.plist */,
 				33F3BB26221AF60500EC3559 /* TestStoryboard.storyboard */,
 				33F3BB23221AF51300EC3559 /* MainModel.xcdatamodeld */,
+				330DE0AA221D6C3800BB3FDA /* PersistenceManager.swift */,
 			);
 			path = UnisaLift;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				330DE0A8221D5EBD00BB3FDA /* Application+CoreDataClass.swift in Sources */,
 				330DE0A3221D5EBD00BB3FDA /* Offer+CoreDataProperties.swift in Sources */,
 				5D738B6B221AF5E700ADD750 /* OffertaTableViewCell.swift in Sources */,
+				330DE0AB221D6C3800BB3FDA /* PersistenceManager.swift in Sources */,
 				5D747611221BF08500CA2035 /* RichiesteTableViewCell.swift in Sources */,
 				5DDBD5712218A4B5005BD270 /* OFFERSViewController.swift in Sources */,
 				5D3CA47C2219B67900010A9B /* DettagliOffertaViewController.swift in Sources */,
