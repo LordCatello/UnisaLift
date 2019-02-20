@@ -59,7 +59,13 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
         self.PasswordTextField.delegate = self
         EmailTextField.setBottomBorder()
         PasswordTextField.setBottomBorder()
-        // Do any additional setup after loading the view.
+        
+        var id = PersistenceManager.fetchProgressiveID()
+        
+        // creo un id progressivo che inizia con 0
+        if(id == nil) {
+            PersistenceManager.newProgressiveID()
+        }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

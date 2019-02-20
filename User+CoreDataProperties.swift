@@ -31,7 +31,7 @@ extension User {
     @NSManaged public var serialNumber: String?
     @NSManaged public var state: Int16
     @NSManaged public var surname: String?
-    @NSManaged public var userID: Int32
+    @NSManaged public var userID: Int64
     @NSManaged public var aboutMeReviews: NSSet?
     @NSManaged public var applications: NSSet?
     @NSManaged public var byMeReviews: NSSet?

@@ -19,7 +19,7 @@ extension Notification {
 
     @NSManaged public var date: NSDate?
     @NSManaged public var message: String?
-    @NSManaged public var notificationID: Int32
+    @NSManaged public var notificationID: Int64
     @NSManaged public var state: Int32
     @NSManaged public var type: Int32
     @NSManaged public var user: User?

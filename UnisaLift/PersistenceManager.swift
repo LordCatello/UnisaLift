@@ -18,6 +18,18 @@ class PersistenceManager {
         return appDelegate.persistentContainer.viewContext
     }
     
+    // questa funzione deve essere chiamata una sola volta
+    static func newProgressiveID () -> Id {
+        let context = getContext()
+        
+        let id = NSEntityDescription.insertNewObject(forEntityName: "Id", into: context) as! Id
+        
+        // il primo elemento dovrà avere ID == 1
+        id.progressiveID = 0;
+        
+        return id
+    }
+    
     // funzione di test che restituisce un utente di default
     // ovviamente tale funzione nella versione funzionante dell'applicazione non deve esistere
     static func newDefaultUser () -> User {
@@ -67,18 +79,50 @@ class PersistenceManager {
         return offer
     }
     
-    static func newOffer (desc: String, endDate: Date, endPointDesc: String, endPointGeo: String, message: String, startDate: String, startPointDesc: String, startPointGeo: String, totalSpots: Int, type: String, offerer: User) -> Offer {
+    static func newOffer (desc: String, endDate: Date, endPointDesc: String, endPointGeo: String, message: String, startDate: Date, startPointDesc: String, startPointGeo: String, totalSpots: Int, type: Int, offerer: User) -> Offer {
         let context = getContext()
         
         let offer = NSEntityDescription.insertNewObject(forEntityName: "Offer", into: context) as! Offer
         
-        offer.offerID = 10
-        offer.desc = "defaultOffer"
-        offer.freeSpots = 10
-        offer.startPointDesc = "defaultStartPointDesc"
-        offer.endPointDesc = "defaultEndPointDesc"
+        let tempId = fetchProgressiveID()
+        tempId?.progressiveID = (tempId?.progressiveID)! + 1
+        
+        offer.offerID = (tempId?.progressiveID)!
+        offer.desc = desc
+        offer.endDate = endDate as NSDate
+        offer.endPointDesc = endPointDesc
+        offer.endPointGeo = endPointGeo
+        offer.message = message
+        offer.startDate = startDate as NSDate
+        offer.startPointDesc = startPointDesc
+        offer.startPointGeo = startPointGeo
+        offer.totalSpots = Int16(totalSpots)
+        offer.freeSpots = Int16(totalSpots)
+        offer.type = Int16(type)
+        offer.offerer = offerer
         
         return offer
+    }
+    
+    static func fetchProgressiveID() -> Id? {
+        var ids: [Id]!
+        
+        let context = getContext()
+        
+        let fetchRequest = NSFetchRequest<Id>(entityName: "Id")
+        
+        do {
+            try ids = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Errore in fetch \(error.code)")
+        }
+        
+        if(ids.count == 0) {
+            return nil
+        } else {
+            return ids[0]
+        }
+
     }
     
     // prendo tutti gli utenti
