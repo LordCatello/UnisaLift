@@ -8,6 +8,7 @@
 import MapKit
 import UIKit
 
+
 class MapSetPositionViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var doneButton: UIButton!
@@ -16,7 +17,26 @@ class MapSetPositionViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var settingPoint = MKPointAnnotation()
+    var settingPointTitle : String!
+    
     let locationManager = CLLocationManager()
+    
+    // this function updates the marked position on a touch
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let position: CGPoint = touch.location(in: view)
+            
+            mapView.removeAnnotation(settingPoint)
+            
+            settingPoint.coordinate = mapView.convert(position, toCoordinateFrom: self.view)
+            settingPoint.title = settingPointTitle
+            setGeolocalizedDescription(pointToLabelize: settingPoint)
+            
+            mapView.addAnnotation(settingPoint)
+            mapView.selectAnnotation(settingPoint, animated: false)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +47,31 @@ class MapSetPositionViewController: UIViewController, MKMapViewDelegate, CLLocat
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.distanceFilter = 50
         locationManager.requestWhenInUseAuthorization()
-        mapView.showsUserLocation = true
+        mapView.showsUserLocation = false // i only want to display a starting placemark, not showing the current placemark
+        locationManager.startUpdatingLocation()
+        
+        // DEBUG: THE TITLE IS SUPPOSED TO BE PASSED BY THE PREPARE FUNCTION BEFORE THE SEGUE TO THIS MAP, BASING ON WHAT KIND OF POSITION YOU WANT TO SAVE (ex. start point, end point)
+        settingPointTitle = "Starting point"
+    }
+    
+    // this function gets the user location if possible and updates the zooming on the map based on it
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocation = manager.location else { return }
+        // DEBUG PRINT
+        print("locations = \(locValue.coordinate.latitude) \(locValue.coordinate.longitude)")
+        
+        settingPoint.coordinate = locValue.coordinate
+        settingPoint.title = settingPointTitle
+        setGeolocalizedDescription(pointToLabelize: settingPoint)
+        mapView.addAnnotation(settingPoint)
+        mapView.selectAnnotation(settingPoint, animated: false)
+        
+        centerMapOnLocation(map: mapView, location: locValue)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         
         
     }
