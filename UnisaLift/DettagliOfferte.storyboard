@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Nuova Offerta-->
+        <!--Create-->
         <scene sceneID="nWn-GD-MPV">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-siI-qV-Fah" title="Nuova Offerta" id="siI-qV-Fah" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-siI-qV-Fah" title="Create" id="siI-qV-Fah" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IT3-59-gMv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="9054" y="-2011"/>
         </scene>
-        <!--Dettagli Mia Offerta-->
+        <!--Details-->
         <scene sceneID="Ofe-bU-FPA">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-t7V-SH-zxD" title="Dettagli Mia Offerta" id="t7V-SH-zxD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-t7V-SH-zxD" title="Details" id="t7V-SH-zxD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y6I-8p-9TX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="10477" y="-2008"/>
         </scene>
-        <!--Dettagli Offerta-->
+        <!--Details-->
         <scene sceneID="wdZ-KK-Rsk">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-gnL-dr-7fY" title="Dettagli Offerta" id="gnL-dr-7fY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-gnL-dr-7fY" title="Details" id="gnL-dr-7fY" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JcR-lb-uQ7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
