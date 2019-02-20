@@ -99,7 +99,7 @@
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="WVa-eH-hp7">
                             <connections>
-                                <segue destination="ZRZ-xb-ODC" kind="show" id="YVb-yT-yot"/>
+                                <action selector="addOfferButtonPressed:" destination="77A-Mn-MZd" id="tf6-3W-aT3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -165,6 +165,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="offers" width="45" height="45"/>
+        <image name="offers" width="30" height="30"/>
     </resources>
 </document>

@@ -47,7 +47,9 @@ class PersistenceManager {
         
         offer.offerID = 10
         offer.desc = "defaultOffer"
-        offer.totalSpots = 10
+        offer.freeSpots = 10
+        offer.startPointDesc = "defaultStartPointDesc"
+        offer.endPointDesc = "defaultEndPointDesc"
         
         return offer
     }
