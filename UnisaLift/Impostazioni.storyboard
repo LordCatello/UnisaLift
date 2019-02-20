@@ -27,55 +27,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eY2-8e-A41">
-                                <rect key="frame" x="0.0" y="143" width="191" height="194"/>
+                                <rect key="frame" x="0.0" y="190" width="191" height="194"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aez-Kd-nM7">
-                                <rect key="frame" x="259" y="143" width="74" height="37"/>
+                                <rect key="frame" x="259" y="190" width="74" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cognome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffN-ia-sCp">
-                                <rect key="frame" x="246" y="220" width="75" height="26"/>
+                                <rect key="frame" x="246" y="267" width="75" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Auto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBA-n6-bdB">
-                                <rect key="frame" x="259" y="347" width="117" height="26"/>
+                                <rect key="frame" x="259" y="394" width="117" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Valutazione" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYD-j5-L6f">
-                                <rect key="frame" x="239" y="288" width="89" height="21"/>
+                                <rect key="frame" x="239" y="335" width="89" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Piccola descrizione del profilo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UOO-Uk-OZv">
-                                <rect key="frame" x="65" y="445" width="285" height="183"/>
+                                <rect key="frame" x="65" y="492" width="285" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bO-bI-ybn">
+                                <rect key="frame" x="0.0" y="88" width="196" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VwH-1K-2ph"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Impostazioni" id="N9q-aT-5Ue">
+                    <navigationItem key="navigationItem" id="N9q-aT-5Ue">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="KHq-1X-9Gq">
                             <connections>
                                 <segue destination="oDH-vl-DVb" kind="showDetail" animates="NO" id="yhK-Aj-H9q"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Modifica" id="nKq-ND-5OH">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="nKq-ND-5OH">
                             <connections>
                                 <segue destination="gqQ-P8-Hnc" kind="show" identifier="ModificaProfilo" id="ga3-Ye-hQx"/>
                             </connections>
@@ -84,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgP-rQ-tcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8274" y="199"/>
+            <point key="canvasLocation" x="8273.9130434782619" y="198.88392857142856"/>
         </scene>
         <!--TabBarPrincipale-->
         <scene sceneID="OzR-Is-7Ds">
@@ -106,8 +113,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SsZ-Wq-bpA"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Modifica Profilo" id="oLU-dG-B50">
-                        <barButtonItem key="rightBarButtonItem" title="Fatto" id="fag-zh-BIa">
+                    <navigationItem key="navigationItem" title="Edit profile" id="oLU-dG-B50">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="fag-zh-BIa">
                             <connections>
                                 <action selector="FattoButtonPressed:" destination="gqQ-P8-Hnc" id="7jM-L5-Ly1"/>
                             </connections>
@@ -118,11 +125,11 @@
             </objects>
             <point key="canvasLocation" x="9200" y="199"/>
         </scene>
-        <!--Impostazioni-->
+        <!--Settings-->
         <scene sceneID="JEo-K4-gpe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JzN-3J-hre" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Impostazioni" id="CAM-3v-PNf"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" landscapeImage="settings" largeContentSizeImage="settings" id="CAM-3v-PNf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xv3-nU-DaU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -138,4 +145,7 @@
             <point key="canvasLocation" x="7326" y="199"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="45" height="45"/>
+    </resources>
 </document>

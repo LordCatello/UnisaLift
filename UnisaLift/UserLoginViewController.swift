@@ -8,12 +8,25 @@
 
 import UIKit
 
-class UserLoginViewController: UIViewController {
+extension UITextField{
+    func setBottomBorder(){
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 0.7)
+        self.layer.shadowOpacity = 1.0
+        self.layer.shadowRadius = 0.0
+    
+    }
+}
+
+class UserLoginViewController: UIViewController, UITextFieldDelegate {
     
     var DataBaseStudenti = ["Carmine","Emanuele"]
+    
 
+    @IBOutlet weak var LabelTopColor: UILabel!
     @IBOutlet weak var EmailTextField: UITextField!
     
+    @IBOutlet weak var PasswordTextField: UITextField!
     @IBAction func LoginButtonPressed(_ sender: Any) {
         if(EmailTextField.text!.description == ""){
         return
@@ -35,10 +48,15 @@ class UserLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.hidesBackButton = true;
+        self.EmailTextField.delegate = self
+        self.PasswordTextField.delegate = self
+        EmailTextField.setBottomBorder()
+        PasswordTextField.setBottomBorder()
         // Do any additional setup after loading the view.
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation
