@@ -85,7 +85,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Offers" id="4Pr-gl-6Uc">
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Kzb-7e-8Df">
-                            <rect key="frame" x="123.5" y="7" width="167" height="30"/>
+                            <rect key="frame" x="133.5" y="7" width="167" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.89089655876159668" green="0.40929615497589111" blue="0.07796236127614975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <segments>

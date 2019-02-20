@@ -35,7 +35,6 @@
 		5DDBD5712218A4B5005BD270 /* OFFERSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDBD5702218A4B5005BD270 /* OFFERSViewController.swift */; };
 		5DE616A8221AD755007C0C15 /* ImpostazioniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE616A7221AD755007C0C15 /* ImpostazioniViewController.swift */; };
 		5DF965FE221ACB3600624246 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF965FD221ACB3600624246 /* UserLoginViewController.swift */; };
-		C109D308221B17CE006B75C4 /* Registrazione.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C109D307221B17CE006B75C4 /* Registrazione.storyboard */; };
 		C109D30A221B17EA006B75C4 /* Offerte.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C109D309221B17EA006B75C4 /* Offerte.storyboard */; };
 		C109D30C221B18F3006B75C4 /* DettagliOfferte.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C109D30B221B18F3006B75C4 /* DettagliOfferte.storyboard */; };
 		C109D30F221B194A006B75C4 /* Richieste.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C109D30D221B194A006B75C4 /* Richieste.storyboard */; };
@@ -95,7 +94,6 @@
 		5DDBD5702218A4B5005BD270 /* OFFERSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFERSViewController.swift; sourceTree = "<group>"; };
 		5DE616A7221AD755007C0C15 /* ImpostazioniViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostazioniViewController.swift; sourceTree = "<group>"; };
 		5DF965FD221ACB3600624246 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
-		C109D307221B17CE006B75C4 /* Registrazione.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registrazione.storyboard; sourceTree = "<group>"; };
 		C109D309221B17EA006B75C4 /* Offerte.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Offerte.storyboard; sourceTree = "<group>"; };
 		C109D30B221B18F3006B75C4 /* DettagliOfferte.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DettagliOfferte.storyboard; sourceTree = "<group>"; };
 		C109D30E221B194A006B75C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = UnisaLift/Base.lproj/Richieste.storyboard; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				5D747612221C096F00CA2035 /* ModificaProfiloViewController.swift */,
 				C109D310221B1966006B75C4 /* DettagliRichieste.storyboard */,
 				C109D30D221B194A006B75C4 /* Richieste.storyboard */,
-				C109D307221B17CE006B75C4 /* Registrazione.storyboard */,
 				5D747610221BF08500CA2035 /* RichiesteTableViewCell.swift */,
 				C109D30B221B18F3006B75C4 /* DettagliOfferte.storyboard */,
 				C109D309221B17EA006B75C4 /* Offerte.storyboard */,
@@ -319,7 +316,6 @@
 				3360A9CD2216B93200AA801A /* Assets.xcassets in Resources */,
 				3360A9C82216B93100AA801A /* Main.storyboard in Resources */,
 				C109D313221B19B3006B75C4 /* Impostazioni.storyboard in Resources */,
-				C109D308221B17CE006B75C4 /* Registrazione.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
