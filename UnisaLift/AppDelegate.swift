@@ -12,13 +12,19 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
     
-    
+    static let defaultColor = UIColor.init(red: 218/255, green: 83/255, blue: 18/255, alpha: 1.0)
     var window: UIWindow?
     
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        UINavigationBar.appearance().barTintColor = AppDelegate.defaultColor
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        UINavigationBar.appearance().tintColor = UIColor.white
+
         return true
     }
 
@@ -30,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        PersistenceManager.saveContext()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -43,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
+        PersistenceManager.saveContext()
     }
 
     // MARK: - Core Data stack
@@ -55,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "UnisaLift")
+        let container = NSPersistentContainer(name: "MainModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

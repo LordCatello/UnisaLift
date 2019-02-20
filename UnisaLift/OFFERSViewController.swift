@@ -9,36 +9,38 @@
 import UIKit
 
 class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource {
+    var offers = [Offer]()
     
+    /*
     var DataSource = ["Prova1","prova2","Prova3"]
     var mieOfferte = ["Salerno","Fisciano"]
+    */
+    
+    @IBAction func addOfferButtonPressed(_ sender: Any) {
+        
+        /*let offer = PersistenceManager.newDefaultOffer()
+        offers.append(offer)
+        myTableView.reloadData()*/
+    }
     
     @IBOutlet weak var OfferteSegment: UISegmentedControl!
     
-    
     @IBAction func SegmentedControlAction(_ sender: Any) {
-        
         myTableView.reloadData()
-        
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         switch (OfferteSegment.selectedSegmentIndex){
             
         case 0:
-            return DataSource.count
+            return offers.count
         case 1:
-            return mieOfferte.count
+            return offers.count // devo far visualizzare il numero delle mie offerte
+                                // oppure posso utilizzare lo stesso array facendo il fetch solo
+                                // sulle offerte dell'utente
         default:
             return 0;
-            
         }
-        
-        
-        
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,14 +49,15 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         
        // mycell.textLabel?.text=DataSource[indexPath.row]
         
+        let offer = offers[indexPath.row]
         
         switch (OfferteSegment.selectedSegmentIndex){
             
         case 0:
-            mycell.OffertaNameLabel.text = "Luca"
-            mycell.NumeroPostiLabel.text = "4 posti rimanenti"
-            mycell.PartenzaLabel.text = "7:55 Salerno"
-            mycell.ArrivoLabel.text = "Fisciano"
+            mycell.OffertaNameLabel.text = "defaultOffererName"
+            mycell.NumeroPostiLabel.text = String(offer.freeSpots)
+            mycell.PartenzaLabel.text = offer.startPointDesc
+            mycell.ArrivoLabel.text = offer.endPointDesc
             mycell.ImageOfferta.image = nil
         case 1:
             mycell.OffertaNameLabel.text = "Luca"
@@ -64,13 +67,9 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             mycell.ImageOfferta.image = nil
         default:
           break
-            
         }
         
-        
-        
         return mycell
-        
     }
     
     @IBOutlet weak var myTableView: UITableView!
@@ -78,11 +77,7 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //myTableView.rowHeight = UITableView.automaticDimension;
-        //myTableView.estimatedRowHeight = 200.0;
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        offers = PersistenceManager.fetchOffers()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -104,6 +99,7 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        offers = PersistenceManager.fetchOffers()
         myTableView.reloadData()
     }
     

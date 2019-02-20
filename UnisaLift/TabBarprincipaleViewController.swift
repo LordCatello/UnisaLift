@@ -1,23 +1,24 @@
 //
-//  ImpostazioniViewController.swift
+//  TabBarprincipaleViewController.swift
 //  UnisaLift
 //
-//  Created by Cuomo Luca on 18/02/2019.
+//  Created by Cuomo Luca on 19/02/2019.
 //  Copyright © 2019 RottenApples. All rights reserved.
 //
 
 import UIKit
 
-class ImpostazioniViewController: UIViewController {
+class TabBarprincipaleViewController: UITabBarController {
 
-   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+ 
     
 
     /*
