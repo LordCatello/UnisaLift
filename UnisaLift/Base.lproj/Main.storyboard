@@ -108,7 +108,7 @@
                         <viewLayoutGuide key="safeArea" id="faB-Vh-ZIm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Registrazione" id="MOU-Xd-qJk">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="NWz-4L-YXl">
+                        <barButtonItem key="rightBarButtonItem" title="Fine" id="NWz-4L-YXl">
                             <connections>
                                 <segue destination="2N2-aE-1he" kind="showDetail" id="7Yt-qF-5yP"/>
                             </connections>
@@ -139,7 +139,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPO-Oy-IQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7668.115942028986" y="-573.21428571428567"/>
+            <point key="canvasLocation" x="7458" y="-593"/>
         </scene>
         <!--Offerte-->
         <scene sceneID="wVQ-30-ABj">
@@ -224,6 +224,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4t9-b3-Rc6"/>
-        <segue reference="nWs-XM-P4O"/>
+        <segue reference="7Yt-qF-5yP"/>
     </inferredMetricsTieBreakers>
 </document>
