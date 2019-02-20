@@ -36,6 +36,19 @@ class PersistenceManager {
         return user
     }
     
+    static func newUser (carModel: String, email: String, name: String, surname: String) -> User {
+        let context = getContext()
+        
+        let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
+        
+        user.carModel = carModel
+        user.email = email
+        user.name = name
+        user.surname = surname
+        
+        return user
+    }
+    
     static func newDefaultOffer () -> Offer {
         let context = getContext()
         
@@ -44,6 +57,20 @@ class PersistenceManager {
         // let empty = NSLocalizedString("empty", comment: "emptyitem")
         // è utile per la localizzazione
         // serve per cambiare lingua in maniera dinamica
+        
+        offer.offerID = 10
+        offer.desc = "defaultOffer"
+        offer.freeSpots = 10
+        offer.startPointDesc = "defaultStartPointDesc"
+        offer.endPointDesc = "defaultEndPointDesc"
+        
+        return offer
+    }
+    
+    static func newOffer (desc: String, endDate: Date, endPointDesc: String, endPointGeo: String, message: String, startDate: String, startPointDesc: String, startPointGeo: String, totalSpots: Int, type: String, offerer: User) -> Offer {
+        let context = getContext()
+        
+        let offer = NSEntityDescription.insertNewObject(forEntityName: "Offer", into: context) as! Offer
         
         offer.offerID = 10
         offer.desc = "defaultOffer"
@@ -75,6 +102,31 @@ class PersistenceManager {
         return users
     }
     
+    // restituisce l'utente che ha la stessa email passata come parametro
+    // restituisce nil altrimenti (si spera)
+    static func fetchUser(email: String) -> User? {
+        var users: [User]!
+        
+        let context = getContext()
+        
+        let fetchRequest = NSFetchRequest<User>(entityName: "User")
+        
+        fetchRequest.predicate = NSPredicate(format: "email == %@", email)
+        
+        do {
+            try users = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Errore in fetch \(error.code)")
+        }
+        
+        if(users == nil || users.count == 0) {
+            return nil
+        } else {
+            return users[0]
+        }
+
+    }
+
     static func fetchOffers() -> [Offer] {
         var offers = [Offer]()
         

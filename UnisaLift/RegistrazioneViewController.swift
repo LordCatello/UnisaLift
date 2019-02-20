@@ -1,26 +1,23 @@
 //
-//  ImpostazioniViewController.swift
+//  RegistrazioneViewController.swift
 //  UnisaLift
 //
-//  Created by Cuomo Luca on 18/02/2019.
+//  Created by Carratu Carmine on 20/02/19.
 //  Copyright © 2019 RottenApples. All rights reserved.
 //
 
 import UIKit
 
-class ImpostazioniViewController: UIViewController {
+class RegistrazioneViewController: UIViewController {
+    
+    var email : String!
 
-  
-   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    
-
     /*
     // MARK: - Navigation
 

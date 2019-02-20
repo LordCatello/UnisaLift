@@ -100,7 +100,7 @@
         <!--Registrazione-->
         <scene sceneID="RrF-aB-mCd">
             <objects>
-                <viewController id="L8l-4Q-kZa" sceneMemberID="viewController">
+                <viewController id="L8l-4Q-kZa" customClass="RegistrazioneViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XrV-PD-wrn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

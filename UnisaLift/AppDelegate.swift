@@ -12,10 +12,11 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
     
+    // utente loggado
+    var userLoggedEmail: String!
+    
     static let defaultColor = UIColor.init(red: 218/255, green: 83/255, blue: 18/255, alpha: 1.0)
     var window: UIWindow?
-    
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
