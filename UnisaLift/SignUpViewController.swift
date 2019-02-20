@@ -17,6 +17,21 @@ extension UIStackView : UITextFieldDelegate{
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     var email : String!
     
+    @IBAction func fineButtonPressed(_ sender: Any) {
+        let name = nameField.text
+        let surname = surnameField.text
+        let carModel = carModelField.text
+        
+        if(name == "" || surname == "" || carModel == "") {
+            // dovrei mostrare un messaggio in cui avverto che tutti i campi devono essere compilati
+        }
+        else {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.userLogged = PersistenceManager.newUser(carModel: carModel!, email: email, name: name!, surname: surname!)
+            // performSegue(withIdentifier: "homeFromSignUp", sender: nil)
+        }
+    }
+    
     @IBOutlet weak var TableViewElementi: UITableView!
     
     @IBOutlet weak var nameField: UITextField!

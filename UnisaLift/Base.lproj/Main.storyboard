@@ -215,6 +215,7 @@
                     <navigationItem key="navigationItem" title="Sign up" id="MOU-Xd-qJk">
                         <barButtonItem key="rightBarButtonItem" title="Fine" id="NWz-4L-YXl">
                             <connections>
+                                <action selector="fineButtonPressed:" destination="L8l-4Q-kZa" id="VsU-jw-e7e"/>
                                 <segue destination="2N2-aE-1he" kind="showDetail" id="7Yt-qF-5yP"/>
                             </connections>
                         </barButtonItem>
