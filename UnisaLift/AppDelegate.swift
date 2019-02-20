@@ -12,13 +12,19 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
     
-    
+    static let defaultColor = UIColor.init(red: 218/255, green: 83/255, blue: 18/255, alpha: 1.0)
     var window: UIWindow?
     
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        UINavigationBar.appearance().barTintColor = AppDelegate.defaultColor
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        UINavigationBar.appearance().tintColor = UIColor.white
+
         return true
     }
 
