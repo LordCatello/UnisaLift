@@ -8,19 +8,37 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     var email : String!
+    
+    
+    
+    @IBOutlet weak var nameField: UITextField!
+    
+    @IBOutlet weak var surnameField: UITextField!
+    
     @IBOutlet weak var emailField: UITextField!
+    
+    @IBOutlet weak var carModelField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.carModelField.delegate = self
+        self.emailField.delegate = self
+        self.nameField.delegate = self
+        self.surnameField.delegate = self
+      nameField.setBottomBorder()
+      emailField.setBottomBorder()
+        surnameField.setBottomBorder()
+        carModelField.setBottomBorder()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         emailField.text = email
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     /*
