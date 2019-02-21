@@ -10,6 +10,9 @@ import UIKit
 
 class DettagliMiaOffertaViewController: UIViewController {
 
+    var offer : Offer!
+    
+    
     @IBOutlet weak var deleteOfferButton: UIButton!
     
     @IBOutlet weak var postiRimasti: UILabel!
