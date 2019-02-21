@@ -63,6 +63,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    @IBAction func tapOnView(_ sender: Any) {
+        nameField.resignFirstResponder()
+        surnameField.resignFirstResponder()
+        carModelField.resignFirstResponder()
+    }
     // Move the text field in a pretty animation!
     func moveTextField(_ textField: UITextField, moveDistance: Int, up: Bool) {
         let moveDuration = 0.3
@@ -82,11 +87,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.nameField.delegate = self
         self.surnameField.delegate = self
         
-    }
-    
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        self.view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
