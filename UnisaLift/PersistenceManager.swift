@@ -170,9 +170,13 @@ class PersistenceManager {
         let fetchRequest = NSFetchRequest<Application>(entityName: "Application")
         
         // non è detto che funzionino, poichè probabilmente questo formato vale solo per le stringhe
-        fetchRequest.predicate = NSPredicate(format: "applicant == %@", applicant)
-        fetchRequest.predicate = NSPredicate(format: "state == %@", "1")
+        let applicantPredicate = NSPredicate(format: "applicant == %@", applicant)
+        let statePredicate = NSPredicate(format: "state == %i", 1)
         // 1 indica le richieste in corso
+        
+        let compoundPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [applicantPredicate, statePredicate])
+        
+        fetchRequest.predicate = compoundPredicate
         
         do {
             try applications = context.fetch(fetchRequest)
@@ -191,9 +195,13 @@ class PersistenceManager {
         let fetchRequest = NSFetchRequest<Application>(entityName: "Application")
         
         // non è detto che funzionino, poichè probabilmente questo formato vale solo per le stringhe
-        fetchRequest.predicate = NSPredicate(format: "applicant == %@", applicant)
-        fetchRequest.predicate = NSPredicate(format: "state == %@", "2")
-        // 2 indica le richieste in corso
+        let applicantPredicate = NSPredicate(format: "applicant == %@", applicant)
+        let statePredicate = NSPredicate(format: "state == %i", 2)
+        // 1 indica le richieste in corso
+        
+        let compoundPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [applicantPredicate, statePredicate])
+        
+        fetchRequest.predicate = compoundPredicate
         
         do {
             try applications = context.fetch(fetchRequest)

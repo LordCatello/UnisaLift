@@ -10,7 +10,7 @@ import UIKit
 
 class RichiesteViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
    
-    var applications : [Application]!
+    var applications = [Application]()
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,8 +50,13 @@ class RichiesteViewController: UIViewController, UITableViewDelegate,UITableView
         return applications.count
     }
     
-   override func viewDidLoad() {
+    override func viewDidLoad() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+        
         super.viewDidLoad()
+        
+        applications = PersistenceManager.fetchActiveApplications(applicant: userLogged!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
