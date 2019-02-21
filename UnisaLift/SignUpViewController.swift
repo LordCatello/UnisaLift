@@ -45,14 +45,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == carModelField {
-        moveTextField(textField, moveDistance: -250, up: true)
-    }
+            TableViewElementi.isScrollEnabled = false
+            moveTextField(textField, moveDistance: -250, up: true)
+        }
     }
     
     // Finish Editing The Text Field
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == carModelField {
-        moveTextField(textField, moveDistance: -250, up: false)
+            TableViewElementi.isScrollEnabled = true
+            moveTextField(textField, moveDistance: -250, up: false)
         }}
     
     // Hide the keyboard when the return key pressed
@@ -90,6 +92,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         emailField.text = email
     }
-
+    
 }
 
