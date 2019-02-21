@@ -234,6 +234,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="t7V-SH-zxD" id="5zn-tV-5yu"/>
+                                    <outlet property="delegate" destination="t7V-SH-zxD" id="DuK-Ez-lxQ"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjD-Tj-KPT">
                                 <rect key="frame" x="149" y="804" width="116" height="39"/>
@@ -248,6 +252,7 @@
                         <viewLayoutGuide key="safeArea" id="f0b-De-WkL"/>
                     </view>
                     <connections>
+                        <outlet property="OfferApplicationTableView" destination="deO-Uj-Nux" id="aIm-sT-RoG"/>
                         <outlet property="arrivo" destination="a1u-YS-XX1" id="sSj-nV-If3"/>
                         <outlet property="deleteOfferButton" destination="ZjD-Tj-KPT" id="WcQ-sq-nnm"/>
                         <outlet property="message" destination="SGl-8m-VQP" id="Jq6-Ub-jEQ"/>

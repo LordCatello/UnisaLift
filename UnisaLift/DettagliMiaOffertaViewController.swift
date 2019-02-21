@@ -9,11 +9,25 @@
 import UIKit
 import MapKit
 
-class DettagliMiaOffertaViewController: UIViewController {
+class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //
+    }
+    
+    
+    var applications = [Application]()
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return applications.count
+    }
 
     var offer : Offer!
     
     @IBOutlet weak var deleteOfferButton: UIButton!
+    
+    @IBOutlet weak var OfferApplicationTableView: UITableView!
+    
     
     @IBOutlet weak var postiRimasti: UILabel!
     
@@ -27,12 +41,14 @@ class DettagliMiaOffertaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        applications = PersistenceManager.fetchOfferApplications(offer: offer)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        
+        applications = PersistenceManager.fetchOfferApplications(offer: offer)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
