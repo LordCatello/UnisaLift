@@ -28,15 +28,15 @@ extension UIButton{
     }
 }
 
-extension UITextField{
-    func setBottomBorder(){
-        self.layer.shadowColor = UIColor.darkGray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 0.7)
-        self.layer.shadowOpacity = 1.0
-        self.layer.shadowRadius = 0.0
-    
-    }
-}
+//extension UITextField{
+//    func setBottomBorder(){
+//        self.layer.shadowColor = UIColor.darkGray.cgColor
+//        self.layer.shadowOffset = CGSize(width: 0.0, height: 0.7)
+//        self.layer.shadowOpacity = 1.0
+//        self.layer.shadowRadius = 0.0
+//
+//    }
+//}
 
 class UserLoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -81,7 +81,7 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.EmailTextField.delegate = self
-        EmailTextField.setBottomBorder()
+//        EmailTextField.setBottomBorder()
        
         let id = PersistenceManager.fetchProgressiveID()
         
