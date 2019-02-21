@@ -103,6 +103,23 @@ class PersistenceManager {
         return offer
     }
     
+    static func newApplication (offer: Offer, applicant: User) -> Application {
+        let context = getContext()
+        
+        let application = NSEntityDescription.insertNewObject(forEntityName: "Application", into: context) as! Application
+        
+        let tempId = fetchProgressiveID()
+        tempId?.progressiveID = (tempId?.progressiveID)! + 1
+        
+        application.applicationID = (tempId?.progressiveID)!
+        application.offer = offer
+        application.applicant = applicant
+        // lo stato è 1: in corso
+        application.state = 1
+        
+        return application
+    }
+    
     static func fetchProgressiveID() -> Id? {
         var ids: [Id]!
         
@@ -266,11 +283,23 @@ class PersistenceManager {
         context.delete(user)
     }
     
+    // devo modificare anche le richieste associate all'offerta
     static func deleteOffer(offer: Offer) {
         let context = getContext()
         
         context.delete(offer)
     }
+    
+    // attenzione
+    // in base allo stato, devo modificare alcuni parametri
+    // dell'offerta associata e del richiedente
+    // per adesso non ho fatto queste cose
+    static func deleteApplication(application: Application) {
+        let context = getContext()
+        
+        context.delete(application)
+    }
+
     
     /*
     static func deleteItem( item :PItem) {
