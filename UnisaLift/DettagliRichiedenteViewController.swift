@@ -11,6 +11,7 @@ import UIKit
 class DettagliRichiedenteViewController: UIViewController {
 
     var user : User!
+    var application : Application!
     
     @IBOutlet weak var applicantImage: UIImageView!
     
