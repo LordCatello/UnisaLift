@@ -145,6 +145,48 @@ class PersistenceManager {
         return users
     }
     
+    static func fetchActiveApplications(applicant: User) -> [Application] {
+        var applications = [Application]()
+        
+        let context = getContext()
+        
+        let fetchRequest = NSFetchRequest<Application>(entityName: "Application")
+        
+        // non è detto che funzionino, poichè probabilmente questo formato vale solo per le stringhe
+        fetchRequest.predicate = NSPredicate(format: "applicant == %@", applicant)
+        fetchRequest.predicate = NSPredicate(format: "state == %@", 1)
+        // 1 indica le richieste in corso
+        
+        do {
+            try applications = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Errore in fetch \(error.code)")
+        }
+        
+       return applications
+    }
+    
+    static func fetchConfirmedApplications(applicant: User) -> [Application] {
+        var applications = [Application]()
+        
+        let context = getContext()
+        
+        let fetchRequest = NSFetchRequest<Application>(entityName: "Application")
+        
+        // non è detto che funzionino, poichè probabilmente questo formato vale solo per le stringhe
+        fetchRequest.predicate = NSPredicate(format: "applicant == %@", applicant)
+        fetchRequest.predicate = NSPredicate(format: "state == %@", 2)
+        // 2 indica le richieste in corso
+        
+        do {
+            try applications = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Errore in fetch \(error.code)")
+        }
+        
+        return applications
+    }
+    
     // restituisce l'utente che ha la stessa email passata come parametro
     // restituisce nil altrimenti (si spera)
     static func fetchUser(email: String) -> User? {
