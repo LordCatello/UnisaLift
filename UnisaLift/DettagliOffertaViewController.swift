@@ -29,8 +29,15 @@ class DettagliOffertaViewController: UIViewController {
     
     @IBOutlet weak var messaggioAutista: UITextView!
     
-    @IBOutlet weak var requestButton: UIButton!
     
+    @IBAction func SendRequestButtonPressed(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+        
+        PersistenceManager.newApplication(offer: offer, applicant: userLogged!)
+        performSegue(withIdentifier: "Richieste", sender: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
