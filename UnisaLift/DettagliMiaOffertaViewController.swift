@@ -12,7 +12,18 @@ import MapKit
 class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //
+        let mycell = OfferApplicationTableView.dequeueReusableCell(withIdentifier: "RichiestaPerOffertaCell", for: indexPath) as! RichiestaperOffertaTableViewCell
+        
+        let application = applications[indexPath.row]
+        
+        mycell.nameLabel.text = application.applicant?.name
+        mycell.surnameLabel.text = application.applicant?.surname
+        var profileimage = UIImage(data: application.applicant?.imageFullRes as! Data, scale:1.0)
+        mycell.Profileimage.image = profileimage
+        
+        return mycell
+        
+        
     }
     
     

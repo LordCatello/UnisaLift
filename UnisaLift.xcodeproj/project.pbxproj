@@ -36,6 +36,7 @@
 		5D738B6B221AF5E700ADD750 /* OffertaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */; };
 		5D747611221BF08500CA2035 /* RichiesteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747610221BF08500CA2035 /* RichiesteTableViewCell.swift */; };
 		5D747613221C096F00CA2035 /* ModificaProfiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D747612221C096F00CA2035 /* ModificaProfiloViewController.swift */; };
+		5D8D2279221F4EC100CAA809 /* RichiestaperOffertaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8D2278221F4EC100CAA809 /* RichiestaperOffertaTableViewCell.swift */; };
 		5DDBD5712218A4B5005BD270 /* OFFERSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDBD5702218A4B5005BD270 /* OFFERSViewController.swift */; };
 		5DE616A8221AD755007C0C15 /* ImpostazioniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE616A7221AD755007C0C15 /* ImpostazioniViewController.swift */; };
 		5DF965FE221ACB3600624246 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF965FD221ACB3600624246 /* UserLoginViewController.swift */; };
@@ -104,6 +105,7 @@
 		5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffertaTableViewCell.swift; sourceTree = "<group>"; };
 		5D747610221BF08500CA2035 /* RichiesteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiesteTableViewCell.swift; sourceTree = "<group>"; };
 		5D747612221C096F00CA2035 /* ModificaProfiloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModificaProfiloViewController.swift; sourceTree = "<group>"; };
+		5D8D2278221F4EC100CAA809 /* RichiestaperOffertaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiestaperOffertaTableViewCell.swift; sourceTree = "<group>"; };
 		5DDBD5702218A4B5005BD270 /* OFFERSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFFERSViewController.swift; sourceTree = "<group>"; };
 		5DE616A7221AD755007C0C15 /* ImpostazioniViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpostazioniViewController.swift; sourceTree = "<group>"; };
 		5DF965FD221ACB3600624246 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				C109D30D221B194A006B75C4 /* Richieste.storyboard */,
 				5D747610221BF08500CA2035 /* RichiesteTableViewCell.swift */,
 				C109D30B221B18F3006B75C4 /* DettagliOfferte.storyboard */,
+				5D8D2278221F4EC100CAA809 /* RichiestaperOffertaTableViewCell.swift */,
 				C10A4073221C242A00AA395C /* Maps.storyboard */,
 				C169B998221D582400D1A8C6 /* MapSetPositionViewController.swift */,
 				C169B99A221D738000D1A8C6 /* MapUtilities.swift */,
@@ -395,6 +398,7 @@
 				33D49B41221DB2EA0045BD3D /* Id+CoreDataProperties.swift in Sources */,
 				3360A9C32216B93100AA801A /* AppDelegate.swift in Sources */,
 				5D714337221D91CB00534160 /* DettagliMiaOffertaViewController.swift in Sources */,
+				5D8D2279221F4EC100CAA809 /* RichiestaperOffertaTableViewCell.swift in Sources */,
 				330DE0A6221D5EBD00BB3FDA /* Review+CoreDataClass.swift in Sources */,
 				330DE0A9221D5EBD00BB3FDA /* Application+CoreDataProperties.swift in Sources */,
 				330DE0A7221D5EBD00BB3FDA /* Review+CoreDataProperties.swift in Sources */,
