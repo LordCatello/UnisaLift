@@ -171,6 +171,9 @@
                                                     <integer key="value" value="10"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="fineButtonPressed:" destination="L8l-4Q-kZa" eventType="touchUpInside" id="DjC-v3-hr8"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etr-xp-tbr">
                                             <rect key="frame" x="6" y="25" width="400" height="1"/>
@@ -260,13 +263,7 @@
                         <viewLayoutGuide key="safeArea" id="faB-Vh-ZIm"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Sign up" id="MOU-Xd-qJk">
-                        <barButtonItem key="rightBarButtonItem" title="Fine" id="NWz-4L-YXl">
-                            <connections>
-                                <action selector="fineButtonPressed:" destination="L8l-4Q-kZa" id="VsU-jw-e7e"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Sign up" id="MOU-Xd-qJk"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="TableViewElementi" destination="bnj-W3-d2E" id="a0q-5M-qnw"/>
