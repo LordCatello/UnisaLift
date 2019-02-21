@@ -28,7 +28,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
         else {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.userLogged = PersistenceManager.newUser(carModel: carModel!, email: email, name: name!, surname: surname!)
+            appDelegate.userLogged = PersistenceManager.newUser(carModel: carModel!, email: email, name: name!, surname: surname!, imageFullRes: imageData)
             performSegue(withIdentifier: "homeFromSignUp", sender: nil)
         }
     }

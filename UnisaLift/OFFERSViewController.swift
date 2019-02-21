@@ -48,7 +48,7 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             mycell.NumeroPostiLabel.text = String(offer.freeSpots)
             mycell.PartenzaLabel.text = offer.startPointDesc
             mycell.ArrivoLabel.text = offer.endPointDesc
-       var profileimage = UIImage(data:offer.offerer?.imageFullRes as! Data,scale:1.0)
+            var profileimage = UIImage(data: offer.offerer?.imageFullRes! as! Data, scale:1.0)
             mycell.ImageOfferta.image = profileimage
      
         return mycell

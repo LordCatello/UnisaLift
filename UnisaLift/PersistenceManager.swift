@@ -47,7 +47,7 @@ class PersistenceManager {
         return user
     }
     
-    static func newUser (carModel: String, email: String, name: String, surname: String) -> User {
+    static func newUser (carModel: String, email: String, name: String, surname: String, imageFullRes: NSData) -> User {
         let context = getContext()
         
         let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
@@ -56,6 +56,7 @@ class PersistenceManager {
         user.email = email
         user.name = name
         user.surname = surname
+        user.imageFullRes = imageFullRes
         
         return user
     }
