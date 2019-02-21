@@ -32,10 +32,10 @@ class ModificaProfiloViewController: UIViewController {
    /*
         self.tabBarController?.selectedIndex = 2
         */
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
        // self.dismiss(animated: true, completion: nil)
         
-        //performSegue(withIdentifier: "Impostazioni", sender: nil)
+        performSegue(withIdentifier: "impostazioni", sender: nil)
     }
     
     override func viewDidLoad() {
