@@ -139,6 +139,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.emailField.delegate = self
         self.nameField.delegate = self
         self.surnameField.delegate = self
+        profile.layer.borderWidth = 1
+        profile.layer.masksToBounds = false
+        profile.layer.borderColor = UIColor.black.cgColor
+        profile.layer.cornerRadius = profile.frame.height/2
+        profile.clipsToBounds = true
         
     }
     

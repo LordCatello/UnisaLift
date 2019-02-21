@@ -13,7 +13,7 @@
         <!--Richieste-->
         <scene sceneID="iQe-Pb-BB0">
             <objects>
-                <viewController title="Richieste" id="q72-0v-hXY" customClass="RichiesteViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Richieste" title="Richieste" id="q72-0v-hXY" customClass="RichiesteViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="po4-3H-mNr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,6 +144,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="requests" width="45" height="45"/>
+        <image name="requests" width="30" height="30"/>
     </resources>
 </document>

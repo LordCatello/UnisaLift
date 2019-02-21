@@ -293,6 +293,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Send Request"/>
+                                <connections>
+                                    <action selector="SendRequestButtonPressed:" destination="gnL-dr-7fY" eventType="touchUpInside" id="Ri4-0P-Poz"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Posti rimasti:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWu-ss-6wg">
                                 <rect key="frame" x="232" y="282" width="152" height="24"/>
@@ -356,13 +359,21 @@
                         <outlet property="nomePassaggio" destination="rGC-u9-UyL" id="gF4-lf-12U"/>
                         <outlet property="partenza" destination="pRV-8N-3kY" id="l8w-fB-yPm"/>
                         <outlet property="postiRimasti" destination="YWu-ss-6wg" id="p5r-sJ-rGd"/>
-                        <outlet property="requestButton" destination="wcL-SX-dPy" id="1n0-H5-mgY"/>
                         <segue destination="zib-gW-0mj" kind="show" identifier="Showmap" id="2Jz-az-a8C"/>
+                        <segue destination="pvg-ST-DyJ" kind="showDetail" identifier="Richieste" id="h6k-QR-e3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3J-dx-93T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11340.579710144928" y="-1300.4464285714284"/>
+            <point key="canvasLocation" x="11175" y="-1335"/>
+        </scene>
+        <!--TabBarPrincipale-->
+        <scene sceneID="FWn-IW-hMR">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Richieste" storyboardName="Main" referencedIdentifier="TabBarPrincipale" id="pvg-ST-DyJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MJq-xc-iFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11432" y="-2053"/>
         </scene>
         <!--MapPath-->
         <scene sceneID="bVk-xk-xUf">

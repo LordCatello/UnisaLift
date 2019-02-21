@@ -9,19 +9,21 @@
 import UIKit
 import MobileCoreServices
 
-class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var image: UIImageView!
     
-    @IBOutlet weak var car: UILabel!
-    @IBOutlet weak var email: UILabel!
-    @IBOutlet weak var surname: UILabel!
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var TableViewElements: UITableView!
+    @IBOutlet weak var ViewElements: UIView!
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var changeImageButton: UIButton!
     @IBOutlet weak var surnameText: UITextField!
     
-    @IBOutlet weak var mailText: UITextField!
+    @IBAction func tapForKeyBoard(_ sender: UITapGestureRecognizer) {
+        nameText.resignFirstResponder()
+        surnameText.resignFirstResponder()
+        carText.resignFirstResponder()
+    }
     
     @IBOutlet weak var carText: UITextField!
     
@@ -89,6 +91,16 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.carText.delegate = self
+        self.nameText.delegate = self
+        self.surnameText.delegate = self
+        
+        image.layer.borderWidth = 1
+        image.layer.masksToBounds = false
+        image.layer.borderColor = UIColor.black.cgColor
+        image.layer.cornerRadius = image.frame.height/2
+        image.clipsToBounds = true
 
         // Do any additional setup after loading the view.
     }
@@ -98,10 +110,9 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
         let userLogged = appDelegate.userLogged
 
         
-        name.text = userLogged?.name
-        surname.text = userLogged?.surname
-        email.text = userLogged?.email
-        car.text = userLogged?.carModel
+        nameText.text = userLogged?.name
+        surnameText.text = userLogged?.surname
+        carText.text = userLogged?.carModel
         descriptionArea.text = userLogged?.desc
         var profileimage = UIImage(data: userLogged?.imageFullRes as! Data, scale:1.0)
         image.image = profileimage
@@ -113,7 +124,38 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
         self.tabBarController?.tabBar.isHidden = false
     }
     
-
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == carText {
+            TableViewElements.isScrollEnabled = false
+            moveTextField(textField, moveDistance: -250, up: true)
+        }
+    }
+    
+    // Finish Editing The Text Field
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == carText {
+            TableViewElements.isScrollEnabled = true
+            moveTextField(textField, moveDistance: -250, up: false)
+        }}
+    
+    // Hide the keyboard when the return key pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    // Move the text field in a pretty animation!
+    func moveTextField(_ textField: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+        
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
     
     // MARK: - Navigation
 
