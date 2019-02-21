@@ -17,7 +17,7 @@ extension Application {
         return NSFetchRequest<Application>(entityName: "Application")
     }
 
-    @NSManaged public var applicationID: Int32
+    @NSManaged public var applicationID: Int64
     @NSManaged public var message: String?
     @NSManaged public var pointDesc: String?
     @NSManaged public var pointGeo: String?

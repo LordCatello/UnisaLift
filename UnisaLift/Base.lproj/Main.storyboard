@@ -75,8 +75,8 @@
                         <outlet property="EmailTextField" destination="K75-Xp-X5X" id="a3r-SJ-xoT"/>
                         <outlet property="LoginButton" destination="Amt-6X-zl8" id="abZ-Md-LGo"/>
                         <outlet property="PasswordTextField" destination="dBx-6C-ewq" id="QSw-El-4X2"/>
-                        <segue destination="2N2-aE-1he" kind="show" identifier="Home" id="nWs-XM-P4O"/>
                         <segue destination="L8l-4Q-kZa" kind="show" identifier="Registrazione" id="fvC-sp-caJ"/>
+                        <segue destination="2N2-aE-1he" kind="showDetail" identifier="Home" id="Rim-qz-U8b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zaV-ME-cQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,7 +215,7 @@
                     <navigationItem key="navigationItem" title="Sign up" id="MOU-Xd-qJk">
                         <barButtonItem key="rightBarButtonItem" title="Fine" id="NWz-4L-YXl">
                             <connections>
-                                <segue destination="2N2-aE-1he" kind="showDetail" id="7Yt-qF-5yP"/>
+                                <action selector="fineButtonPressed:" destination="L8l-4Q-kZa" id="VsU-jw-e7e"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -226,6 +226,7 @@
                         <outlet property="emailField" destination="K5z-l2-NId" id="VmC-Cc-0Iu"/>
                         <outlet property="nameField" destination="QhN-Az-xEu" id="vZf-mu-ffE"/>
                         <outlet property="surnameField" destination="K3a-Tw-fHl" id="UQd-UC-Z0p"/>
+                        <segue destination="2N2-aE-1he" kind="showDetail" identifier="homeFromSignUp" id="lQB-si-FDX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oXJ-U9-rF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -343,6 +344,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4t9-b3-Rc6"/>
-        <segue reference="7Yt-qF-5yP"/>
+        <segue reference="Rim-qz-U8b"/>
     </inferredMetricsTieBreakers>
 </document>

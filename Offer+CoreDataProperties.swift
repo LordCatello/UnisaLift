@@ -23,7 +23,7 @@ extension Offer {
     @NSManaged public var endPointGeo: String?
     @NSManaged public var freeSpots: Int16
     @NSManaged public var message: String?
-    @NSManaged public var offerID: Int32
+    @NSManaged public var offerID: Int64
     @NSManaged public var priceInt: Int64
     @NSManaged public var priceString: String?
     @NSManaged public var startDate: NSDate?

@@ -18,6 +18,18 @@ class PersistenceManager {
         return appDelegate.persistentContainer.viewContext
     }
     
+    // questa funzione deve essere chiamata una sola volta
+    static func newProgressiveID () -> Id {
+        let context = getContext()
+        
+        let id = NSEntityDescription.insertNewObject(forEntityName: "Id", into: context) as! Id
+        
+        // il primo elemento dovrà avere ID == 1
+        id.progressiveID = 0;
+        
+        return id
+    }
+    
     // funzione di test che restituisce un utente di default
     // ovviamente tale funzione nella versione funzionante dell'applicazione non deve esistere
     static func newDefaultUser () -> User {
@@ -32,6 +44,19 @@ class PersistenceManager {
         user.name = "defaultName"
         user.carModel = "defaultCarModel"
         user.email = "defaultEmail"
+        
+        return user
+    }
+    
+    static func newUser (carModel: String, email: String, name: String, surname: String) -> User {
+        let context = getContext()
+        
+        let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
+        
+        user.carModel = carModel
+        user.email = email
+        user.name = name
+        user.surname = surname
         
         return user
     }
@@ -52,6 +77,52 @@ class PersistenceManager {
         offer.endPointDesc = "defaultEndPointDesc"
         
         return offer
+    }
+    
+    static func newOffer (desc: String, endDate: Date, endPointDesc: String, endPointGeo: String, message: String, startDate: Date, startPointDesc: String, startPointGeo: String, totalSpots: Int, type: Int, offerer: User) -> Offer {
+        let context = getContext()
+        
+        let offer = NSEntityDescription.insertNewObject(forEntityName: "Offer", into: context) as! Offer
+        
+        let tempId = fetchProgressiveID()
+        tempId?.progressiveID = (tempId?.progressiveID)! + 1
+        
+        offer.offerID = (tempId?.progressiveID)!
+        offer.desc = desc
+        offer.endDate = endDate as NSDate
+        offer.endPointDesc = endPointDesc
+        offer.endPointGeo = endPointGeo
+        offer.message = message
+        offer.startDate = startDate as NSDate
+        offer.startPointDesc = startPointDesc
+        offer.startPointGeo = startPointGeo
+        offer.totalSpots = Int16(totalSpots)
+        offer.freeSpots = Int16(totalSpots)
+        offer.type = Int16(type)
+        offer.offerer = offerer
+        
+        return offer
+    }
+    
+    static func fetchProgressiveID() -> Id? {
+        var ids: [Id]!
+        
+        let context = getContext()
+        
+        let fetchRequest = NSFetchRequest<Id>(entityName: "Id")
+        
+        do {
+            try ids = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Errore in fetch \(error.code)")
+        }
+        
+        if(ids.count == 0) {
+            return nil
+        } else {
+            return ids[0]
+        }
+
     }
     
     // prendo tutti gli utenti
@@ -75,6 +146,31 @@ class PersistenceManager {
         return users
     }
     
+    // restituisce l'utente che ha la stessa email passata come parametro
+    // restituisce nil altrimenti (si spera)
+    static func fetchUser(email: String) -> User? {
+        var users: [User]!
+        
+        let context = getContext()
+        
+        let fetchRequest = NSFetchRequest<User>(entityName: "User")
+        
+        fetchRequest.predicate = NSPredicate(format: "email == %@", email)
+        
+        do {
+            try users = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Errore in fetch \(error.code)")
+        }
+        
+        if(users == nil || users.count == 0) {
+            return nil
+        } else {
+            return users[0]
+        }
+
+    }
+
     static func fetchOffers() -> [Offer] {
         var offers = [Offer]()
         
