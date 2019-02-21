@@ -41,23 +41,17 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         
         let offer = offers[indexPath.row]
         
-        switch (OfferteSegment.selectedSegmentIndex){
-            
-        case 0:
-            mycell.OffertaNameLabel.text = "defaultOffererName"
+        
+            // handle failed conversion
+         
+        
+            mycell.OffertaNameLabel.text = offer.offerer?.name
             mycell.NumeroPostiLabel.text = String(offer.freeSpots)
             mycell.PartenzaLabel.text = offer.startPointDesc
             mycell.ArrivoLabel.text = offer.endPointDesc
             mycell.ImageOfferta.image = nil
-        case 1:
-            mycell.OffertaNameLabel.text = "Luca"
-            mycell.NumeroPostiLabel.text = "prova"
-            mycell.PartenzaLabel.text = nil
-            mycell.ArrivoLabel.text = nil
-            mycell.ImageOfferta.image = nil
-        default:
-          break
-        }
+     
+            
         
         return mycell
     }
