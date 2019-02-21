@@ -154,6 +154,9 @@
                                 <rect key="frame" x="101" y="253" width="212" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="See itinerary"/>
+                                <connections>
+                                    <action selector="seeItineraryButtonPressed:" destination="t7V-SH-zxD" eventType="touchUpInside" id="An7-RC-6cb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ff-iT-NrR">
                                 <rect key="frame" x="167" y="291" width="80" height="24"/>
@@ -200,15 +203,23 @@
                     <connections>
                         <outlet property="arrivo" destination="a1u-YS-XX1" id="sSj-nV-If3"/>
                         <outlet property="deleteOfferButton" destination="ZjD-Tj-KPT" id="WcQ-sq-nnm"/>
-                        <outlet property="itineraryButton" destination="27b-qQ-64a" id="h74-nd-lhw"/>
                         <outlet property="message" destination="SGl-8m-VQP" id="Jq6-Ub-jEQ"/>
                         <outlet property="partenza" destination="lvl-tN-zdb" id="gFm-h7-c2d"/>
                         <outlet property="postiRimasti" destination="Vv8-Bl-bMx" id="RCo-gC-kh4"/>
+                        <segue destination="dxU-dO-4fb" kind="show" identifier="Showmap2" id="u7t-Hf-77r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvS-QF-pLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="10296" y="-2590"/>
+        </scene>
+        <!--MapPath-->
+        <scene sceneID="aFy-t7-VrV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Maps" referencedIdentifier="MapPath" id="dxU-dO-4fb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dmh-Wc-isR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11285" y="-3002"/>
         </scene>
         <!--Maps-->
         <scene sceneID="z1J-AO-uDq">

@@ -11,7 +11,6 @@ import UIKit
 import CoreData
 
 class PersistenceManager {
-    
     static func getContext () -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         

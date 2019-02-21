@@ -25,7 +25,6 @@ class DettagliOffertaViewController: UIViewController {
     
     @IBAction func seeItineraryButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "Showmap", sender: nil)
-        
     }
     
     @IBOutlet weak var messaggioAutista: UITextView!
