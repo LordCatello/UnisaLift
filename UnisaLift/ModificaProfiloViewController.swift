@@ -27,7 +27,6 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
     
     @IBOutlet weak var carText: UITextField!
     
-    @IBOutlet weak var descriptionArea: UITextView!
     
     @IBAction func FattoButtonPressed(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -39,9 +38,7 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
         if(surnameText.text != ""){
         userLogged?.surname = surnameText.text
         }
-        if(descriptionArea.text != ""){
-        userLogged?.desc = descriptionArea.text
-        }
+        
    /*
         self.tabBarController?.selectedIndex = 2
         */
@@ -113,7 +110,6 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
         nameText.text = userLogged?.name
         surnameText.text = userLogged?.surname
         carText.text = userLogged?.carModel
-        descriptionArea.text = userLogged?.desc
         var profileimage = UIImage(data: userLogged?.imageFullRes as! Data, scale:1.0)
         image.image = profileimage
         

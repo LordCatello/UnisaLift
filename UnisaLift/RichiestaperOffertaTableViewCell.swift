@@ -1,25 +1,25 @@
 //
-//  OffertaTableViewCell.swift
+//  RichiestaperOffertaTableViewCell.swift
 //  UnisaLift
 //
-//  Created by Cuomo Luca on 18/02/2019.
+//  Created by Cuomo Luca on 21/02/2019.
 //  Copyright © 2019 RottenApples. All rights reserved.
 //
 
 import UIKit
 
-class OffertaTableViewCell: UITableViewCell {
+class RichiestaperOffertaTableViewCell: UITableViewCell {
+
     
-    @IBOutlet weak var ImageOfferta: UIImageView!
-    @IBOutlet weak var OffertaNameLabel: UILabel!
-    @IBOutlet weak var NumeroPostiLabel: UILabel!
-    @IBOutlet weak var PartenzaLabel: UILabel!
-    @IBOutlet weak var ArrivoLabel: UILabel!
+    @IBOutlet weak var Profile: UIImageView!
     
- 
+    @IBOutlet weak var nameLabel: UILabel!
     
+    @IBAction func acceptApplicationButtonPerformed(_ sender: Any) {
+        
+    }
     
-    
+    @IBOutlet weak var surnameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

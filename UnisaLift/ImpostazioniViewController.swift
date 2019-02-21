@@ -23,7 +23,6 @@ class ImpostazioniViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var car: UITextField!
     @IBOutlet weak var surname: UITextField!
-    @IBOutlet weak var descrizione: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,7 +48,6 @@ class ImpostazioniViewController: UIViewController {
         surname.text = userLogged?.surname
         email.text = userLogged?.email
         car.text = userLogged?.carModel
-        descrizione.text = userLogged?.desc
         var profileimage = UIImage(data: userLogged?.imageFullRes as! Data, scale:1.0)
         image.image = profileimage
         

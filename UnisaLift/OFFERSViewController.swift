@@ -8,9 +8,12 @@
 
 import UIKit
 
-class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource {
+class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     var offers = [Offer]()
    
+    
+    
+    
     // teoricamente non serve, da cancellare
     @IBAction func addOfferButtonPressed(_ sender: Any) {
     }
@@ -45,6 +48,17 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         mycell.ArrivoLabel.text = offer.endPointDesc
         var profileimage = UIImage(data: offer.offerer?.imageFullRes! as! Data, scale:1.0)
         mycell.ImageOfferta.image = profileimage
+//        mycell.contentView.layer.cornerRadius = 2.0
+//        mycell.contentView.layer.borderWidth = 1.0
+//        mycell.contentView.layer.borderColor = UIColor.clear.cgColor
+//        mycell.contentView.layer.masksToBounds = true
+        mycell.layer.shadowColor = UIColor.lightGray.cgColor
+        mycell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        mycell.layer.shadowRadius = 2.0
+        mycell.layer.shadowOpacity = 1.0
+        mycell.layer.masksToBounds = false
+        mycell.layer.cornerRadius = 20
+        mycell.layer.shadowPath = UIBezierPath(roundedRect: mycell.bounds, cornerRadius: mycell.contentView.layer.cornerRadius).cgPath
      
         return mycell
     }
@@ -59,6 +73,8 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         super.viewDidLoad()
         
         offers = PersistenceManager.fetchOffers(userLogged: userLogged!)
+        
+    
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

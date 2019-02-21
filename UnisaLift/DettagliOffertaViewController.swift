@@ -47,6 +47,7 @@ class DettagliOffertaViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
         
+        
         // CLLocation(latitude: peppe, longitude: swag)
     }
     
