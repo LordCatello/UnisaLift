@@ -99,7 +99,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="757"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="LV0-q9-dxS">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="LV0-q9-dxS">
                                             <rect key="frame" x="168" y="58" width="77" height="74"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -381,7 +381,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="profile.png" width="80" height="80"/>
+        <image name="profile" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4t9-b3-Rc6"/>

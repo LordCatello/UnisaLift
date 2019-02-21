@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1DBCDC12221D6E200069BD28 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBCDC11221D6E200069BD28 /* SignUpViewController.swift */; };
-		1DBCDC14221EC6E70069BD28 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DBCDC13221EC6E60069BD28 /* profile.png */; };
-		1DBCDC1A221EC96A0069BD28 /* icons8-male-user-filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DBCDC19221EC9690069BD28 /* icons8-male-user-filled-100.png */; };
 		330DE0A0221D5EBD00BB3FDA /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DE096221D5EBD00BB3FDA /* User+CoreDataClass.swift */; };
 		330DE0A1221D5EBD00BB3FDA /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DE097221D5EBD00BB3FDA /* User+CoreDataProperties.swift */; };
 		330DE0A2221D5EBD00BB3FDA /* Offer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DE098221D5EBD00BB3FDA /* Offer+CoreDataClass.swift */; };
@@ -73,8 +71,6 @@
 
 /* Begin PBXFileReference section */
 		1DBCDC11221D6E200069BD28 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		1DBCDC13221EC6E60069BD28 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile.png; path = ../../../Desktop/profile.png; sourceTree = "<group>"; };
-		1DBCDC19221EC9690069BD28 /* icons8-male-user-filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-male-user-filled-100.png"; path = "../../../Downloads/icons8-male-user-filled-100.png"; sourceTree = "<group>"; };
 		330DE096221D5EBD00BB3FDA /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		330DE097221D5EBD00BB3FDA /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		330DE098221D5EBD00BB3FDA /* Offer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Offer+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -185,7 +181,6 @@
 		3360A9C12216B93100AA801A /* UnisaLift */ = {
 			isa = PBXGroup;
 			children = (
-				1DBCDC19221EC9690069BD28 /* icons8-male-user-filled-100.png */,
 				C109D312221B19B3006B75C4 /* Impostazioni.storyboard */,
 				5D747612221C096F00CA2035 /* ModificaProfiloViewController.swift */,
 				C109D310221B1966006B75C4 /* DettagliRichieste.storyboard */,
@@ -205,7 +200,6 @@
 				5DF965FD221ACB3600624246 /* UserLoginViewController.swift */,
 				3360A9C42216B93100AA801A /* ViewController.swift */,
 				3360A9C62216B93100AA801A /* Main.storyboard */,
-				1DBCDC13221EC6E60069BD28 /* profile.png */,
 				1DBCDC11221D6E200069BD28 /* SignUpViewController.swift */,
 				5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */,
 				5D3CA47B2219B67900010A9B /* DettagliOffertaViewController.swift */,
@@ -351,8 +345,6 @@
 				C109D311221B1966006B75C4 /* DettagliRichieste.storyboard in Resources */,
 				3360A9CD2216B93200AA801A /* Assets.xcassets in Resources */,
 				3360A9C82216B93100AA801A /* Main.storyboard in Resources */,
-				1DBCDC1A221EC96A0069BD28 /* icons8-male-user-filled-100.png in Resources */,
-				1DBCDC14221EC6E70069BD28 /* profile.png in Resources */,
 				C10A4074221C242A00AA395C /* Maps.storyboard in Resources */,
 				C109D313221B19B3006B75C4 /* Impostazioni.storyboard in Resources */,
 			);
