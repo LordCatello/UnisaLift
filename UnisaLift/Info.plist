@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app uses the Photo Library</string>
+	<string>This allows you to choose your profile picture from your photo library</string>
 	<key>NSCameraUsageDescription</key>
-	<string>This app uses camera</string>
+	<string>This allows you to shoot a photo for your profile picture</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>The app uses your location to better display the initial position selection.</string>
 	<key>UIStatusBarStyle</key>
