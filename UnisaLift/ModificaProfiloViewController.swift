@@ -87,6 +87,12 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
         self.carText.delegate = self
         self.nameText.delegate = self
         self.surnameText.delegate = self
+        
+        image.layer.borderWidth = 1
+        image.layer.masksToBounds = false
+        image.layer.borderColor = UIColor.black.cgColor
+        image.layer.cornerRadius = image.frame.height/2
+        image.clipsToBounds = true
 
         // Do any additional setup after loading the view.
     }
