@@ -100,10 +100,17 @@ class MapSetPositionViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+         self.tabBarController?.tabBar.isHidden = true
         
         if mapView.annotations.isEmpty {
             doneButton.isEnabled = false
         }
+    }
+    
+   
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -143,6 +150,13 @@ class MapSetPositionViewController: UIViewController, MKMapViewDelegate, CLLocat
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
+    
+    
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.

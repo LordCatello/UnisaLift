@@ -171,10 +171,11 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="e8Z-QM-SYl" id="hmc-hf-7SB"/>
-                        <segue destination="fxH-2q-eEj" kind="show" identifier="confirmPath" id="8Hg-pN-Q2N"/>
+                        <segue destination="wqm-xv-VPp" kind="unwind" identifier="confirmPath" unwindAction="unwindToNewOfferWithSegue:" id="BKG-m8-Xqr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMM-2a-IgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wqm-xv-VPp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1832" y="788"/>
         </scene>

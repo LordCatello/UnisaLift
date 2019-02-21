@@ -77,7 +77,13 @@ class MapPathViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -106,8 +112,12 @@ class MapPathViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "confirmPath", sender: nil)
+       
+       performSegue(withIdentifier: "confirmPath", sender: self)
     }
+    
+
+    
     
     
      // MARK: - Navigation

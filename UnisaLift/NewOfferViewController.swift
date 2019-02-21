@@ -9,15 +9,6 @@
 import UIKit
 import MapKit
 
-class NewOfferViewController: UIViewController {
-    
-    //var departurePlace, arrivePlace: String
-    var startPointDesc: String!
-    var endPointDesc: String!
-    var startPointLocation: CLLocation!
-    var endPointLocation: CLLocation!
-    
-
 class NewOfferViewController: UIViewController, UITextFieldDelegate {
     //var departurePlace, arrivePlace: String
     var startPointDesc: String!
@@ -34,6 +25,13 @@ class NewOfferViewController: UIViewController, UITextFieldDelegate {
     @IBAction func chooseItineraryButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "chooseItinerary", sender: nil)
     }
+    
+    @IBAction func unwindToNewOffer(segue: UIStoryboardSegue) {
+        print(startPointDesc)
+        
+    }
+    
+    
     
     @IBAction func AddOfferButtonPressed(_ sender: Any) {
         /*
@@ -67,3 +65,4 @@ class NewOfferViewController: UIViewController, UITextFieldDelegate {
     }
 
 }
+
