@@ -10,14 +10,8 @@ import UIKit
 
 class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource {
     var offers = [Offer]()
-    
-    /*
-    var DataSource = ["Prova1","prova2","Prova3"]
-    var mieOfferte = ["Salerno","Fisciano"]
-    */
-    
+   
     @IBAction func addOfferButtonPressed(_ sender: Any) {
-        
         /*let offer = PersistenceManager.newDefaultOffer()
         offers.append(offer)
         myTableView.reloadData()*/
@@ -26,49 +20,37 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var OfferteSegment: UISegmentedControl!
     
     @IBAction func SegmentedControlAction(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+        
+        if(OfferteSegment.selectedSegmentIndex == 0) {
+            offers = PersistenceManager.fetchOffers()
+        } else {
+            offers = PersistenceManager.fetchUserOffers(offerer: userLogged!)
+        }
+        
         myTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch (OfferteSegment.selectedSegmentIndex){
-            
-        case 0:
-            return offers.count
-        case 1:
-            return offers.count // devo far visualizzare il numero delle mie offerte
-                                // oppure posso utilizzare lo stesso array facendo il fetch solo
-                                // sulle offerte dell'utente
-        default:
-            return 0;
-        }
+        return offers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let mycell=myTableView.dequeueReusableCell(withIdentifier: "OfferteCell", for: indexPath) as! OffertaTableViewCell
-        
-       // mycell.textLabel?.text=DataSource[indexPath.row]
         
         let offer = offers[indexPath.row]
         
-        switch (OfferteSegment.selectedSegmentIndex){
-            
-        case 0:
-            mycell.OffertaNameLabel.text = "defaultOffererName"
+        
+            // handle failed conversion
+        
+            mycell.OffertaNameLabel.text = offer.offerer?.name
             mycell.NumeroPostiLabel.text = String(offer.freeSpots)
             mycell.PartenzaLabel.text = offer.startPointDesc
             mycell.ArrivoLabel.text = offer.endPointDesc
-            mycell.ImageOfferta.image = nil
-        case 1:
-            mycell.OffertaNameLabel.text = "Luca"
-            mycell.NumeroPostiLabel.text = "prova"
-            mycell.PartenzaLabel.text = nil
-            mycell.ArrivoLabel.text = nil
-            mycell.ImageOfferta.image = nil
-        default:
-          break
-        }
-        
+            var profileimage = UIImage(data: offer.offerer?.imageFullRes! as! Data, scale:1.0)
+            mycell.ImageOfferta.image = profileimage
+     
         return mycell
     }
     
@@ -93,14 +75,45 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             break
             
         }
-        
-        
-        
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        offers = PersistenceManager.fetchOffers()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+        
+        if(OfferteSegment.selectedSegmentIndex == 0) {
+            offers = PersistenceManager.fetchOffers()
+        } else {
+            offers = PersistenceManager.fetchUserOffers(offerer: userLogged!)
+        }
+
         myTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      
+        switch segue.identifier{
+        case "DettagliOfferta":
+            if let currentIndex = myTableView.indexPathForSelectedRow?.row {
+                let offer = offers[currentIndex]
+                // prendo la view di destinazione
+                let destinationView = segue.destination as! DettagliOffertaViewController
+                // trasferisco l'elemento all view di destinazione
+                destinationView.offer = offer
+            }
+        case "DettagliMiaOfferta":
+            if let currentIndex = myTableView.indexPathForSelectedRow?.row {
+                let offer = offers[currentIndex]
+                // prendo la view di destinazione
+                let destinationView = segue.destination as! DettagliMiaOffertaViewController
+                // trasferisco l'elemento all view di destinazione
+                destinationView.offer = offer
+            }
+        default :
+            return
+        }
+   
     }
     
 

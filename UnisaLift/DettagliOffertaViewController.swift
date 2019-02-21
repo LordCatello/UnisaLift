@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import MapKit
 
 class DettagliOffertaViewController: UIViewController {
     
+    var offer : Offer!
     
     @IBOutlet weak var nomePassaggio: UILabel!
     
@@ -21,7 +23,9 @@ class DettagliOffertaViewController: UIViewController {
     
     @IBOutlet weak var arrivo: UILabel!
     
-    @IBOutlet weak var itineraryButton: UIButton!
+    @IBAction func seeItineraryButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "Showmap", sender: nil)
+    }
     
     @IBOutlet weak var messaggioAutista: UITextView!
     
@@ -35,6 +39,8 @@ class DettagliOffertaViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        
+        // CLLocation(latitude: peppe, longitude: swag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -42,14 +48,24 @@ class DettagliOffertaViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        switch segue.identifier {
+        case "Showmap":
+            let destinationView = segue.destination as! MapPathViewController
+            destinationView.source = CLLocation(latitude: offer.startPointLat, longitude: offer.startPointLong)
+            destinationView.destination = CLLocation(latitude: offer.endPointLat, longitude: offer.endPointLong)
+        default:
+            return
+            
+        }
+        
     }
-    */
+ 
 
 }

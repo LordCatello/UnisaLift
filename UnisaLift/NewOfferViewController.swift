@@ -7,26 +7,58 @@
 //
 
 import UIKit
+import MapKit
 
 class NewOfferViewController: UIViewController, UITextFieldDelegate {
-    
     //var departurePlace, arrivePlace: String
-
+    var startPointDesc: String!
+    var endPointDesc: String!
+    var startPointLocation: CLLocation!
+    var endPointLocation: CLLocation!
     
-    @IBOutlet weak var ArriveTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
-    @IBOutlet weak var SeatsTextField: UITextField!
-    @IBAction func AddOfferButtonPressed(_ sender: Any) {
-        PersistenceManager.newDefaultOffer()
-         self.navigationController?.popViewController(animated: true)
+    @IBOutlet weak var totalSpotsField: UITextField!
+    
+    @IBOutlet weak var messageField: UITextView!
+    
+    @IBAction func chooseItineraryButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "chooseItinerary", sender: nil)
     }
+    
+    @IBAction func unwindToNewOffer(segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func AddOfferButtonPressed(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+        
+        let date = datePicker.date
+        let totalSpots = totalSpotsField.text
+        let message = messageField.text
+        
+        if(totalSpots == "" || message == "" || startPointDesc == nil || endPointDesc == nil || startPointDesc == "" || endPointDesc == "" || startPointLocation == nil || endPointLocation == nil) {
+            // dovrei mostrare un messaggio in cui avverto che tutti i campi devono essere compilati
+        } else {
+        
+            let startPointLat = startPointLocation.coordinate.latitude as Double
+            let startPointLong = startPointLocation.coordinate.longitude as Double
+            let endPointLat = endPointLocation.coordinate.latitude as Double
+            let endPointLong = endPointLocation.coordinate.longitude as Double
+            
+            let totalSpotsInt = Int(totalSpots!)
+        
+            PersistenceManager.newOffer(endPointDesc: endPointDesc, message: message!, startDate: date, startPointDesc: startPointDesc, totalSpots: totalSpotsInt!, offerer: userLogged!, startPointLat: startPointLat, startPointLong: startPointLong, endPointLat: endPointLat, endPointLong: endPointLong)
+        
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.ArriveTextField.delegate = self
-        self.SeatsTextField.delegate = self
-
-        // Do any additional setup after loading the view.
+        self.totalSpotsField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,14 +73,5 @@ class NewOfferViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+

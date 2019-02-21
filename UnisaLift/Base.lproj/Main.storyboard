@@ -224,6 +224,15 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88C-Ba-LPZ">
+                                            <rect key="frame" x="261" y="57" width="30" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <state key="normal" title="+"/>
+                                            <connections>
+                                                <action selector="addPhoto:" destination="L8l-4Q-kZa" eventType="touchUpInside" id="V6W-z4-hab"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <gestureRecognizers/>
@@ -237,6 +246,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="faB-Vh-ZIm"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="j4m-9Q-Pfj"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Sign up" id="MOU-Xd-qJk">
                         <barButtonItem key="rightBarButtonItem" title="Fine" id="NWz-4L-YXl">
                             <connections>
@@ -244,12 +256,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="TableViewElementi" destination="bnj-W3-d2E" id="a0q-5M-qnw"/>
                         <outlet property="ViewElementi" destination="c7z-Qg-dwn" id="uFf-M2-zH8"/>
                         <outlet property="carModelField" destination="zKg-wc-0pC" id="XwW-3O-NHh"/>
                         <outlet property="emailField" destination="7Zz-em-lHV" id="Ev6-Ug-yq6"/>
                         <outlet property="nameField" destination="k3G-sT-8DZ" id="f5T-Ri-pTN"/>
+                        <outlet property="profile" destination="LV0-q9-dxS" id="Hxk-Pq-050"/>
                         <outlet property="surnameField" destination="cYv-3I-KRG" id="fO3-L2-5pK"/>
                         <segue destination="2N2-aE-1he" kind="showDetail" identifier="homeFromSignUp" id="lQB-si-FDX"/>
                     </connections>
@@ -373,7 +387,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="profile" width="60" height="60"/>
+        <image name="profile" width="80" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4t9-b3-Rc6"/>

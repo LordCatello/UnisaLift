@@ -8,9 +8,8 @@
 import MapKit
 import UIKit
 
-
-class MapSetPositionViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-
+class MapSetPositionViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
+    
     @IBOutlet weak var doneButton: UIButton!
     
     @IBOutlet weak var mapView: MKMapView!
@@ -26,8 +25,15 @@ class MapSetPositionViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     var locality = StringWrapper()
     
-    var startDescription: String!
-    var arrivalDescription: String!
+    var startPosition : CLLocation!
+    
+    var startDescription: String = ""
+    var arrivalDescription: String = ""
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        searchBar.endEditing(true)
+    }
     
     // this function updates the marked position on a touch
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -42,6 +48,7 @@ class MapSetPositionViewController: UIViewController, MKMapViewDelegate, CLLocat
             
             mapView.addAnnotation(settingPoint)
             mapView.selectAnnotation(settingPoint, animated: false)
+            doneButton.isEnabled = true
         }
     }
     
@@ -50,6 +57,7 @@ class MapSetPositionViewController: UIViewController, MKMapViewDelegate, CLLocat
         
         mapView.delegate = self
         locationManager.delegate = self
+        searchBar.delegate = self
         
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.distanceFilter = 50
@@ -63,57 +71,135 @@ class MapSetPositionViewController: UIViewController, MKMapViewDelegate, CLLocat
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        if let search = searchBar.text {
+            localSearch(query: search)
+        }
+        
+    }
+    
     // this function gets the user location if possible and updates the zooming on the map based on it - WORKS ONLY ONCE
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if !alreadyLocalized {
             alreadyLocalized = true
-        guard let locValue: CLLocation = manager.location else { return }
-        // DEBUG PRINT
-        print("locations = \(locValue.coordinate.latitude) \(locValue.coordinate.longitude)")
-        
-        settingPoint.coordinate = locValue.coordinate
-        settingPoint.title = settingPointTitle
+            guard let locValue: CLLocation = manager.location else { return }
+            // DEBUG PRINT
+            print("locations = \(locValue.coordinate.latitude) \(locValue.coordinate.longitude)")
+            
+            settingPoint.coordinate = locValue.coordinate
+            settingPoint.title = settingPointTitle
             setGeolocalizedDescription(pointToLabelize: settingPoint, locality: locality)
-        mapView.addAnnotation(settingPoint)
-        mapView.selectAnnotation(settingPoint, animated: false)
-        
-        centerMapOnLocation(map: mapView, location: locValue)
+            mapView.addAnnotation(settingPoint)
+            mapView.selectAnnotation(settingPoint, animated: false)
+            
+            centerMapOnLocation(map: mapView, location: locValue)
+            doneButton.isEnabled = true
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         self.tabBarController?.tabBar.isHidden = true
+        
+        if mapView.annotations.isEmpty {
+            doneButton.isEnabled = false
+        }
+    }
+    
+   
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
-
+    
     @IBAction func startDoneButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "showMapAgain", sender: nil)
-       }
+    }
     
     @IBAction func endDoneButtonPressed(_ sender: UIButton) {
-//        performSegue(withIdentifier: "endItinerarySelection", sender: nil)
+        performSegue(withIdentifier: "confirmingPath", sender: nil)
     }
-
-
+    
+    
+    func localSearch(query: String) {
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = query
+        request.region = mapView.region
+        let search = MKLocalSearch(request: request)
+        search.start { (response, error) in
+            if error == nil {
+                if let res = response {
+                    let placemark = res.mapItems[0].placemark
+                    self.mapView.removeAnnotation(self.settingPoint)
+                    self.settingPoint.coordinate = placemark.coordinate
+                    setGeolocalizedDescription(pointToLabelize: self.settingPoint, locality: self.locality)
+                    self.mapView.addAnnotation(self.settingPoint)
+                    centerMapOnLocation(map: self.mapView, location: placemark.location!)
+                    self.mapView.selectAnnotation(self.settingPoint, animated: false)
+                    self.doneButton.isEnabled = true
+                }
+            } }
+    }
+    
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
+    
+    
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // Get the new view controller using segue.destination.
-    // Pass the selected object to the new view controller.
-
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
         switch segue.identifier {
         case "showMapAgain":
             let destinationView = segue.destination as! MapSetPositionViewController
-        
-            destinationView.startDescription = settingPoint.subtitle! + ", " + locality.string!
+            
+            if let subtitle = settingPoint.subtitle {
+                destinationView.startDescription += subtitle
+            }
+            
+            if let location = locality.string {
+                if destinationView.startDescription != "" {
+                    destinationView.startDescription += ", "
+                }
+                
+                destinationView.startDescription += location
+            }
+            
             destinationView.settingPointTitle = "Arrival Point"
+            destinationView.startPosition = CLLocation(latitude: settingPoint.coordinate.latitude, longitude: settingPoint.coordinate.longitude)
             
             
-        case "endItinerarySelection":
-            break
-//            let destinationView = segue.destination as! NewOfferViewController
-//            send the geolocalised data
+        case "confirmingPath":
+            let destinationView = segue.destination as! MapPathViewController
+            destinationView.destination = CLLocation(latitude: settingPoint.coordinate.latitude, longitude: settingPoint.coordinate.longitude)
+            destinationView.source = startPosition
+            destinationView.startDescription = startDescription
+            
+            if let subtitle = settingPoint.subtitle {
+                destinationView.destDescription += subtitle
+            }
+            
+            if let location = locality.string {
+                if destinationView.destDescription != "" {
+                    destinationView.destDescription += ", "
+                }
+                
+                destinationView.destDescription += location
+            }
+            
+            
         default:
             return
         }

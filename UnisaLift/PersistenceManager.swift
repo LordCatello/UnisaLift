@@ -11,7 +11,6 @@ import UIKit
 import CoreData
 
 class PersistenceManager {
-    
     static func getContext () -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
@@ -48,7 +47,7 @@ class PersistenceManager {
         return user
     }
     
-    static func newUser (carModel: String, email: String, name: String, surname: String) -> User {
+    static func newUser (carModel: String, email: String, name: String, surname: String, imageFullRes: NSData) -> User {
         let context = getContext()
         
         let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
@@ -57,6 +56,7 @@ class PersistenceManager {
         user.email = email
         user.name = name
         user.surname = surname
+        user.imageFullRes = imageFullRes
         
         return user
     }
@@ -79,7 +79,7 @@ class PersistenceManager {
         return offer
     }
     
-    static func newOffer (desc: String, endDate: Date, endPointDesc: String, endPointGeo: String, message: String, startDate: Date, startPointDesc: String, startPointGeo: String, totalSpots: Int, type: Int, offerer: User) -> Offer {
+    static func newOffer (endPointDesc: String, message: String, startDate: Date, startPointDesc: String, totalSpots: Int, offerer: User, startPointLat: Double, startPointLong: Double, endPointLat: Double, endPointLong: Double) -> Offer {
         let context = getContext()
         
         let offer = NSEntityDescription.insertNewObject(forEntityName: "Offer", into: context) as! Offer
@@ -88,18 +88,17 @@ class PersistenceManager {
         tempId?.progressiveID = (tempId?.progressiveID)! + 1
         
         offer.offerID = (tempId?.progressiveID)!
-        offer.desc = desc
-        offer.endDate = endDate as NSDate
         offer.endPointDesc = endPointDesc
-        offer.endPointGeo = endPointGeo
         offer.message = message
         offer.startDate = startDate as NSDate
         offer.startPointDesc = startPointDesc
-        offer.startPointGeo = startPointGeo
         offer.totalSpots = Int16(totalSpots)
         offer.freeSpots = Int16(totalSpots)
-        offer.type = Int16(type)
         offer.offerer = offerer
+        offer.startPointLat = startPointLat
+        offer.startPointLong = startPointLong
+        offer.endPointLat = endPointLat
+        offer.endPointLong = endPointLong
         
         return offer
     }
@@ -181,6 +180,24 @@ class PersistenceManager {
         // esempio di utilizzo dei predicati
         // let number = “2"
         // fetchRequest.predicate = NSPredicate(format: “quantity > %@“, number)
+        
+        do {
+            try offers = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Errore in fetch \(error.code)")
+        }
+        
+        return offers
+    }
+    
+    static func fetchUserOffers(offerer: User) -> [Offer] {
+        var offers = [Offer]()
+        
+        let context = getContext()
+        
+        let fetchRequest = NSFetchRequest<Offer>(entityName: "Offer")
+        
+        fetchRequest.predicate = NSPredicate(format: "offerer == %@", offerer)
         
         do {
             try offers = context.fetch(fetchRequest)

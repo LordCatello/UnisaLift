@@ -2,7 +2,7 @@
 //  Offer+CoreDataProperties.swift
 //  UnisaLift
 //
-//  Created by Carratu Carmine on 20/02/19.
+//  Created by Carratu Carmine on 21/02/19.
 //  Copyright © 2019 RottenApples. All rights reserved.
 //
 //
@@ -20,7 +20,6 @@ extension Offer {
     @NSManaged public var desc: String?
     @NSManaged public var endDate: NSDate?
     @NSManaged public var endPointDesc: String?
-    @NSManaged public var endPointGeo: String?
     @NSManaged public var freeSpots: Int16
     @NSManaged public var message: String?
     @NSManaged public var offerID: Int64
@@ -28,10 +27,13 @@ extension Offer {
     @NSManaged public var priceString: String?
     @NSManaged public var startDate: NSDate?
     @NSManaged public var startPointDesc: String?
-    @NSManaged public var startPointGeo: String?
     @NSManaged public var state: Int16
     @NSManaged public var totalSpots: Int16
     @NSManaged public var type: Int16
+    @NSManaged public var startPointLat: Double
+    @NSManaged public var startPointLong: Double
+    @NSManaged public var endPointLat: Double
+    @NSManaged public var endPointLong: Double
     @NSManaged public var applications: NSSet?
     @NSManaged public var offerer: User?
 
