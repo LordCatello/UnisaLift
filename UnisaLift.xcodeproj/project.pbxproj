@@ -53,6 +53,7 @@
 		C1F11DC4221F21E5007A5E72 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F11DC3221F21E5007A5E72 /* OnboardingViewController.swift */; };
 		C1F11DC6221F2370007A5E72 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F11DC5221F2370007A5E72 /* OnboardingSlide.swift */; };
 		C1F11DC8221F2385007A5E72 /* OnboardingSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1F11DC7221F2385007A5E72 /* OnboardingSlide.xib */; };
+		C1F11DCB221F63B1007A5E72 /* tutorialImages in Resources */ = {isa = PBXBuildFile; fileRef = C1F11DCA221F63B1007A5E72 /* tutorialImages */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		C1F11DC3221F21E5007A5E72 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C1F11DC5221F2370007A5E72 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		C1F11DC7221F2385007A5E72 /* OnboardingSlide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingSlide.xib; sourceTree = "<group>"; };
+		C1F11DCA221F63B1007A5E72 /* tutorialImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tutorialImages; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,11 @@
 		3360A9C12216B93100AA801A /* UnisaLift */ = {
 			isa = PBXGroup;
 			children = (
+				C1F11DC1221F109E007A5E72 /* OnboardingTutorial.storyboard */,
+				C1F11DC5221F2370007A5E72 /* OnboardingSlide.swift */,
+				C1F11DC3221F21E5007A5E72 /* OnboardingViewController.swift */,
+				C1F11DC7221F2385007A5E72 /* OnboardingSlide.xib */,
+				C1F11DCA221F63B1007A5E72 /* tutorialImages */,
 				C109D312221B19B3006B75C4 /* Impostazioni.storyboard */,
 				5D747612221C096F00CA2035 /* ModificaProfiloViewController.swift */,
 				C109D310221B1966006B75C4 /* DettagliRichieste.storyboard */,
@@ -216,10 +223,6 @@
 				33F3BB26221AF60500EC3559 /* TestStoryboard.storyboard */,
 				33F3BB23221AF51300EC3559 /* MainModel.xcdatamodeld */,
 				330DE0AA221D6C3800BB3FDA /* PersistenceManager.swift */,
-				C1F11DC1221F109E007A5E72 /* OnboardingTutorial.storyboard */,
-				C1F11DC5221F2370007A5E72 /* OnboardingSlide.swift */,
-				C1F11DC3221F21E5007A5E72 /* OnboardingViewController.swift */,
-				C1F11DC7221F2385007A5E72 /* OnboardingSlide.xib */,
 			);
 			path = UnisaLift;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				3360A9D02216B93200AA801A /* LaunchScreen.storyboard in Resources */,
 				33F3BB27221AF60500EC3559 /* TestStoryboard.storyboard in Resources */,
 				C109D30F221B194A006B75C4 /* Richieste.storyboard in Resources */,
+				C1F11DCB221F63B1007A5E72 /* tutorialImages in Resources */,
 				C1F11DC2221F109E007A5E72 /* OnboardingTutorial.storyboard in Resources */,
 				C109D311221B1966006B75C4 /* DettagliRichieste.storyboard in Resources */,
 				3360A9CD2216B93200AA801A /* Assets.xcassets in Resources */,

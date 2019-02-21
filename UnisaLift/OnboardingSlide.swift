@@ -18,10 +18,6 @@ class OnboardingSlide: UIView {
     @IBOutlet weak var labelDesc: UILabel!
     
     
-    @IBOutlet weak var endButton: UIButton!
-    
-    
-    
     
     
     

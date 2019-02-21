@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q9T-Be-n0g">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,28 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="eMQ-Jh-PhT">
-                                <rect key="frame" x="187.5" y="780" width="39" height="37"/>
-                            </pageControl>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rvl-e8-f0l">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvl-e8-f0l">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZ7-Mc-DnH">
-                                <rect key="frame" x="318" y="783.5" width="46" height="30"/>
+                                <rect key="frame" x="318" y="732" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="endTutorialButtonPressed:" destination="q9T-Be-n0g" eventType="touchUpInside" id="3uc-y7-qWV"/>
                                 </connections>
                             </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="cpE-o3-Xhq">
+                                <rect key="frame" x="171.5" y="728.5" width="71" height="37"/>
+                                <color key="tintColor" red="0.85313507720000004" green="0.33373212540000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="pageIndicatorTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="currentPageIndicatorTintColor" red="0.85313507720000004" green="0.33373212540000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="cpE-o3-Xhq" firstAttribute="centerX" secondItem="cyI-ma-o9o" secondAttribute="centerX" id="51i-YR-TIM"/>
                             <constraint firstItem="rvl-e8-f0l" firstAttribute="leading" secondItem="5Vy-Rl-J7Y" secondAttribute="leading" id="Epc-ah-dwr"/>
                             <constraint firstItem="rvl-e8-f0l" firstAttribute="top" secondItem="5Vy-Rl-J7Y" secondAttribute="top" id="GNs-gG-xUx"/>
-                            <constraint firstItem="5Vy-Rl-J7Y" firstAttribute="bottom" secondItem="eMQ-Jh-PhT" secondAttribute="bottom" constant="45" id="ICY-r0-Yua"/>
-                            <constraint firstItem="eMQ-Jh-PhT" firstAttribute="centerY" secondItem="EZ7-Mc-DnH" secondAttribute="centerY" id="fFD-ye-w1p"/>
                             <constraint firstItem="5Vy-Rl-J7Y" firstAttribute="bottom" secondItem="rvl-e8-f0l" secondAttribute="bottom" id="fHw-pZ-kf0"/>
-                            <constraint firstItem="eMQ-Jh-PhT" firstAttribute="centerX" secondItem="rvl-e8-f0l" secondAttribute="centerX" id="kec-Yn-Pew"/>
+                            <constraint firstItem="5Vy-Rl-J7Y" firstAttribute="bottom" secondItem="EZ7-Mc-DnH" secondAttribute="bottom" constant="100" id="gcs-Gf-jCf"/>
+                            <constraint firstItem="cpE-o3-Xhq" firstAttribute="centerY" secondItem="EZ7-Mc-DnH" secondAttribute="centerY" id="mZM-wA-EPV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EZ7-Mc-DnH" secondAttribute="trailing" constant="30" id="yHW-Jr-2x9"/>
                             <constraint firstItem="5Vy-Rl-J7Y" firstAttribute="trailing" secondItem="rvl-e8-f0l" secondAttribute="trailing" id="zOC-Fj-SzK"/>
                         </constraints>
@@ -47,7 +50,7 @@
                     </view>
                     <connections>
                         <outlet property="endTutorialButton" destination="EZ7-Mc-DnH" id="q66-hW-TPB"/>
-                        <outlet property="pageControl" destination="eMQ-Jh-PhT" id="CLr-b7-Pwu"/>
+                        <outlet property="pageControl" destination="cpE-o3-Xhq" id="b2U-MI-Unp"/>
                         <outlet property="scrollView" destination="rvl-e8-f0l" id="Egc-1E-jgX"/>
                     </connections>
                 </viewController>
