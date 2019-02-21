@@ -259,9 +259,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="faB-Vh-ZIm"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="j4m-9Q-Pfj"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Sign up" id="MOU-Xd-qJk">
                         <barButtonItem key="rightBarButtonItem" title="Fine" id="NWz-4L-YXl">
                             <connections>
@@ -395,7 +393,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="profile" width="80" height="80"/>
+        <image name="profile" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4t9-b3-Rc6"/>
