@@ -28,15 +28,15 @@ extension UIButton{
     }
 }
 
-extension UITextField{
-    func setBottomBorder(){
-        self.layer.shadowColor = UIColor.darkGray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 0.7)
-        self.layer.shadowOpacity = 1.0
-        self.layer.shadowRadius = 0.0
-    
-    }
-}
+//extension UITextField{
+//    func setBottomBorder(){
+//        self.layer.shadowColor = UIColor.darkGray.cgColor
+//        self.layer.shadowOffset = CGSize(width: 0.0, height: 0.7)
+//        self.layer.shadowOpacity = 1.0
+//        self.layer.shadowRadius = 0.0
+//
+//    }
+//}
 
 class UserLoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -45,10 +45,8 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
     var user: User!
     var emailField: String!
 
-    @IBOutlet weak var LabelTopColor: UILabel!
     @IBOutlet weak var EmailTextField: UITextField!
     
-    @IBOutlet weak var PasswordTextField: UITextField!
     @IBAction func LoginButtonPressed(_ sender: Any) {
         emailField = EmailTextField.text!
         
@@ -74,13 +72,17 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
 
     }
 
+    // Hide the keyboard when the return key pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.EmailTextField.delegate = self
-        self.PasswordTextField.delegate = self
-        EmailTextField.setBottomBorder()
-        PasswordTextField.setBottomBorder()
-        
+//        EmailTextField.setBottomBorder()
+       
         let id = PersistenceManager.fetchProgressiveID()
         
         // creo un id progressivo che inizia con 0
