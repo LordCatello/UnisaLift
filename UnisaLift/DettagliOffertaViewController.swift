@@ -23,6 +23,8 @@ class DettagliOffertaViewController: UIViewController {
     
     @IBOutlet weak var arrivo: UILabel!
     
+    @IBOutlet weak var PartenzaLabel: UILabel!
+    
     @IBAction func seeItineraryButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "Showmap", sender: nil)
     }
@@ -43,8 +45,22 @@ class DettagliOffertaViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var postiRimastiLabel: UILabel!
     
+    @IBOutlet weak var surnameOfferer: UILabel!
+    @IBOutlet weak var nameOffererLabel: UILabel!
+    @IBOutlet weak var ArrivoLabel: UILabel!
+    @IBOutlet weak var orarioLabel: UILabel!
     override func viewWillAppear(_ animated: Bool) {
+        PartenzaLabel.text = offer.startPointDesc
+        ArrivoLabel.text = offer.endPointDesc
+        orarioLabel.text = offer.startDate?.description
+        nameOffererLabel.text = offer.offerer?.name
+        surnameOfferer.text = offer.offerer?.surname
+        postiRimastiLabel.text = String(offer.freeSpots)
+        var profileimage = UIImage(data: offer.offerer?.imageFullRes! as! Data, scale:1.0)
+        foto.image = profileimage
+        
         self.tabBarController?.tabBar.isHidden = true
         
         
