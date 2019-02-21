@@ -7,6 +7,16 @@
 //
 
 import UIKit
+import MapKit
+
+class NewOfferViewController: UIViewController {
+    
+    //var departurePlace, arrivePlace: String
+    var startPointDesc: String!
+    var endPointDesc: String!
+    var startPointLocation: CLLocation!
+    var endPointLocation: CLLocation!
+    
 
 class NewOfferViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var datePicker: UIDatePicker!
