@@ -93,6 +93,31 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         myTableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      
+        switch segue.identifier{
+        case "DettagliOfferta":
+            if let currentIndex = myTableView.indexPathForSelectedRow?.row {
+                let offer = offers[currentIndex]
+                // prendo la view di destinazione
+                let destinationView = segue.destination as! DettagliOffertaViewController
+                // trasferisco l'elemento all view di destinazione
+                destinationView.offer = offer
+            }
+        case "DettagliMiaOfferta":
+            if let currentIndex = myTableView.indexPathForSelectedRow?.row {
+                let offer = offers[currentIndex]
+                // prendo la view di destinazione
+                let destinationView = segue.destination as! DettagliMiaOffertaViewController
+                // trasferisco l'elemento all view di destinazione
+                destinationView.offer = offer
+            }
+        default :
+            return
+        }
+   
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -261,6 +261,9 @@
                                 <rect key="frame" x="82" y="542" width="212" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="See itinerary"/>
+                                <connections>
+                                    <action selector="seeItineraryButtonPressed:" destination="gnL-dr-7fY" eventType="touchUpInside" id="Uhv-ib-H1N"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message from driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IT-Gj-57L">
                                 <rect key="frame" x="108" y="610" width="178" height="24"/>
@@ -291,17 +294,25 @@
                     <connections>
                         <outlet property="arrivo" destination="qoe-vU-IUO" id="eni-12-4U9"/>
                         <outlet property="foto" destination="o5u-me-fmh" id="uRC-EQ-c0k"/>
-                        <outlet property="itineraryButton" destination="3bE-w5-33k" id="dtS-UW-6Px"/>
                         <outlet property="messaggioAutista" destination="JIR-4T-dIs" id="f7O-Yv-EG9"/>
                         <outlet property="nomePassaggio" destination="rGC-u9-UyL" id="gF4-lf-12U"/>
                         <outlet property="partenza" destination="pRV-8N-3kY" id="l8w-fB-yPm"/>
                         <outlet property="postiRimasti" destination="YWu-ss-6wg" id="p5r-sJ-rGd"/>
                         <outlet property="requestButton" destination="wcL-SX-dPy" id="1n0-H5-mgY"/>
+                        <segue destination="zib-gW-0mj" kind="show" identifier="Showmap" id="2Jz-az-a8C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3J-dx-93T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="11340.579710144928" y="-1300.4464285714284"/>
+        </scene>
+        <!--MapPath-->
+        <scene sceneID="bVk-xk-xUf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Maps" referencedIdentifier="MapPath" id="zib-gW-0mj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VWl-0R-C8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12469" y="-1685"/>
         </scene>
     </scenes>
 </document>
