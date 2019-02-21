@@ -16,10 +16,13 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         
         let application = applications[indexPath.row]
         
+        
         mycell.nameLabel.text = application.applicant?.name
         mycell.surnameLabel.text = application.applicant?.surname
         var profileimage = UIImage(data: application.applicant?.imageFullRes as! Data, scale:1.0)
-        mycell.Profileimage.image = profileimage
+        mycell.Profile.image = profileimage
+        
+        
         
         return mycell
         

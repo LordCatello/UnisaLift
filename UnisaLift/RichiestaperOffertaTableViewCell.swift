@@ -11,7 +11,7 @@ import UIKit
 class RichiestaperOffertaTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var Profileimage: UIImageView!
+    @IBOutlet weak var Profile: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
     
