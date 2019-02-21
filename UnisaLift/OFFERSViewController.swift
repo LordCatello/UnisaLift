@@ -24,7 +24,7 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         let userLogged = appDelegate.userLogged
         
         if(OfferteSegment.selectedSegmentIndex == 0) {
-            offers = PersistenceManager.fetchOffers()
+            offers = PersistenceManager.fetchOffers(userLogged: userLogged!)
         } else {
             offers = PersistenceManager.fetchUserOffers(offerer: userLogged!)
         }
@@ -57,9 +57,12 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+        
         super.viewDidLoad()
         
-        offers = PersistenceManager.fetchOffers()
+        offers = PersistenceManager.fetchOffers(userLogged: userLogged!)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -83,7 +86,7 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         let userLogged = appDelegate.userLogged
         
         if(OfferteSegment.selectedSegmentIndex == 0) {
-            offers = PersistenceManager.fetchOffers()
+            offers = PersistenceManager.fetchOffers(userLogged: userLogged!)
         } else {
             offers = PersistenceManager.fetchUserOffers(offerer: userLogged!)
         }

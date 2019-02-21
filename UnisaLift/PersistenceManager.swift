@@ -212,16 +212,15 @@ class PersistenceManager {
 
     }
 
-    static func fetchOffers() -> [Offer] {
+    // non mostra le offerte dell'utente loggato
+    static func fetchOffers(userLogged: User) -> [Offer] {
         var offers = [Offer]()
         
         let context = getContext()
         
         let fetchRequest = NSFetchRequest<Offer>(entityName: "Offer")
         
-        // esempio di utilizzo dei predicati
-        // let number = “2"
-        // fetchRequest.predicate = NSPredicate(format: “quantity > %@“, number)
+        fetchRequest.predicate = NSPredicate(format: "offerer != %@", userLogged)
         
         do {
             try offers = context.fetch(fetchRequest)
