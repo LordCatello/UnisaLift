@@ -72,6 +72,12 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
 
     }
 
+    // Hide the keyboard when the return key pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.EmailTextField.delegate = self
