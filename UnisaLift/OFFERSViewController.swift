@@ -43,16 +43,14 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         
         
             // handle failed conversion
-         
         
             mycell.OffertaNameLabel.text = offer.offerer?.name
             mycell.NumeroPostiLabel.text = String(offer.freeSpots)
             mycell.PartenzaLabel.text = offer.startPointDesc
             mycell.ArrivoLabel.text = offer.endPointDesc
-            mycell.ImageOfferta.image = nil
+       var profileimage = UIImage(data:offer.offerer?.imageFullRes as! Data,scale:1.0)
+            mycell.ImageOfferta.image = profileimage
      
-            
-        
         return mycell
     }
     
