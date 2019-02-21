@@ -50,6 +50,9 @@
 		C169B99B221D738000D1A8C6 /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169B99A221D738000D1A8C6 /* MapUtilities.swift */; };
 		C1BA917C221DB80200CED629 /* StringWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BA917B221DB80200CED629 /* StringWrapper.swift */; };
 		C1F11DC2221F109E007A5E72 /* OnboardingTutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1F11DC1221F109E007A5E72 /* OnboardingTutorial.storyboard */; };
+		C1F11DC4221F21E5007A5E72 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F11DC3221F21E5007A5E72 /* OnboardingViewController.swift */; };
+		C1F11DC6221F2370007A5E72 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F11DC5221F2370007A5E72 /* OnboardingSlide.swift */; };
+		C1F11DC8221F2385007A5E72 /* OnboardingSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1F11DC7221F2385007A5E72 /* OnboardingSlide.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +122,9 @@
 		C169B99A221D738000D1A8C6 /* MapUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtilities.swift; sourceTree = "<group>"; };
 		C1BA917B221DB80200CED629 /* StringWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringWrapper.swift; sourceTree = "<group>"; };
 		C1F11DC1221F109E007A5E72 /* OnboardingTutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingTutorial.storyboard; sourceTree = "<group>"; };
+		C1F11DC3221F21E5007A5E72 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		C1F11DC5221F2370007A5E72 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		C1F11DC7221F2385007A5E72 /* OnboardingSlide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingSlide.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,9 @@
 				33F3BB23221AF51300EC3559 /* MainModel.xcdatamodeld */,
 				330DE0AA221D6C3800BB3FDA /* PersistenceManager.swift */,
 				C1F11DC1221F109E007A5E72 /* OnboardingTutorial.storyboard */,
+				C1F11DC5221F2370007A5E72 /* OnboardingSlide.swift */,
+				C1F11DC3221F21E5007A5E72 /* OnboardingViewController.swift */,
+				C1F11DC7221F2385007A5E72 /* OnboardingSlide.xib */,
 			);
 			path = UnisaLift;
 			sourceTree = "<group>";
@@ -337,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1F11DC8221F2385007A5E72 /* OnboardingSlide.xib in Resources */,
 				C109D30A221B17EA006B75C4 /* Offerte.storyboard in Resources */,
 				C109D30C221B18F3006B75C4 /* DettagliOfferte.storyboard in Resources */,
 				3360A9D02216B93200AA801A /* LaunchScreen.storyboard in Resources */,
@@ -376,6 +386,7 @@
 				330DE0A2221D5EBD00BB3FDA /* Offer+CoreDataClass.swift in Sources */,
 				5D747613221C096F00CA2035 /* ModificaProfiloViewController.swift in Sources */,
 				5DE616A8221AD755007C0C15 /* ImpostazioniViewController.swift in Sources */,
+				C1F11DC6221F2370007A5E72 /* OnboardingSlide.swift in Sources */,
 				330DE0A0221D5EBD00BB3FDA /* User+CoreDataClass.swift in Sources */,
 				5DF965FE221ACB3600624246 /* UserLoginViewController.swift in Sources */,
 				5D225F13221985AB0000BE75 /* RichiesteViewController.swift in Sources */,
@@ -395,6 +406,7 @@
 				330DE0A1221D5EBD00BB3FDA /* User+CoreDataProperties.swift in Sources */,
 				330DE0A5221D5EBD00BB3FDA /* Notification+CoreDataProperties.swift in Sources */,
 				33F3BB25221AF51300EC3559 /* MainModel.xcdatamodeld in Sources */,
+				C1F11DC4221F21E5007A5E72 /* OnboardingViewController.swift in Sources */,
 				5D67E84B221D79A10034BDEB /* NewOfferViewController.swift in Sources */,
 				33D49B41221DB2EA0045BD3D /* Id+CoreDataProperties.swift in Sources */,
 				3360A9C32216B93100AA801A /* AppDelegate.swift in Sources */,
