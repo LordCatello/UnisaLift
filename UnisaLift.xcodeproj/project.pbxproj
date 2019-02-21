@@ -49,6 +49,7 @@
 		C169B999221D582400D1A8C6 /* MapSetPositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169B998221D582400D1A8C6 /* MapSetPositionViewController.swift */; };
 		C169B99B221D738000D1A8C6 /* MapUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169B99A221D738000D1A8C6 /* MapUtilities.swift */; };
 		C1BA917C221DB80200CED629 /* StringWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BA917B221DB80200CED629 /* StringWrapper.swift */; };
+		C1F11DC2221F109E007A5E72 /* OnboardingTutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1F11DC1221F109E007A5E72 /* OnboardingTutorial.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		C169B998221D582400D1A8C6 /* MapSetPositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSetPositionViewController.swift; sourceTree = "<group>"; };
 		C169B99A221D738000D1A8C6 /* MapUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtilities.swift; sourceTree = "<group>"; };
 		C1BA917B221DB80200CED629 /* StringWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringWrapper.swift; sourceTree = "<group>"; };
+		C1F11DC1221F109E007A5E72 /* OnboardingTutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingTutorial.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				33F3BB26221AF60500EC3559 /* TestStoryboard.storyboard */,
 				33F3BB23221AF51300EC3559 /* MainModel.xcdatamodeld */,
 				330DE0AA221D6C3800BB3FDA /* PersistenceManager.swift */,
+				C1F11DC1221F109E007A5E72 /* OnboardingTutorial.storyboard */,
 			);
 			path = UnisaLift;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				3360A9D02216B93200AA801A /* LaunchScreen.storyboard in Resources */,
 				33F3BB27221AF60500EC3559 /* TestStoryboard.storyboard in Resources */,
 				C109D30F221B194A006B75C4 /* Richieste.storyboard in Resources */,
+				C1F11DC2221F109E007A5E72 /* OnboardingTutorial.storyboard in Resources */,
 				C109D311221B1966006B75C4 /* DettagliRichieste.storyboard in Resources */,
 				3360A9CD2216B93200AA801A /* Assets.xcassets in Resources */,
 				3360A9C82216B93100AA801A /* Main.storyboard in Resources */,
