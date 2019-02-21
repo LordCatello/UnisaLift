@@ -19,6 +19,12 @@ class NewOfferViewController: UIViewController {
     
 
 class NewOfferViewController: UIViewController, UITextFieldDelegate {
+    //var departurePlace, arrivePlace: String
+    var startPointDesc: String!
+    var endPointDesc: String!
+    var startPointLocation: CLLocation!
+    var endPointLocation: CLLocation!
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var totalSpotsField: UITextField!
@@ -41,6 +47,7 @@ class NewOfferViewController: UIViewController, UITextFieldDelegate {
         PersistenceManager.newDefaultOffer()
         self.navigationController?.popViewController(animated: true)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,15 +65,5 @@ class NewOfferViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -9,7 +9,24 @@
 import UIKit
 
 class ModificaProfiloViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var image: UIImageView!
+    
+    
+    @IBOutlet weak var car: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var surname: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var changeImageButton: UIButton!
+    @IBOutlet weak var surnameText: UITextField!
+    
+    @IBOutlet weak var mailText: UITextField!
+    
+    @IBOutlet weak var carText: UITextField!
+    
+    @IBOutlet weak var descriptionArea: UITextView!
     @IBAction func FattoButtonPressed(_ sender: Any) {
         
    /*
@@ -20,6 +37,7 @@ class ModificaProfiloViewController: UIViewController {
         
         //performSegue(withIdentifier: "Impostazioni", sender: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
