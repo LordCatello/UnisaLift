@@ -43,7 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0k-hz-w2E">
-                                <rect key="frame" x="31" y="410" width="350" height="1"/>
+                                <rect key="frame" x="6" y="410" width="400" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -162,6 +162,9 @@
                                                     <integer key="value" value="10"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="fineButtonPressed:" destination="L8l-4Q-kZa" eventType="touchUpInside" id="DjC-v3-hr8"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWz-r6-gkE">
                                             <rect key="frame" x="6" y="197" width="400" height="1"/>
@@ -224,10 +227,11 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="88C-Ba-LPZ">
-                                            <rect key="frame" x="221" y="109" width="38" height="41"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88C-Ba-LPZ">
+                                            <rect key="frame" x="261" y="57" width="30" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="icons8-screenshot-100" backgroundImage="icons8-screenshot-100"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <state key="normal" title="+"/>
                                             <connections>
                                                 <action selector="addPhoto:" destination="L8l-4Q-kZa" eventType="touchUpInside" id="V6W-z4-hab"/>
                                             </connections>
@@ -246,13 +250,7 @@
                         <viewLayoutGuide key="safeArea" id="faB-Vh-ZIm"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Sign up" id="MOU-Xd-qJk">
-                        <barButtonItem key="rightBarButtonItem" title="Fine" id="NWz-4L-YXl">
-                            <connections>
-                                <action selector="fineButtonPressed:" destination="L8l-4Q-kZa" id="VsU-jw-e7e"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Sign up" id="MOU-Xd-qJk"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="TableViewElementi" destination="bnj-W3-d2E" id="a0q-5M-qnw"/>
@@ -272,7 +270,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="6486.9565217391309" y="-1212.0535714285713"/>
+            <point key="canvasLocation" x="6394" y="-1325"/>
         </scene>
         <!--Tab Barprincipale View Controller-->
         <scene sceneID="yM0-Dz-xGH">
@@ -294,7 +292,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPO-Oy-IQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7458" y="-593"/>
+            <point key="canvasLocation" x="7452" y="-573"/>
         </scene>
         <!--Offerte-->
         <scene sceneID="wVQ-30-ABj">
@@ -384,11 +382,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-screenshot-100" width="180" height="180"/>
         <image name="profile" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4t9-b3-Rc6"/>
-        <segue reference="lQB-si-FDX"/>
+        <segue reference="Rim-qz-U8b"/>
     </inferredMetricsTieBreakers>
 </document>
