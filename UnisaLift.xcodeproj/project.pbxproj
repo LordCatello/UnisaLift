@@ -20,7 +20,6 @@
 		330DE0A9221D5EBD00BB3FDA /* Application+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DE09F221D5EBD00BB3FDA /* Application+CoreDataProperties.swift */; };
 		330DE0AB221D6C3800BB3FDA /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330DE0AA221D6C3800BB3FDA /* PersistenceManager.swift */; };
 		3360A9C32216B93100AA801A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360A9C22216B93100AA801A /* AppDelegate.swift */; };
-		3360A9C52216B93100AA801A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3360A9C42216B93100AA801A /* ViewController.swift */; };
 		3360A9C82216B93100AA801A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3360A9C62216B93100AA801A /* Main.storyboard */; };
 		3360A9CD2216B93200AA801A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3360A9CC2216B93200AA801A /* Assets.xcassets */; };
 		3360A9D02216B93200AA801A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3360A9CE2216B93200AA801A /* LaunchScreen.storyboard */; };
@@ -84,7 +83,6 @@
 		330DE0AA221D6C3800BB3FDA /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		3360A9BF2216B93100AA801A /* UnisaLift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnisaLift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3360A9C22216B93100AA801A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3360A9C42216B93100AA801A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3360A9C72216B93100AA801A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3360A9CC2216B93200AA801A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3360A9CF2216B93200AA801A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 				3360A9C22216B93100AA801A /* AppDelegate.swift */,
 				5DE616A7221AD755007C0C15 /* ImpostazioniViewController.swift */,
 				5DF965FD221ACB3600624246 /* UserLoginViewController.swift */,
-				3360A9C42216B93100AA801A /* ViewController.swift */,
 				3360A9C62216B93100AA801A /* Main.storyboard */,
 				1DBCDC11221D6E200069BD28 /* SignUpViewController.swift */,
 				5D738B6A221AF5E700ADD750 /* OffertaTableViewCell.swift */,
@@ -390,7 +387,6 @@
 				C1BA917C221DB80200CED629 /* StringWrapper.swift in Sources */,
 				C169B99B221D738000D1A8C6 /* MapUtilities.swift in Sources */,
 				5D3CA47C2219B67900010A9B /* DettagliOffertaViewController.swift in Sources */,
-				3360A9C52216B93100AA801A /* ViewController.swift in Sources */,
 				330DE0A4221D5EBD00BB3FDA /* Notification+CoreDataClass.swift in Sources */,
 				330DE0A1221D5EBD00BB3FDA /* User+CoreDataProperties.swift in Sources */,
 				330DE0A5221D5EBD00BB3FDA /* Notification+CoreDataProperties.swift in Sources */,

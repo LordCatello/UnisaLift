@@ -212,6 +212,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="faB-Vh-ZIm"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="j4m-9Q-Pfj"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Sign up" id="MOU-Xd-qJk">
                         <barButtonItem key="rightBarButtonItem" title="Fine" id="NWz-4L-YXl">
                             <connections>
@@ -219,6 +222,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="StackViewElementi" destination="NG9-y5-QEU" id="Gfd-8s-AGY"/>
                         <outlet property="TableViewElementi" destination="bnj-W3-d2E" id="a0q-5M-qnw"/>
@@ -344,6 +348,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="4t9-b3-Rc6"/>
-        <segue reference="Rim-qz-U8b"/>
+        <segue reference="lQB-si-FDX"/>
     </inferredMetricsTieBreakers>
 </document>
