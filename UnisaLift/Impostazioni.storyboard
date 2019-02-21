@@ -334,11 +334,11 @@
             </objects>
             <point key="canvasLocation" x="9233.3333333333339" y="198.88392857142856"/>
         </scene>
-        <!--Settings-->
+        <!--Profile-->
         <scene sceneID="JEo-K4-gpe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JzN-3J-hre" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" landscapeImage="settings" largeContentSizeImage="settings" id="CAM-3v-PNf"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icona_profile_tab" landscapeImage="icona_profile_tab" largeContentSizeImage="icona_profile_tab" id="CAM-3v-PNf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="xv3-nU-DaU">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -361,6 +361,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="settings" width="45" height="45"/>
+        <image name="icona_profile_tab" width="45" height="45"/>
     </resources>
 </document>
