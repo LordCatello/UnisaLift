@@ -10,7 +10,6 @@ import UIKit
 
 class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource {
     var offers = [Offer]()
-    
    
     @IBAction func addOfferButtonPressed(_ sender: Any) {
         /*let offer = PersistenceManager.newDefaultOffer()
@@ -84,13 +83,19 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             break
             
         }
-        
-        
-        
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        offers = PersistenceManager.fetchOffers()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+        
+        if(OfferteSegment.selectedSegmentIndex == 0) {
+            offers = PersistenceManager.fetchOffers()
+        } else {
+            offers = PersistenceManager.fetchUserOffers(offerer: userLogged!)
+        }
+
         myTableView.reloadData()
     }
     
