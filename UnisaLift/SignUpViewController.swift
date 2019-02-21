@@ -22,6 +22,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             // dovrei mostrare un messaggio in cui avverto che tutti i campi devono essere compilati
         }
         else {
+            if(imageData == nil) {
+                let image = #imageLiteral(resourceName: "profile")
+                imageData = image.jpegData(compressionQuality: 0.5) as! NSData
+            }
+                
+                
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.userLogged = PersistenceManager.newUser(carModel: carModel!, email: email, name: name!, surname: surname!, imageFullRes: imageData)
             performSegue(withIdentifier: "homeFromSignUp", sender: nil)

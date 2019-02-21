@@ -30,7 +30,18 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
     @IBOutlet weak var descriptionArea: UITextView!
     
     @IBAction func FattoButtonPressed(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
         
+        if(nameText.text != ""){
+        userLogged?.name = nameText.text
+        }
+        if(surnameText.text != ""){
+        userLogged?.surname = surnameText.text
+        }
+        if(descriptionArea.text != ""){
+        userLogged?.desc = descriptionArea.text
+        }
    /*
         self.tabBarController?.selectedIndex = 2
         */

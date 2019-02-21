@@ -103,6 +103,23 @@ class PersistenceManager {
         return offer
     }
     
+    static func newApplication (offer: Offer, applicant: User) -> Application {
+        let context = getContext()
+        
+        let application = NSEntityDescription.insertNewObject(forEntityName: "Application", into: context) as! Application
+        
+        let tempId = fetchProgressiveID()
+        tempId?.progressiveID = (tempId?.progressiveID)! + 1
+        
+        application.applicationID = (tempId?.progressiveID)!
+        application.offer = offer
+        application.applicant = applicant
+        // lo stato è 1: in corso
+        application.state = 1
+        
+        return application
+    }
+    
     static func fetchProgressiveID() -> Id? {
         var ids: [Id]!
         
@@ -145,6 +162,56 @@ class PersistenceManager {
         return users
     }
     
+    static func fetchActiveApplications(applicant: User) -> [Application] {
+        var applications = [Application]()
+        
+        let context = getContext()
+        
+        let fetchRequest = NSFetchRequest<Application>(entityName: "Application")
+        
+        // non è detto che funzionino, poichè probabilmente questo formato vale solo per le stringhe
+        let applicantPredicate = NSPredicate(format: "applicant == %@", applicant)
+        let statePredicate = NSPredicate(format: "state == %i", 1)
+        // 1 indica le richieste in corso
+        
+        let compoundPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [applicantPredicate, statePredicate])
+        
+        fetchRequest.predicate = compoundPredicate
+        
+        do {
+            try applications = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Errore in fetch \(error.code)")
+        }
+        
+       return applications
+    }
+    
+    static func fetchConfirmedApplications(applicant: User) -> [Application] {
+        var applications = [Application]()
+        
+        let context = getContext()
+        
+        let fetchRequest = NSFetchRequest<Application>(entityName: "Application")
+        
+        // non è detto che funzionino, poichè probabilmente questo formato vale solo per le stringhe
+        let applicantPredicate = NSPredicate(format: "applicant == %@", applicant)
+        let statePredicate = NSPredicate(format: "state == %i", 2)
+        // 1 indica le richieste in corso
+        
+        let compoundPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [applicantPredicate, statePredicate])
+        
+        fetchRequest.predicate = compoundPredicate
+        
+        do {
+            try applications = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Errore in fetch \(error.code)")
+        }
+        
+        return applications
+    }
+    
     // restituisce l'utente che ha la stessa email passata come parametro
     // restituisce nil altrimenti (si spera)
     static func fetchUser(email: String) -> User? {
@@ -170,16 +237,15 @@ class PersistenceManager {
 
     }
 
-    static func fetchOffers() -> [Offer] {
+    // non mostra le offerte dell'utente loggato
+    static func fetchOffers(userLogged: User) -> [Offer] {
         var offers = [Offer]()
         
         let context = getContext()
         
         let fetchRequest = NSFetchRequest<Offer>(entityName: "Offer")
         
-        // esempio di utilizzo dei predicati
-        // let number = “2"
-        // fetchRequest.predicate = NSPredicate(format: “quantity > %@“, number)
+        fetchRequest.predicate = NSPredicate(format: "offerer != %@", userLogged)
         
         do {
             try offers = context.fetch(fetchRequest)
@@ -225,11 +291,23 @@ class PersistenceManager {
         context.delete(user)
     }
     
+    // devo modificare anche le richieste associate all'offerta
     static func deleteOffer(offer: Offer) {
         let context = getContext()
         
         context.delete(offer)
     }
+    
+    // attenzione
+    // in base allo stato, devo modificare alcuni parametri
+    // dell'offerta associata e del richiedente
+    // per adesso non ho fatto queste cose
+    static func deleteApplication(application: Application) {
+        let context = getContext()
+        
+        context.delete(application)
+    }
+
     
     /*
     static func deleteItem( item :PItem) {
