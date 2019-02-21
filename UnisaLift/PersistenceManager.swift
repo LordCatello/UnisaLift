@@ -171,7 +171,7 @@ class PersistenceManager {
         
         // non è detto che funzionino, poichè probabilmente questo formato vale solo per le stringhe
         fetchRequest.predicate = NSPredicate(format: "applicant == %@", applicant)
-        fetchRequest.predicate = NSPredicate(format: "state == %@", 1)
+        fetchRequest.predicate = NSPredicate(format: "state == %@", "1")
         // 1 indica le richieste in corso
         
         do {
@@ -192,7 +192,7 @@ class PersistenceManager {
         
         // non è detto che funzionino, poichè probabilmente questo formato vale solo per le stringhe
         fetchRequest.predicate = NSPredicate(format: "applicant == %@", applicant)
-        fetchRequest.predicate = NSPredicate(format: "state == %@", 2)
+        fetchRequest.predicate = NSPredicate(format: "state == %@", "2")
         // 2 indica le richieste in corso
         
         do {

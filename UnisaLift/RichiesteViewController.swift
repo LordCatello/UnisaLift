@@ -14,29 +14,16 @@ class RichiesteViewController: UIViewController, UITableViewDelegate,UITableView
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let mycell=myTableView.dequeueReusableCell(withIdentifier: "RichiesteCell", for: indexPath) as! RichiesteTableViewCell
+
+        let application = applications[indexPath.row]
         
-        // mycell.textLabel?.text=DataSource[indexPath.row]
-        
-        
-        switch (RichiesteSegmentedControl.selectedSegmentIndex){
-            
-        case 0:
-            mycell.RichiesteNomeLabel.text = "Luca"
-            mycell.RichiesteNumeroPostiLabel.text = "4 posti rimanenti"
-            mycell.RichiestePartenzaLabel.text = "7:55 Salerno"
-            mycell.RichiesteArrivoLabel.text = "Fisciano"
-            mycell.RichiesteImageCell.image = nil
-        case 1:
-            mycell.RichiesteNomeLabel.text = "Luca"
-            mycell.RichiesteNumeroPostiLabel.text = "prova"
-            mycell.RichiestePartenzaLabel.text = nil
-            mycell.RichiesteArrivoLabel.text = nil
-            mycell.RichiesteImageCell.image = nil
-    default:
-            break
-            
-        }
+        mycell.RichiesteNomeLabel.text = application.offer?.offerer?.name
+        mycell.RichiestePartenzaLabel.text = application.offer?.startPointDesc
+        mycell.RichiesteArrivoLabel.text = application.offer?.endPointDesc
+        var profileimage = UIImage(data: application.offer!.offerer?.imageFullRes! as! Data, scale:1.0)
+        mycell.RichiesteImageCell.image = profileimage
         
         return mycell
     }
@@ -47,27 +34,37 @@ class RichiesteViewController: UIViewController, UITableViewDelegate,UITableView
     @IBOutlet weak var RichiesteSegmentedControl: UISegmentedControl!
     
     @IBAction func RichiesteSegmentedControlAction(_ sender: Any) {
-        myTableView.reloadData()
-    }
-    var DataSource = ["Prova1","prova2","Prova3"]
-    var RichiesteAccettate = ["Salerno","Fisciano"]
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
         
-        switch (RichiesteSegmentedControl.selectedSegmentIndex){
-            
-        case 0:
-            return DataSource.count
-        case 1:
-            return RichiesteAccettate.count
-        default:
-            return 0;
+        if(RichiesteSegmentedControl.selectedSegmentIndex == 0) {
+            applications = PersistenceManager.fetchActiveApplications(applicant: userLogged!)
+        } else {
+            applications = PersistenceManager.fetchConfirmedApplications(applicant: userLogged!)
         }
         
+        myTableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return applications.count
     }
     
    override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+        
+        if(RichiesteSegmentedControl.selectedSegmentIndex == 0) {
+            applications = PersistenceManager.fetchActiveApplications(applicant: userLogged!)
+        } else {
+            applications = PersistenceManager.fetchConfirmedApplications(applicant: userLogged!)
+        }
+        
+        myTableView.reloadData()
     }
 
 }
