@@ -9,24 +9,32 @@
 import UIKit
 
 class NewOfferViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var datePicker: UIDatePicker!
     
-    //var departurePlace, arrivePlace: String
-
+    @IBOutlet weak var totalSpotsField: UITextField!
     
-    @IBOutlet weak var ArriveTextField: UITextField!
+    @IBOutlet weak var messageField: UITextView!
     
-    @IBOutlet weak var SeatsTextField: UITextField!
+    @IBAction func chooseItineraryButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "chooseItinerary", sender: nil)
+    }
+    
     @IBAction func AddOfferButtonPressed(_ sender: Any) {
+        /*
+        if(name == "" || surname == "" || carModel == "") {
+            // dovrei mostrare un messaggio in cui avverto che tutti i campi devono essere compilati
+        }
+        */
+        
+
+        
         PersistenceManager.newDefaultOffer()
-         self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.ArriveTextField.delegate = self
-        self.SeatsTextField.delegate = self
-
-        // Do any additional setup after loading the view.
+        self.totalSpotsField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
