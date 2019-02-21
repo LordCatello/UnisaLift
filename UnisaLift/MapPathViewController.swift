@@ -17,6 +17,9 @@ class MapPathViewController: UIViewController, MKMapViewDelegate {
     var source: CLLocation!
     var destination: CLLocation!
     
+    var startDescription: String = ""
+    var destDescription: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapView.delegate = self
@@ -80,43 +83,48 @@ class MapPathViewController: UIViewController, MKMapViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // DEBUGGING
-        let debugLocation = CLLocation(latitude: 40.700151, longitude: 14.814523)
+        if locationToDisplay == nil {
+            locationToDisplay = source
+        }
         
-        //        centerMapOnLocation(location: locationToDisplay)
-        centerMapOnLocation(map: mapView, location: debugLocation)
+        centerMapOnLocation(map: mapView, location: locationToDisplay)
         
         let sourcePoint = MKPointAnnotation()
         let destinationPoint = MKPointAnnotation()
         
-        //        sourcePoint.coordinate = source.coordinate
-        sourcePoint.coordinate = debugLocation.coordinate
+        sourcePoint.coordinate = source.coordinate
         sourcePoint.title = NSLocalizedString("Starting point", comment: "English")
         setGeolocalizedDescription(pointToLabelize: sourcePoint)
         
-        //        destinationPoint.coordinate = destination.coordinate
-        destinationPoint.coordinate = CLLocation(latitude: 40.774001, longitude: 14.793703).coordinate
+        destinationPoint.coordinate = destination.coordinate
         destinationPoint.title = NSLocalizedString("Destination point", comment: "English")
         setGeolocalizedDescription(pointToLabelize: destinationPoint)
         
         self.mapView.addAnnotations([sourcePoint, destinationPoint])
         
-        requestDirectionsTo(from: debugLocation, to: CLLocation(latitude: 40.774001, longitude: 14.793703))
-        //        requestDirectionsTo(from: source, to: destination)
-        
-        
-        
+        requestDirectionsTo(from: source, to: destination)
+    }
+    
+    @IBAction func confirmButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "confirmPath", sender: nil)
     }
     
     
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+        switch segue.identifier {
+        case "confirmPath":
+            let destinationView = segue.destination as! NewOfferViewController
+            destinationView.startPointDesc = startDescription
+            destinationView.endPointDesc = destDescription
+            destinationView.startPointLocation = source
+            destinationView.endPointLocation = destination
+        default:
+            return
+        }
      }
-     */
+    
     
 }
