@@ -24,7 +24,8 @@
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="endPointDesc" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="endPointGeo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endPointLat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="endPointLong" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="freeSpots" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="offerID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -32,7 +33,8 @@
         <attribute name="priceString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="startPointDesc" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="startPointGeo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startPointLat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startPointLong" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="totalSpots" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -70,10 +72,10 @@
     </entity>
     <elements>
         <element name="Application" positionX="-131.796875" positionY="117.90234375" width="128" height="150"/>
+        <element name="Id" positionX="-270" positionY="-135" width="128" height="60"/>
         <element name="Notification" positionX="-182.7109375" positionY="312.37890625" width="128" height="135"/>
-        <element name="Offer" positionX="-103.19140625" positionY="-211.80078125" width="128" height="300"/>
+        <element name="Offer" positionX="-103.19140625" positionY="-211.80078125" width="128" height="330"/>
         <element name="Review" positionX="-253.23828125" positionY="-287.9453125" width="128" height="120"/>
         <element name="User" positionX="-445.02734375" positionY="0.58984375" width="128" height="345"/>
-        <element name="Id" positionX="-270" positionY="-135" width="128" height="60"/>
     </elements>
 </model>

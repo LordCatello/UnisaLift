@@ -11,13 +11,8 @@ import UIKit
 class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource {
     var offers = [Offer]()
     
-    /*
-    var DataSource = ["Prova1","prova2","Prova3"]
-    var mieOfferte = ["Salerno","Fisciano"]
-    */
-    
+   
     @IBAction func addOfferButtonPressed(_ sender: Any) {
-        
         /*let offer = PersistenceManager.newDefaultOffer()
         offers.append(offer)
         myTableView.reloadData()*/
@@ -26,28 +21,24 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var OfferteSegment: UISegmentedControl!
     
     @IBAction func SegmentedControlAction(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+        
+        if(OfferteSegment.selectedSegmentIndex == 0) {
+            offers = PersistenceManager.fetchOffers()
+        } else {
+            offers = PersistenceManager.fetchUserOffers(offerer: userLogged!)
+        }
+        
         myTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch (OfferteSegment.selectedSegmentIndex){
-            
-        case 0:
-            return offers.count
-        case 1:
-            return offers.count // devo far visualizzare il numero delle mie offerte
-                                // oppure posso utilizzare lo stesso array facendo il fetch solo
-                                // sulle offerte dell'utente
-        default:
-            return 0;
-        }
+        return offers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let mycell=myTableView.dequeueReusableCell(withIdentifier: "OfferteCell", for: indexPath) as! OffertaTableViewCell
-        
-       // mycell.textLabel?.text=DataSource[indexPath.row]
         
         let offer = offers[indexPath.row]
         
