@@ -38,6 +38,9 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
         if(surnameText.text != ""){
         userLogged?.surname = surnameText.text
         }
+        if(carText.text != ""){
+            userLogged?.carModel = carText.text
+        }
         
    /*
         self.tabBarController?.selectedIndex = 2
