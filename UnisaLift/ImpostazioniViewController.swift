@@ -35,6 +35,21 @@ class ImpostazioniViewController: UIViewController {
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+        
+        name.text = userLogged?.name
+        surname.text = userLogged?.surname
+        email.text = userLogged?.email
+        car.text = userLogged?.carModel
+        descrizione.text = userLogged?.desc
+        var profileimage = UIImage(data: userLogged?.imageFullRes as! Data, scale:1.0)
+        image.image = profileimage
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 

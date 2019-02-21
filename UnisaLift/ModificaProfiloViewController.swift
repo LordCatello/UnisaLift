@@ -11,9 +11,7 @@ import MobileCoreServices
 
 class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
-    
     @IBOutlet weak var image: UIImageView!
-    
     
     @IBOutlet weak var car: UILabel!
     @IBOutlet weak var email: UILabel!
@@ -29,13 +27,6 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
     
     @IBOutlet weak var descriptionArea: UITextView!
     
-    
-    
-    
-    
-    
-    
-    
     @IBAction func FattoButtonPressed(_ sender: Any) {
         
    /*
@@ -49,21 +40,11 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
     
     @IBAction func takePicture(_ sender: Any) {
         let imagePicker = UIImagePickerController()
-        //challenge
+        
         imagePicker.setEditing(true, animated: true)
         
-        
-        // If the device has a camera, take a picture, otherwise,
-        // just pick from photo library
-        
-        
-       /* if UIImagePickerController.isSourceTypeAvailable(.camera) {
-           imagePicker.sourceType = .camera
-            
-        } else {*/
-            imagePicker.sourceType = .photoLibrary
-        //}
-        
+        imagePicker.sourceType = .photoLibrary
+
         imagePicker.delegate = self
         
         // Place image picker on the screen
@@ -71,6 +52,7 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        
         let image1 = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
         // Store the image in the ImageStore for the item's key
@@ -78,7 +60,15 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
         
         // Put that image onto the screen in our image view
         
-        image.image = image1
+     //   image.image = image1
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+        
+        var imageData = image1.jpegData(compressionQuality: 0.5) as! NSData
+        userLogged?.imageFullRes = imageData
+        
+        
+    
         
         // Take image picker off the screen -
         // you must call this dismiss method
@@ -93,6 +83,18 @@ class ModificaProfiloViewController: UIViewController,UIImagePickerControllerDel
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+
+        
+        name.text = userLogged?.name
+        surname.text = userLogged?.surname
+        email.text = userLogged?.email
+        car.text = userLogged?.carModel
+        descriptionArea.text = userLogged?.desc
+        var profileimage = UIImage(data: userLogged?.imageFullRes as! Data, scale:1.0)
+        image.image = profileimage
+        
         self.tabBarController?.tabBar.isHidden = true
     }
     
