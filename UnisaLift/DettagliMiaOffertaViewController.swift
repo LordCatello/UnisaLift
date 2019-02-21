@@ -16,11 +16,19 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         // dovrei cambiare il bottone, o disabilitare quest'ultimo
         // aggiornare il numero di posti liberi
         // gestire il fatto che se non ci sono più posti liberi, l'offerta scompare dalla liste delle offerte nella lobby
-        let currentIndex = OfferApplicationTableView.indexPathForSelectedRow?.row
+        /*let currentIndex = OfferApplicationTableView.indexPathForSelectedRow?.row
         
         let application = applications[currentIndex!]
         
-        application.state = 2
+        application.state = 2*/
+        //performSegue(withIdentifier: "DettagliRichiedente", sender: nil)
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
+        
+        
+        performSegue(withIdentifier: "DettagliRichiedente", sender: nil)
+        
     }
     
     @IBOutlet weak var arrivoLabel: UILabel!
@@ -90,6 +98,15 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
             let destinationView = segue.destination as! MapPathViewController
             destinationView.source = CLLocation(latitude: offer.startPointLat, longitude: offer.startPointLong)
             destinationView.destination = CLLocation(latitude: offer.endPointLat, longitude: offer.endPointLong)
+        case "DettagliRichiedente":
+            let destinationView = segue.destination as! DettagliRichiedenteViewController
+            
+            
+            let currentIndex = OfferApplicationTableView.indexPathForSelectedRow?.row
+            
+            let application = applications[currentIndex!]
+            destinationView.user = application.applicant
+            
         default:
             return
         }
