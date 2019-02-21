@@ -11,6 +11,10 @@ import MapKit
 
 class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var arrivoLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var partenzaLabel: UILabel!
+    @IBOutlet weak var freespotsLabel: UILabel!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let mycell = OfferApplicationTableView.dequeueReusableCell(withIdentifier: "RichiestaPerOffertaCell", for: indexPath) as! RichiestaperOffertaTableViewCell
         
@@ -60,6 +64,12 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        partenzaLabel.text = offer.startPointDesc
+        arrivoLabel.text = offer.endPointDesc
+        dateLabel.text = offer.startDate?.description
+        
+        freespotsLabel.text = String(offer.freeSpots)
+    
         self.tabBarController?.tabBar.isHidden = true
         
         applications = PersistenceManager.fetchOfferApplications(offer: offer)
