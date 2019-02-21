@@ -212,6 +212,42 @@ class PersistenceManager {
         return applications
     }
     
+    static func fetchAllApplications(applicant: User) -> [Application] {
+        var applications = [Application]()
+        
+        let context = getContext()
+        
+        let fetchRequest = NSFetchRequest<Application>(entityName: "Application")
+        
+        fetchRequest.predicate = NSPredicate(format: "applicant == %@", applicant)
+        
+        do {
+            try applications = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Errore in fetch \(error.code)")
+        }
+        
+        return applications
+    }
+    
+    static func fetchOfferApplications(offer: Offer) -> [Application] {
+        var applications = [Application]()
+        
+        let context = getContext()
+        
+        let fetchRequest = NSFetchRequest<Application>(entityName: "Application")
+        
+        fetchRequest.predicate = NSPredicate(format: "offer == %@", offer)
+        
+        do {
+            try applications = context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Errore in fetch \(error.code)")
+        }
+        
+        return applications
+    }
+    
     // restituisce l'utente che ha la stessa email passata come parametro
     // restituisce nil altrimenti (si spera)
     static func fetchUser(email: String) -> User? {
@@ -251,6 +287,16 @@ class PersistenceManager {
             try offers = context.fetch(fetchRequest)
         } catch let error as NSError {
             print("Errore in fetch \(error.code)")
+        }
+        
+        var userLoggedApplications = [Application]()
+        
+        userLoggedApplications = fetchAllApplications(applicant: userLogged)
+        
+        for application in userLoggedApplications {
+            if let index = offers.index(of: application.offer!) {
+                offers.remove(at: index)
+            }
         }
         
         return offers
