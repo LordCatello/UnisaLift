@@ -16,6 +16,7 @@ extension UIView : UITextFieldDelegate{
 
 class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var email : String!
+    var imageData: NSData!
     
     @IBAction func fineButtonPressed(_ sender: Any) {
         let name = nameField.text
@@ -81,6 +82,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         profile.image = image1
         
+        
+      //  var imageData  = image1.pngData()! as Data
+        
+        imageData = image1.jpegData(compressionQuality: 0.5) as! NSData
+        
+       
+         
         // Take image picker off the screen -
         // you must call this dismiss method
         dismiss(animated: true, completion: nil)
