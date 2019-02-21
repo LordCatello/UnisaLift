@@ -45,10 +45,8 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
     var user: User!
     var emailField: String!
 
-    @IBOutlet weak var LabelTopColor: UILabel!
     @IBOutlet weak var EmailTextField: UITextField!
     
-    @IBOutlet weak var PasswordTextField: UITextField!
     @IBAction func LoginButtonPressed(_ sender: Any) {
         emailField = EmailTextField.text!
         
@@ -74,13 +72,17 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
 
     }
 
+    // Hide the keyboard when the return key pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.EmailTextField.delegate = self
-        self.PasswordTextField.delegate = self
         EmailTextField.setBottomBorder()
-        PasswordTextField.setBottomBorder()
-        
+       
         let id = PersistenceManager.fetchProgressiveID()
         
         // creo un id progressivo che inizia con 0

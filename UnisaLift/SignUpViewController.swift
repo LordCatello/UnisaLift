@@ -7,12 +7,7 @@
 //
 
 import UIKit
-extension UIView : UITextFieldDelegate{
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        self.endEditing(true)
-    }
-}
+
 
 class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var email : String!
@@ -94,18 +89,56 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         dismiss(animated: true, completion: nil)
     }
     
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == carModelField {
+            TableViewElementi.isScrollEnabled = false
+            moveTextField(textField, moveDistance: -250, up: true)
+        }
+    }
+    
+    // Finish Editing The Text Field
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == carModelField {
+            TableViewElementi.isScrollEnabled = true
+            moveTextField(textField, moveDistance: -250, up: false)
+        }}
+    
+    // Hide the keyboard when the return key pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func tapOnView(_ sender: Any) {
+        nameField.resignFirstResponder()
+        surnameField.resignFirstResponder()
+        carModelField.resignFirstResponder()
+    }
+    // Move the text field in a pretty animation!
+    func moveTextField(_ textField: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+        
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.carModelField.delegate = ViewElementi
-        self.emailField.delegate = ViewElementi
-        self.nameField.delegate = ViewElementi
-        self.surnameField.delegate = ViewElementi
+        self.carModelField.delegate = self
+        self.emailField.delegate = self
+        self.nameField.delegate = self
+        self.surnameField.delegate = self
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         emailField.text = email
     }
-
+    
 }
 
