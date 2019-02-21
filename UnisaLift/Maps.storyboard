@@ -130,11 +130,61 @@
                         <outlet property="doneButton" destination="PUQ-L3-ya8" id="irP-DQ-P7D"/>
                         <outlet property="mapView" destination="vE3-J9-VgY" id="N6m-V5-sa6"/>
                         <outlet property="searchBar" destination="tsi-Eb-g3Y" id="HCV-a7-44A"/>
+                        <segue destination="Tip-ST-IdT" kind="show" identifier="confirmingPath" id="ggj-aN-ZwH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGG-8l-tAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="801" y="788"/>
+        </scene>
+        <!--Map Path View Controller-->
+        <scene sceneID="Xt0-4J-iuG">
+            <objects>
+                <viewController id="Tip-ST-IdT" customClass="MapPathViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a1I-Nt-NZ7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="e8Z-QM-SYl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbt-Lx-hNn">
+                                <rect key="frame" x="109" y="755" width="196" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.85313507720000004" green="0.33373212540000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.85313507720000004" green="0.33373212540000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Confirm itinerary"/>
+                                <connections>
+                                    <action selector="confirmButtonPressed:" destination="Tip-ST-IdT" eventType="touchUpInside" id="rN9-Vg-f2K"/>
+                                    <action selector="endDoneButtonPressed:" destination="nC0-Gm-1zT" eventType="touchUpInside" id="HEg-pu-mFr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Cdy-JF-gHR" firstAttribute="bottom" secondItem="e8Z-QM-SYl" secondAttribute="bottom" id="3n5-hk-6m7"/>
+                            <constraint firstItem="Cdy-JF-gHR" firstAttribute="trailing" secondItem="e8Z-QM-SYl" secondAttribute="trailing" id="HP2-ze-b6E"/>
+                            <constraint firstItem="e8Z-QM-SYl" firstAttribute="leading" secondItem="Cdy-JF-gHR" secondAttribute="leading" id="qNa-Bg-i0S"/>
+                            <constraint firstItem="e8Z-QM-SYl" firstAttribute="top" secondItem="Cdy-JF-gHR" secondAttribute="top" id="qlz-fK-NnS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cdy-JF-gHR"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="e8Z-QM-SYl" id="hmc-hf-7SB"/>
+                        <segue destination="fxH-2q-eEj" kind="show" identifier="confirmPath" id="8Hg-pN-Q2N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JMM-2a-IgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1832" y="788"/>
+        </scene>
+        <!--UIViewController-siI-qV-Fah-->
+        <scene sceneID="K5E-8I-3h5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DettagliOfferte" referencedIdentifier="UIViewController-siI-qV-Fah" id="fxH-2q-eEj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hbZ-eN-4jZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2506" y="1012"/>
         </scene>
     </scenes>
 </document>

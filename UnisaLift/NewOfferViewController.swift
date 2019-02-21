@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import MapKit
 
 class NewOfferViewController: UIViewController {
     
     //var departurePlace, arrivePlace: String
-
+    var startPointDesc: String!
+    var endPointDesc: String!
+    var startPointLocation: CLLocation!
+    var endPointLocation: CLLocation!
+    
 
     @IBAction func AddOfferButtonPressed(_ sender: Any) {
         PersistenceManager.newDefaultOffer()
