@@ -11,7 +11,12 @@ import UIKit
 class ImpostazioniViewController: UIViewController {
 
   
-   
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.userLogged = nil
+        performSegue(withIdentifier: "logoutSegue", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

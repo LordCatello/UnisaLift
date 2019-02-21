@@ -72,7 +72,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="N9q-aT-5Ue">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="KHq-1X-9Gq">
                             <connections>
-                                <segue destination="oDH-vl-DVb" kind="showDetail" animates="NO" id="yhK-Aj-H9q"/>
+                                <action selector="logoutButtonPressed:" destination="SlF-06-Fsb" id="SQC-p4-Ohc"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="nKq-ND-5OH">
@@ -81,6 +81,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="oDH-vl-DVb" kind="show" identifier="logoutSegue" id="gob-TV-9cb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgP-rQ-tcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
