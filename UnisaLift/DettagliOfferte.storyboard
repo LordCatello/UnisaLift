@@ -187,6 +187,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="Accept"/>
+                                                    <connections>
+                                                        <action selector="acceptApplicationButton:" destination="t7V-SH-zxD" eventType="touchUpInside" id="re0-2O-yCe"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ai2-lW-khT">
                                                     <rect key="frame" x="186" y="58" width="42" height="21"/>

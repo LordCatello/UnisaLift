@@ -11,24 +11,30 @@ import MapKit
 
 class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBAction func acceptApplicationButton(_ sender: Any) {
+        // per adesso cambio solo lo stato
+        // dovrei cambiare il bottone, o disabilitare quest'ultimo
+        // aggiornare il numero di posti liberi
+        // gestire il fatto che se non ci sono più posti liberi, l'offerta scompare dalla liste delle offerte nella lobby
+        let currentIndex = OfferApplicationTableView.indexPathForSelectedRow?.row
+        
+        let application = applications[currentIndex!]
+        
+        application.state = 2
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let mycell = OfferApplicationTableView.dequeueReusableCell(withIdentifier: "RichiestaPerOffertaCell", for: indexPath) as! RichiestaperOffertaTableViewCell
         
         let application = applications[indexPath.row]
-        
         
         mycell.nameLabel.text = application.applicant?.name
         mycell.surnameLabel.text = application.applicant?.surname
         var profileimage = UIImage(data: application.applicant?.imageFullRes as! Data, scale:1.0)
         mycell.Profile.image = profileimage
         
-        
-        
         return mycell
-        
-        
     }
-    
     
     var applications = [Application]()
     
@@ -41,7 +47,6 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
     @IBOutlet weak var deleteOfferButton: UIButton!
     
     @IBOutlet weak var OfferApplicationTableView: UITableView!
-    
     
     @IBOutlet weak var postiRimasti: UILabel!
     
