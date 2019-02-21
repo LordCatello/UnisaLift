@@ -13,7 +13,7 @@
         <!--Details-->
         <scene sceneID="QVV-Pc-mbr">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-K1Q-z3-9qs" title="Details" id="K1Q-z3-9qs" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-K1Q-z3-9qs" title="Details" id="K1Q-z3-9qs" customClass="DettagliRichiesteViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nV1-Yl-59Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
