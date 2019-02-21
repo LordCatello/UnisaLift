@@ -8,11 +8,14 @@
 
 import UIKit
 
-class NewOfferViewController: UIViewController {
+class NewOfferViewController: UIViewController, UITextFieldDelegate {
     
     //var departurePlace, arrivePlace: String
 
-
+    
+    @IBOutlet weak var ArriveTextField: UITextField!
+    
+    @IBOutlet weak var SeatsTextField: UITextField!
     @IBAction func AddOfferButtonPressed(_ sender: Any) {
         PersistenceManager.newDefaultOffer()
          self.navigationController?.popViewController(animated: true)
@@ -20,6 +23,8 @@ class NewOfferViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.ArriveTextField.delegate = self
+        self.SeatsTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -32,6 +37,9 @@ class NewOfferViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation
