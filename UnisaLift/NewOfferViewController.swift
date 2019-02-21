@@ -9,16 +9,13 @@
 import UIKit
 import MapKit
 
-class NewOfferViewController: UIViewController {
-    
+class NewOfferViewController: UIViewController, UITextFieldDelegate {
     //var departurePlace, arrivePlace: String
     var startPointDesc: String!
     var endPointDesc: String!
     var startPointLocation: CLLocation!
     var endPointLocation: CLLocation!
     
-
-class NewOfferViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var totalSpotsField: UITextField!
@@ -41,6 +38,7 @@ class NewOfferViewController: UIViewController, UITextFieldDelegate {
         PersistenceManager.newDefaultOffer()
         self.navigationController?.popViewController(animated: true)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
