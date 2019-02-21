@@ -79,7 +79,7 @@ class PersistenceManager {
         return offer
     }
     
-    static func newOffer (desc: String, endDate: Date, endPointDesc: String, message: String, startDate: Date, startPointDesc: String, totalSpots: Int, type: Int, offerer: User, startPointLat: Double, startPointLong: Double, endPointLat: Double, endPointLong: Double) -> Offer {
+    static func newOffer (endPointDesc: String, message: String, startDate: Date, startPointDesc: String, totalSpots: Int, offerer: User, startPointLat: Double, startPointLong: Double, endPointLat: Double, endPointLong: Double) -> Offer {
         let context = getContext()
         
         let offer = NSEntityDescription.insertNewObject(forEntityName: "Offer", into: context) as! Offer
@@ -88,15 +88,12 @@ class PersistenceManager {
         tempId?.progressiveID = (tempId?.progressiveID)! + 1
         
         offer.offerID = (tempId?.progressiveID)!
-        offer.desc = desc
-        offer.endDate = endDate as NSDate
         offer.endPointDesc = endPointDesc
         offer.message = message
         offer.startDate = startDate as NSDate
         offer.startPointDesc = startPointDesc
         offer.totalSpots = Int16(totalSpots)
         offer.freeSpots = Int16(totalSpots)
-        offer.type = Int16(type)
         offer.offerer = offerer
         offer.startPointLat = startPointLat
         offer.startPointLong = startPointLong

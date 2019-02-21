@@ -27,23 +27,32 @@ class NewOfferViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func unwindToNewOffer(segue: UIStoryboardSegue) {
-        print(startPointDesc)
         
     }
     
-    
-    
     @IBAction func AddOfferButtonPressed(_ sender: Any) {
-        /*
-        if(name == "" || surname == "" || carModel == "") {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLogged = appDelegate.userLogged
+        
+        let date = datePicker.date
+        let totalSpots = totalSpotsField.text
+        let message = messageField.text
+        
+        if(totalSpots == "" || message == "" || startPointDesc == nil || endPointDesc == nil || startPointDesc == "" || endPointDesc == "" || startPointLocation == nil || endPointLocation == nil) {
             // dovrei mostrare un messaggio in cui avverto che tutti i campi devono essere compilati
+        } else {
+        
+            let startPointLat = startPointLocation.coordinate.latitude as Double
+            let startPointLong = startPointLocation.coordinate.longitude as Double
+            let endPointLat = endPointLocation.coordinate.latitude as Double
+            let endPointLong = endPointLocation.coordinate.longitude as Double
+            
+            let totalSpotsInt = Int(totalSpots!)
+        
+            PersistenceManager.newOffer(endPointDesc: endPointDesc, message: message!, startDate: date, startPointDesc: startPointDesc, totalSpots: totalSpotsInt!, offerer: userLogged!, startPointLat: startPointLat, startPointLong: startPointLong, endPointLat: endPointLat, endPointLong: endPointLong)
+        
+            self.navigationController?.popViewController(animated: true)
         }
-        */
-        
-
-        
-        PersistenceManager.newDefaultOffer()
-        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
