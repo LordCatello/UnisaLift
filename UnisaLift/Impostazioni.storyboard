@@ -313,14 +313,14 @@
                         <outlet property="TableViewElements" destination="cPV-4Q-lfr" id="0jK-yG-4HZ"/>
                         <outlet property="ViewElements" destination="D6m-xj-TwP" id="3Lr-Do-Ibb"/>
                         <outlet property="car" destination="LSS-Hc-ZWN" id="6cQ-ej-E5E"/>
-                        <outlet property="carText" destination="6Qt-A3-VjA" id="Wlk-6b-wNp"/>
+                        <outlet property="carText" destination="6Qt-A3-VjA" id="uxf-EJ-bbP"/>
                         <outlet property="changeImageButton" destination="aVY-6Y-ycf" id="JKz-xJ-nyc"/>
-                        <outlet property="descriptionArea" destination="D5v-Dl-6sM" id="4Ao-xx-pgk"/>
+                        <outlet property="descriptionArea" destination="D5v-Dl-6sM" id="60N-wH-itG"/>
                         <outlet property="image" destination="BrV-rr-g7f" id="3gN-H4-cZr"/>
                         <outlet property="name" destination="cr4-vd-EHC" id="9r3-nY-AMH"/>
-                        <outlet property="nameText" destination="EU8-4E-XT4" id="HsH-Kw-Z3q"/>
+                        <outlet property="nameText" destination="EU8-4E-XT4" id="bK7-50-QSb"/>
                         <outlet property="surname" destination="DBg-sp-xuh" id="lmB-Vv-vgX"/>
-                        <outlet property="surnameText" destination="Oh2-ai-mDQ" id="GmR-LI-3KM"/>
+                        <outlet property="surnameText" destination="Oh2-ai-mDQ" id="ph9-r9-UkR"/>
                         <segue destination="wu3-cr-Sgk" kind="unwind" identifier="impostazioni" unwindAction="unwindToImpostazioniWithSegue:" id="Mg2-FH-MCL"/>
                     </connections>
                 </viewController>
