@@ -58,6 +58,10 @@ class DettagliRichiedenteViewController: UIViewController {
             DenyRequestButton.isHidden = true
             acceptRequestButton.isHidden = true
         }
+        
+        if(application.state == 2) {
+            acceptRequestButton.isHidden = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,7 +73,7 @@ class DettagliRichiedenteViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
         if(application.state == 2) {
             acceptRequestButton.isEnabled = false
-            acceptRequestButton.isOpaque = true
+            acceptRequestButton.isHidden = true
         }
         
         if(application.offer!.state == 2) {
