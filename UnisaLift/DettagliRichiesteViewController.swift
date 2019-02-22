@@ -9,16 +9,24 @@
 import UIKit
 
 class DettagliRichiesteViewController: UIViewController {
+    var application : Application!
 
+    @IBAction func deleteApplicationButtonPressed(_ sender: Any) {
+        
+        if(application.state == 2) {
+            application.offer!.freeSpots = application.offer!.freeSpots + 1
+        }
+        PersistenceManager.deleteApplication(application: application)
+        
+        self.navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+            }
     
     override func viewWillAppear(_ animated: Bool) {
         
-     self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {

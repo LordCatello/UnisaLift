@@ -87,5 +87,29 @@ class RichiesteViewController: UIViewController, UITableViewDelegate,UITableView
         
         myTableView.reloadData()
     }
+    
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
+        performSegue(withIdentifier: "GotoRequest", sender: nil)
+    }
+    
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "GotoRequest"){
+            if let currentIndex = myTableView.indexPathForSelectedRow?.row {
+                let application = applications[currentIndex]
+                // prendo la view di destinazione
+                let destinationView = segue.destination as! DettagliRichiesteViewController
+                // trasferisco l'elemento all view di destinazione
+                destinationView.application = application
+            }
+            
+        }
+        
+    }
 
 }
