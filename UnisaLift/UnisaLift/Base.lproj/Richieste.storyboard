@@ -113,7 +113,6 @@
                                             <outlet property="RichiesteNumeroPostiLabel" destination="oDv-Vw-UiL" id="uLP-jr-2lA"/>
                                             <outlet property="RichiestePartenzaLabel" destination="5pR-iM-07X" id="seq-wN-Iqn"/>
                                             <outlet property="dateLabel" destination="jwt-ZK-L2H" id="jmZ-XF-VO2"/>
-                                            <segue destination="kAm-sU-GHm" kind="show" id="0Nm-RD-HRP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -144,6 +143,7 @@
                     <connections>
                         <outlet property="RichiesteSegmentedControl" destination="LV8-39-241" id="Fzc-kc-zKL"/>
                         <outlet property="myTableView" destination="tsm-15-9bV" id="qfr-Yd-yeH"/>
+                        <segue destination="kAm-sU-GHm" kind="show" identifier="GotoRequest" id="TnZ-4U-8jr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qx-bW-tji" userLabel="First Responder" sceneMemberID="firstResponder"/>

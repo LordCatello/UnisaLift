@@ -12,6 +12,7 @@ class DettagliRichiesteViewController: UIViewController {
     var application : Application!
 
     @IBAction func deleteApplicationButtonPressed(_ sender: Any) {
+        
         if(application.state == 2) {
             application.offer!.freeSpots = application.offer!.freeSpots + 1
         }
@@ -19,6 +20,9 @@ class DettagliRichiesteViewController: UIViewController {
         
         self.navigationController?.popViewController(animated: true)
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+            }
     
     override func viewDidLoad() {
         super.viewDidLoad()
