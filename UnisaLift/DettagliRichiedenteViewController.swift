@@ -45,6 +45,11 @@ class DettagliRichiedenteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        applicantImage.layer.borderWidth = 1
+        applicantImage.layer.masksToBounds = false
+        applicantImage.layer.borderColor = UIColor.black.cgColor
+        applicantImage.layer.cornerRadius = applicantImage.frame.height/2
+        applicantImage.clipsToBounds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
