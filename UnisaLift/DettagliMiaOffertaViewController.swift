@@ -12,21 +12,10 @@ import MapKit
 class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBAction func acceptApplicationButton(_ sender: Any) {
-        // per adesso cambio solo lo stato
-        // dovrei cambiare il bottone, o disabilitare quest'ultimo
-        // aggiornare il numero di posti liberi
-        // gestire il fatto che se non ci sono più posti liberi, l'offerta scompare dalla liste delle offerte nella lobby
-        /*let currentIndex = OfferApplicationTableView.indexPathForSelectedRow?.row
-        
-        let application = applications[currentIndex!]
-        
-        application.state = 2*/
-        //performSegue(withIdentifier: "DettagliRichiedente", sender: nil)
+
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        
-        
-        
         performSegue(withIdentifier: "DettagliRichiedente", sender: nil)
         
     }
@@ -35,6 +24,7 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var partenzaLabel: UILabel!
     @IBOutlet weak var freespotsLabel: UILabel!
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let mycell = OfferApplicationTableView.dequeueReusableCell(withIdentifier: "RichiestaPerOffertaCell", for: indexPath) as! RichiestaperOffertaTableViewCell
         
@@ -56,7 +46,9 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
 
     var offer : Offer!
     
-    @IBOutlet weak var deleteOfferButton: UIButton!
+    @IBAction func deleteOfferButton(_ sender: Any) {
+        
+    }
     
     @IBOutlet weak var OfferApplicationTableView: UITableView!
     
@@ -89,6 +81,8 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         self.tabBarController?.tabBar.isHidden = true
         
         applications = PersistenceManager.fetchOfferApplications(offer: offer)
+        
+        OfferApplicationTableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
