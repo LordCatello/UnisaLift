@@ -29,6 +29,7 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
     @IBOutlet weak var finishLiftButton: UIButton!
     
     @IBAction func StartLiftButtonPressed(_ sender: Any) {
+        
         // devo fare in modo che le richieste confermate non siano più cancellabili
         if(offer.state != 2) {
             offer.state = 2
@@ -39,6 +40,8 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
             
             PersistenceManager.deleteActiveApplicationsOfOffer(offer: offer)
         }
+        applications = PersistenceManager.fetchOfferApplications(offer: offer)
+        OfferApplicationTableView.reloadData()
     
     }
     
