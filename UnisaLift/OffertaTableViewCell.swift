@@ -16,7 +16,8 @@ class OffertaTableViewCell: UITableViewCell {
     @IBOutlet weak var PartenzaLabel: UILabel!
     @IBOutlet weak var ArrivoLabel: UILabel!
     
- 
+    @IBOutlet weak var DateLabel: UILabel!
+    
     
     
     

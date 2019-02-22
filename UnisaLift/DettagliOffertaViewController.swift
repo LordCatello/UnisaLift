@@ -52,9 +52,13 @@ class DettagliOffertaViewController: UIViewController {
     @IBOutlet weak var ArrivoLabel: UILabel!
     @IBOutlet weak var orarioLabel: UILabel!
     override func viewWillAppear(_ animated: Bool) {
+        
         PartenzaLabel.text = offer.startPointDesc
         ArrivoLabel.text = offer.endPointDesc
-        orarioLabel.text = offer.startDate?.description
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy - hh:mm" // MM inserisce il mese come numero
+    orarioLabel.text = dateFormatter.string(from: offer.startDate as! Date)
+
         nameOffererLabel.text = offer.offerer?.name
         surnameOfferer.text = offer.offerer?.surname
         postiRimastiLabel.text = String(offer.freeSpots)

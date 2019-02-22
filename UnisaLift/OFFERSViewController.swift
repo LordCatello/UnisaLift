@@ -46,6 +46,10 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         mycell.NumeroPostiLabel.text = String(offer.freeSpots)
         mycell.PartenzaLabel.text = offer.startPointDesc
         mycell.ArrivoLabel.text = offer.endPointDesc
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy - hh:mm" // MM inserisce il mese come numero
+        
+        mycell.DateLabel.text = dateFormatter.string(from: offer.startDate as! Date)
         var profileimage = UIImage(data: offer.offerer?.imageFullRes! as! Data, scale:1.0)
         mycell.ImageOfferta.image = profileimage
         mycell.ImageOfferta.layer.borderWidth = 1

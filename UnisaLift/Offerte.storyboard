@@ -108,6 +108,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ArrivoLabel" destination="Bv0-Lr-kwz" id="viD-sF-sRz"/>
+                                            <outlet property="DateLabel" destination="mjS-fM-ffY" id="m0q-Qq-zCp"/>
                                             <outlet property="ImageOfferta" destination="cPu-mG-giT" id="aCr-Py-fPl"/>
                                             <outlet property="NumeroPostiLabel" destination="fwI-mW-DYg" id="5LO-zr-fVy"/>
                                             <outlet property="OffertaNameLabel" destination="RpD-DD-SW7" id="h4P-tj-T17"/>
