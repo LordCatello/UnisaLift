@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import MapKit
 
 class DettagliRichiesteViewController: UIViewController {
     var application : Application!
 
+    @IBOutlet weak var image: UIImageView!
+    
+    @IBOutlet weak var arrivoLabel: UILabel!
+    @IBOutlet weak var partenzaLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var seatsLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var surnameLabel: UILabel!
     @IBAction func deleteApplicationButtonPressed(_ sender: Any) {
         
         if(application.state == 2) {
@@ -24,7 +33,30 @@ class DettagliRichiesteViewController: UIViewController {
         super.viewDidLoad()
             }
     
+    
+    
+    @IBAction func seeItineraryButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "Showmap3", sender: nil)
+    }
+    
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
+        
+        partenzaLabel.text = application.offer?.startPointDesc
+        nameLabel.text = application.offer?.offerer?.name
+        surnameLabel.text = application.offer?.offerer?.surname
+        seatsLabel.text = String(application.offer!.freeSpots)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy - hh:mm" // MM inserisce il mese come numero
+        dateLabel.text = dateFormatter.string(from: application.offer?.startDate as! Date)
+        arrivoLabel.text = application.offer?.endPointDesc
+        var profileimage = UIImage(data: application.offer?.offerer?.imageFullRes! as! Data, scale:1.0)
+    
+        image.image = profileimage
+        
+        
         
         self.tabBarController?.tabBar.isHidden = true
     }
@@ -32,5 +64,25 @@ class DettagliRichiesteViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        switch segue.identifier {
+        case "Showmap3":
+            let destinationView = segue.destination as! MapPathViewController
 
+            
+        destinationView.source = CLLocation(latitude: application.offer!.startPointLat, longitude: application.offer!.startPointLong)
+            
+            destinationView.destination = CLLocation(latitude: application.offer!.endPointLat, longitude: application.offer!.endPointLong)
+        default:
+            return
+            
+        }
+
+}
 }
