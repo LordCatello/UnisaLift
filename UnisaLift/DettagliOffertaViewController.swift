@@ -42,6 +42,12 @@ class DettagliOffertaViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        foto.layer.borderWidth = 1
+        foto.layer.masksToBounds = false
+        foto.layer.borderColor = UIColor.black.cgColor
+        foto.layer.cornerRadius = foto.frame.height/2
+        foto.clipsToBounds = true
 
         // Do any additional setup after loading the view.
     }
