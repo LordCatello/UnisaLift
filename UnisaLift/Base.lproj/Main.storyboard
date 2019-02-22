@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Tw-ax-oFD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wg4-Vn-n7L">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -375,6 +375,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJe-uV-duM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4715.9420289855079" y="-573.88392857142856"/>
+        </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="YPj-7E-5IB">
+            <objects>
+                <viewController id="Wg4-Vn-n7L" customClass="OnboardingViewController" customModule="UnisaLift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aIX-ho-sp5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYg-qt-akf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNO-Eb-Syj">
+                                <rect key="frame" x="318" y="732" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="endTutorialButtonPressed:" destination="Wg4-Vn-n7L" eventType="touchUpInside" id="GZg-Mf-VVx"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="Clg-uj-JP1">
+                                <rect key="frame" x="171.5" y="728.5" width="71" height="37"/>
+                                <color key="tintColor" red="0.85313507720000004" green="0.33373212540000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="pageIndicatorTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="currentPageIndicatorTintColor" red="0.85313507720000004" green="0.33373212540000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Clg-uj-JP1" firstAttribute="centerX" secondItem="aIX-ho-sp5" secondAttribute="centerX" id="3tT-Ki-Yoe"/>
+                            <constraint firstItem="xYg-qt-akf" firstAttribute="top" secondItem="rLW-iP-xBr" secondAttribute="top" id="BLC-em-hxH"/>
+                            <constraint firstItem="rLW-iP-xBr" firstAttribute="bottom" secondItem="xYg-qt-akf" secondAttribute="bottom" id="J3a-9n-9gb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DNO-Eb-Syj" secondAttribute="trailing" constant="30" id="KGQ-kT-N8T"/>
+                            <constraint firstItem="xYg-qt-akf" firstAttribute="leading" secondItem="rLW-iP-xBr" secondAttribute="leading" id="LsU-m3-oy7"/>
+                            <constraint firstItem="Clg-uj-JP1" firstAttribute="centerY" secondItem="DNO-Eb-Syj" secondAttribute="centerY" id="it8-qu-jMw"/>
+                            <constraint firstItem="rLW-iP-xBr" firstAttribute="bottom" secondItem="DNO-Eb-Syj" secondAttribute="bottom" constant="100" id="mKO-Vi-5Or"/>
+                            <constraint firstItem="rLW-iP-xBr" firstAttribute="trailing" secondItem="xYg-qt-akf" secondAttribute="trailing" id="xsC-wi-KHD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rLW-iP-xBr"/>
+                    </view>
+                    <connections>
+                        <outlet property="endTutorialButton" destination="DNO-Eb-Syj" id="Qpe-rC-vdd"/>
+                        <outlet property="pageControl" destination="Clg-uj-JP1" id="O6O-nb-9iv"/>
+                        <outlet property="scrollView" destination="xYg-qt-akf" id="JDX-CM-csI"/>
+                        <segue destination="3Tw-ax-oFD" kind="show" identifier="endTutorial" id="pqg-MW-1kE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Js-6D-RYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3665" y="-573"/>
         </scene>
     </scenes>
     <resources>

@@ -161,6 +161,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func endTutorialButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "endTutorial", sender: nil)
     }
     
     /*
