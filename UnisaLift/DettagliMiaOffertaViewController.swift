@@ -93,6 +93,10 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         super.viewDidLoad()
         
         applications = PersistenceManager.fetchOfferApplications(offer: offer)
+        
+        if(offer.state == 2) {
+            StartLiftButton.setTitle("Finish Lift", for: .normal)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,6 +114,9 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         
         OfferApplicationTableView.reloadData()
         
+        if(offer.state == 2) {
+            StartLiftButton.setTitle("Finish Lift", for: .normal)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
