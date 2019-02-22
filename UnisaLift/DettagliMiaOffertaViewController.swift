@@ -47,7 +47,9 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
     var offer : Offer!
     
     @IBAction func deleteOfferButton(_ sender: Any) {
-        
+        // deleteOffer cancella anche tutte le applications associate alle offerte
+        PersistenceManager.deleteOffer(offer: offer)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBOutlet weak var OfferApplicationTableView: UITableView!

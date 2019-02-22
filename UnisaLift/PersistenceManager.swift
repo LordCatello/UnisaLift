@@ -345,9 +345,17 @@ class PersistenceManager {
         context.delete(user)
     }
     
-    // devo modificare anche le richieste associate all'offerta
+    // cancello l'offerta e tutte le richieste associate all'offerta, in qualsiasi stato
     static func deleteOffer(offer: Offer) {
         let context = getContext()
+        
+        var applications = [Application]()
+        
+        applications = fetchOfferApplications(offer: offer)
+        
+        for application in applications {
+            deleteApplication(application: application)
+        }
         
         context.delete(offer)
     }
@@ -361,15 +369,5 @@ class PersistenceManager {
         
         context.delete(application)
     }
-
-    
-    /*
-    static func deleteItem( item :PItem) {
-        
-        let context  = getContext()
-        
-        context.delete(item)
-    }
-    */
     
 }
