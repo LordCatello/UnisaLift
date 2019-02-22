@@ -50,6 +50,9 @@
                                 <state key="normal" title="Delete Request">
                                     <color key="titleColor" red="1" green="0.1602604145" blue="0.15480155239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteApplicationButtonPressed:" destination="K1Q-z3-9qs" eventType="touchUpInside" id="tir-YA-iJA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
