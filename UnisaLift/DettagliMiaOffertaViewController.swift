@@ -13,6 +13,10 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
     
     @IBOutlet weak var StartLiftButton: UIButton!
     
+    @IBAction func acceptApplicationButton(_ sender: Any) {
+
+    }
+    
     @IBAction func StartLiftButtonPressed(_ sender: Any) {
         // devo fare in modo che le richieste confermate non siano più cancellabili
         // devo cancellare tutte le richieste non confermate
@@ -23,10 +27,6 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
             offer.state = 2
             StartLiftButton.setTitle("Finish Lift", for: .normal)
         }
-    }
-    
-    @IBAction func acceptApplicationButton(_ sender: Any) {
-
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
