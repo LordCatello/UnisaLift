@@ -73,6 +73,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         present(imagePicker, animated: true, completion: nil)
     }
     
+    
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         let image1 = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
