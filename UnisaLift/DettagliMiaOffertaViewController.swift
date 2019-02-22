@@ -47,7 +47,9 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
     var offer : Offer!
     
     @IBAction func deleteOfferButton(_ sender: Any) {
-        
+        // deleteOffer cancella anche tutte le applications associate alle offerte
+        PersistenceManager.deleteOffer(offer: offer)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBOutlet weak var OfferApplicationTableView: UITableView!
@@ -73,8 +75,7 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         arrivoLabel.text = offer.endPointDesc
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy - hh:mm" // MM inserisce il mese come numero
-       dateLabel.text = dateFormatter.string(from: offer.startDate as! Date)
-        
+        dateLabel.text = dateFormatter.string(from: offer.startDate as! Date)
         
         freespotsLabel.text = String(offer.freeSpots)
     
