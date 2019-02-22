@@ -11,6 +11,8 @@ import MapKit
 
 class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var deleteOfferButton: UIButton!
+    
     @IBOutlet weak var StartLiftButton: UIButton!
     
     @IBAction func acceptApplicationButton(_ sender: Any) {
@@ -26,6 +28,7 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         if(offer.state != 2) {
             offer.state = 2
             StartLiftButton.setTitle("Finish Lift", for: .normal)
+            deleteOfferButton.isHidden = true
         }
     }
     

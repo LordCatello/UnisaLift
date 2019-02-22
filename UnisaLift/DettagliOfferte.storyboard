@@ -392,6 +392,7 @@
                         <outlet property="arrivo" destination="a1u-YS-XX1" id="sSj-nV-If3"/>
                         <outlet property="arrivoLabel" destination="5Kl-gB-UlE" id="Pg7-Gy-rfn"/>
                         <outlet property="dateLabel" destination="zxo-R3-xwS" id="j2e-wg-CVB"/>
+                        <outlet property="deleteOfferButton" destination="ZjD-Tj-KPT" id="uc5-ix-wYh"/>
                         <outlet property="freespotsLabel" destination="lKr-1V-IWq" id="9vW-n6-SZb"/>
                         <outlet property="message" destination="SGl-8m-VQP" id="Jq6-Ub-jEQ"/>
                         <outlet property="partenza" destination="lvl-tN-zdb" id="gFm-h7-c2d"/>
