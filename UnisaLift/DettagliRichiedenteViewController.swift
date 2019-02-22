@@ -50,7 +50,8 @@ class DettagliRichiedenteViewController: UIViewController {
         
         self.tabBarController?.tabBar.isHidden = true
         if(application.state == 2) {
-            acceptRequestButton.isEnabled = true
+            acceptRequestButton.isEnabled = false
+            acceptRequestButton.isOpaque = true
         }
     }
 
