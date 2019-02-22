@@ -48,6 +48,11 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         mycell.ArrivoLabel.text = offer.endPointDesc
         var profileimage = UIImage(data: offer.offerer?.imageFullRes! as! Data, scale:1.0)
         mycell.ImageOfferta.image = profileimage
+        mycell.ImageOfferta.layer.borderWidth = 1
+        mycell.ImageOfferta.layer.masksToBounds = false
+        mycell.ImageOfferta.layer.borderColor = UIColor.black.cgColor
+        mycell.ImageOfferta.layer.cornerRadius = mycell.ImageOfferta.layer.frame.height/2
+        mycell.ImageOfferta.clipsToBounds = true
 //        mycell.contentView.layer.cornerRadius = 2.0
 //        mycell.contentView.layer.borderWidth = 1.0
 //        mycell.contentView.layer.borderColor = UIColor.clear.cgColor
@@ -57,7 +62,7 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         mycell.layer.shadowRadius = 2.0
         mycell.layer.shadowOpacity = 1.0
         mycell.layer.masksToBounds = false
-        mycell.layer.cornerRadius = 20
+        mycell.layer.cornerRadius = 14
         mycell.layer.shadowPath = UIBezierPath(roundedRect: mycell.bounds, cornerRadius: mycell.contentView.layer.cornerRadius).cgPath
      
         return mycell
