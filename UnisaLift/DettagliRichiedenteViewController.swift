@@ -11,26 +11,33 @@ import UIKit
 class DettagliRichiedenteViewController: UIViewController {
 
     var user : User!
-    var application : Application!
+    var application: Application!
     
     @IBOutlet weak var applicantImage: UIImageView!
     
     @IBAction func DenyRequestButtonPressed(_ sender: Any) {
+        
     }
     
     @IBAction func AcceptRequestButtonPressed(_ sender: Any) {
+        // dovrei cambiare il bottone, o disabilitare quest'ultimo
+        // devo far comparire un messaggio di errore nel caso questo non accade
+        if(application.offer!.freeSpots > 0) {
+            application.state = 2
+            application.offer!.freeSpots = application.offer!.freeSpots - 1
+        }
     }
+    
     @IBOutlet weak var applicantSurnameLabel: UILabel!
+    
     @IBOutlet weak var applicantNameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-         var profileimage = UIImage(data: user.imageFullRes as! Data, scale:1.0)
+        var profileimage = UIImage(data: user.imageFullRes as! Data, scale:1.0)
         applicantImage.image = profileimage
         applicantNameLabel.text = user.name
         applicantSurnameLabel.text = user.surname
@@ -38,19 +45,8 @@ class DettagliRichiedenteViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
 
-    
-    
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
