@@ -99,13 +99,16 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
             destinationView.source = CLLocation(latitude: offer.startPointLat, longitude: offer.startPointLong)
             destinationView.destination = CLLocation(latitude: offer.endPointLat, longitude: offer.endPointLong)
         case "DettagliRichiedente":
-            let destinationView = segue.destination as! DettagliRichiedenteViewController
             
+            let destinationView = segue.destination as! DettagliRichiedenteViewController
             
             let currentIndex = OfferApplicationTableView.indexPathForSelectedRow?.row
             
             let application = applications[currentIndex!]
             destinationView.user = application.applicant
+            
+            destinationView.application = application
+            
             
         default:
             return
