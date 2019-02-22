@@ -55,6 +55,12 @@ class NewOfferViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBOutlet weak var partenzaLabel: UILabel!
+    
+    
+    @IBOutlet weak var arrivoLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,6 +68,13 @@ class NewOfferViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if(startPointDesc != nil){
+            partenzaLabel.text = startPointDesc
+        }
+        
+        if(endPointDesc != nil){
+            arrivoLabel.text = endPointDesc
+        }
         self.tabBarController?.tabBar.isHidden = true
     }
     
