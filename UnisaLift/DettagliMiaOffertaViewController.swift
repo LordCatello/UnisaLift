@@ -99,6 +99,7 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         
         if(offer.state == 2) {
             StartLiftButton.setTitle("Finish Lift", for: .normal)
+            deleteOfferButton.isHidden = true
         }
     }
     
@@ -119,6 +120,7 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         
         if(offer.state == 2) {
             StartLiftButton.setTitle("Finish Lift", for: .normal)
+            deleteOfferButton.isHidden = true
         }
     }
     
