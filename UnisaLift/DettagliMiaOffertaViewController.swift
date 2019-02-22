@@ -19,20 +19,27 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
 
     }
     
-    @IBAction func StartLiftButtonPressed(_ sender: Any) {
-        // devo fare in modo che le richieste confermate non siano più cancellabili
-        // devo cancellare tutte le richieste non confermate
-        if(offer.state != 2) {
-            offer.state = 2
-            StartLiftButton.setTitle("Finish Lift", for: .normal)
-            deleteOfferButton.isHidden = true
-        }
-        
-        // cancello la richiesta se premo su Finish Lift
+    @IBAction func finishLiftButtonPressed(_ sender: Any) {
         if(offer.state == 2) {
             PersistenceManager.deleteOffer(offer: offer)
             self.navigationController?.popViewController(animated: true)
         }
+    }
+    
+    @IBOutlet weak var finishLiftButton: UIButton!
+    
+    @IBAction func StartLiftButtonPressed(_ sender: Any) {
+        // devo fare in modo che le richieste confermate non siano più cancellabili
+        if(offer.state != 2) {
+            offer.state = 2
+
+            deleteOfferButton.isHidden = true
+            StartLiftButton.isHidden = true
+            finishLiftButton.isHidden = false
+            
+            PersistenceManager.deleteActiveApplicationsOfOffer(offer: offer)
+        }
+    
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
@@ -103,6 +110,12 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         if(offer.state == 2) {
             StartLiftButton.setTitle("Finish Lift", for: .normal)
             deleteOfferButton.isHidden = true
+            StartLiftButton.isHidden = true
+            finishLiftButton.isHidden = false
+        }
+        
+        if(offer.state != 2) {
+            finishLiftButton.isHidden = true
         }
     }
     
@@ -124,6 +137,12 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         if(offer.state == 2) {
             StartLiftButton.setTitle("Finish Lift", for: .normal)
             deleteOfferButton.isHidden = true
+            StartLiftButton.isHidden = true
+            finishLiftButton.isHidden = false
+        }
+        
+        if(offer.state != 2) {
+            finishLiftButton.isHidden = true
         }
     }
     

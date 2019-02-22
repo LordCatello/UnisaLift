@@ -13,6 +13,8 @@ class DettagliRichiedenteViewController: UIViewController {
     var user : User!
     var application: Application!
     
+    @IBOutlet weak var DenyRequestButton: UIButton!
+    
     @IBOutlet weak var applicantImage: UIImageView!
     
     @IBAction func DenyRequestButtonPressed(_ sender: Any) {
@@ -28,6 +30,7 @@ class DettagliRichiedenteViewController: UIViewController {
     }
     
     @IBOutlet weak var acceptRequestButton: UIButton!
+    
     @IBAction func AcceptRequestButtonPressed(_ sender: Any) {
         // devo far comparire un messaggio di errore nel caso questo non accade
         // bisogna disattivare il bottone quando l'offerta è confermata
@@ -50,6 +53,11 @@ class DettagliRichiedenteViewController: UIViewController {
         applicantImage.layer.borderColor = UIColor.black.cgColor
         applicantImage.layer.cornerRadius = applicantImage.frame.height/2
         applicantImage.clipsToBounds = true
+        
+        if(application.offer!.state == 2) {
+            DenyRequestButton.isHidden = true
+            acceptRequestButton.isHidden = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +70,11 @@ class DettagliRichiedenteViewController: UIViewController {
         if(application.state == 2) {
             acceptRequestButton.isEnabled = false
             acceptRequestButton.isOpaque = true
+        }
+        
+        if(application.offer!.state == 2) {
+            DenyRequestButton.isHidden = true
+            acceptRequestButton.isHidden = true
         }
     }
 

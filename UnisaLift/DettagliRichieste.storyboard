@@ -209,6 +209,14 @@
                                             <action selector="seeItineraryButtonPressed:" destination="K1Q-z3-9qs" eventType="touchUpInside" id="7vj-fa-vrj"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lift Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6f-XO-4FR">
+                                        <rect key="frame" x="78" y="709" width="258" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.61176470588235299" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <viewLayoutGuide key="safeArea" id="adl-ve-YJh"/>
@@ -220,7 +228,9 @@
                     <connections>
                         <outlet property="arrivoLabel" destination="EYS-xl-M0S" id="8xh-4i-1n7"/>
                         <outlet property="dateLabel" destination="EPe-wC-Q2m" id="jae-eF-fQ5"/>
+                        <outlet property="deleteButton" destination="ygW-p9-Gfs" id="6ZL-e3-zpI"/>
                         <outlet property="image" destination="Jvj-lp-0Uz" id="gZ1-fy-e8m"/>
+                        <outlet property="liftStartedLabel" destination="J6f-XO-4FR" id="HzT-t0-st4"/>
                         <outlet property="nameLabel" destination="QDV-WO-NU4" id="EJl-iT-Dgr"/>
                         <outlet property="partenzaLabel" destination="ECF-gh-8cK" id="lsP-hY-dhz"/>
                         <outlet property="seatsLabel" destination="Qnh-75-qIs" id="kMM-js-AHZ"/>
