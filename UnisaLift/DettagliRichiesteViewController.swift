@@ -24,10 +24,6 @@ class DettagliRichiesteViewController: UIViewController {
         super.viewDidLoad()
             }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         
         self.tabBarController?.tabBar.isHidden = true
