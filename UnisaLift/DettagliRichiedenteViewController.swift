@@ -11,13 +11,21 @@ import UIKit
 class DettagliRichiedenteViewController: UIViewController {
 
     var user : User!
+    var application: Application!
     
     @IBOutlet weak var applicantImage: UIImageView!
     
     @IBAction func DenyRequestButtonPressed(_ sender: Any) {
+        
     }
     
     @IBAction func AcceptRequestButtonPressed(_ sender: Any) {
+        // dovrei cambiare il bottone, o disabilitare quest'ultimo
+        // devo far comparire un messaggio di errore nel caso questo non accade
+        if(application.offer!.freeSpots > 0) {
+            application.state = 2
+            application.offer!.freeSpots = application.offer!.freeSpots - 1
+        }
     }
     
     @IBOutlet weak var applicantSurnameLabel: UILabel!
