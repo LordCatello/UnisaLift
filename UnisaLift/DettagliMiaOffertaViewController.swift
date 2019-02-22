@@ -22,13 +22,16 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
     @IBAction func StartLiftButtonPressed(_ sender: Any) {
         // devo fare in modo che le richieste confermate non siano più cancellabili
         // devo cancellare tutte le richieste non confermate
-        // devo fare in modo che l'offerta non sia più cancellabile,
-        // oscurando magari il tasto deleteOffer
-        // devo fare in modo che il titolo del tasto cambi, in stop Ride
         if(offer.state != 2) {
             offer.state = 2
             StartLiftButton.setTitle("Finish Lift", for: .normal)
             deleteOfferButton.isHidden = true
+        }
+        
+        // cancello la richiesta se premo su Finish Lift
+        if(offer.state == 2) {
+            PersistenceManager.deleteOffer(offer: offer)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
