@@ -274,6 +274,7 @@ class PersistenceManager {
     }
 
     // non mostra le offerte dell'utente loggato
+    // non mostra le offerte che non hanno più posti liberi
     static func fetchOffers(userLogged: User) -> [Offer] {
         var offers = [Offer]()
         
@@ -281,7 +282,14 @@ class PersistenceManager {
         
         let fetchRequest = NSFetchRequest<Offer>(entityName: "Offer")
         
-        fetchRequest.predicate = NSPredicate(format: "offerer != %@", userLogged)
+        // fetchRequest.predicate = NSPredicate(format: "offerer != %@", userLogged)
+    
+        let userLoggedPredicate = NSPredicate(format: "offerer != %@", userLogged)
+        let freeSpotsPredicate = NSPredicate(format: "freeSpots != %i", 0)
+        
+        let compoundPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [userLoggedPredicate, freeSpotsPredicate])
+        
+        fetchRequest.predicate = compoundPredicate
         
         do {
             try offers = context.fetch(fetchRequest)
