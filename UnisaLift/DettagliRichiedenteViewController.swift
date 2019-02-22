@@ -22,6 +22,9 @@ class DettagliRichiedenteViewController: UIViewController {
             application.offer!.freeSpots = application.offer!.freeSpots + 1
         }
         PersistenceManager.deleteApplication(application: application)
+        
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
     @IBOutlet weak var acceptRequestButton: UIButton!
@@ -32,6 +35,8 @@ class DettagliRichiedenteViewController: UIViewController {
             application.state = 2
             application.offer!.freeSpots = application.offer!.freeSpots - 1
         }
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBOutlet weak var applicantSurnameLabel: UILabel!
