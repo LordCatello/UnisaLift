@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class NewOfferViewController: UIViewController, UITextFieldDelegate {
+class NewOfferViewController: UIViewController, UITextFieldDelegate , UITextViewDelegate{
     //var departurePlace, arrivePlace: String
     var startPointDesc: String!
     var endPointDesc: String!
@@ -63,7 +63,7 @@ class NewOfferViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.messageField.delegate = self
         self.totalSpotsField.delegate = self
     }
     
@@ -78,9 +78,69 @@ class NewOfferViewController: UIViewController, UITextFieldDelegate {
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    
+    
+    
+    
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        
+            moveTextField(textField, moveDistance: -250, up: true)
+    }
+    
+    // Finish Editing The Text Field
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+            moveTextField(textField, moveDistance: -250, up: false)
+        }
+    
+    // Hide the keyboard when the return key pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    // Move the text field in a pretty animation!
+    func moveTextField(_ textField: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+        
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        moveTextView(textView, moveDistance: -250, up: true)
+    }
+    
+    // Finish Editing The Text Field
+    func textViewDidEndEditing(_ textView: UITextView) {
+        moveTextView(textView, moveDistance: -250, up: false)
+    }
+    
+    // Hide the keyboard when the return key pressed
+    
+    
+    // Move the text field in a pretty animation!
+    func moveTextView(_ textView: UITextView, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance : -moveDistance)
+        
+        UIView.beginAnimations("animateTextView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
