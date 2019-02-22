@@ -22,6 +22,11 @@ class RichiesteViewController: UIViewController, UITableViewDelegate,UITableView
         mycell.RichiesteNomeLabel.text = application.offer?.offerer?.name
         mycell.RichiestePartenzaLabel.text = application.offer?.startPointDesc
         mycell.RichiesteArrivoLabel.text = application.offer?.endPointDesc
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy - hh:mm" // MM inserisce il mese come numero
+        
+        mycell.dateLabel.text = dateFormatter.string(from: application.offer?.startDate as! Date)
+        
         var profileimage = UIImage(data: application.offer!.offerer?.imageFullRes! as! Data, scale:1.0)
         mycell.RichiesteImageCell.image = profileimage
         mycell.RichiesteImageCell.layer.borderWidth = 1

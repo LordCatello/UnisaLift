@@ -112,6 +112,7 @@
                                             <outlet property="RichiesteNomeLabel" destination="ftK-nA-7w0" id="aBR-9h-gbn"/>
                                             <outlet property="RichiesteNumeroPostiLabel" destination="oDv-Vw-UiL" id="uLP-jr-2lA"/>
                                             <outlet property="RichiestePartenzaLabel" destination="5pR-iM-07X" id="seq-wN-Iqn"/>
+                                            <outlet property="dateLabel" destination="jwt-ZK-L2H" id="jmZ-XF-VO2"/>
                                             <segue destination="kAm-sU-GHm" kind="show" id="0Nm-RD-HRP"/>
                                         </connections>
                                     </tableViewCell>

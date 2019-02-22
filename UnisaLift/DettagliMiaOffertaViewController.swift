@@ -71,7 +71,10 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
     override func viewWillAppear(_ animated: Bool) {
         partenzaLabel.text = offer.startPointDesc
         arrivoLabel.text = offer.endPointDesc
-        dateLabel.text = offer.startDate?.description
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy - hh:mm" // MM inserisce il mese come numero
+       dateLabel.text = dateFormatter.string(from: offer.startDate as! Date)
+        
         
         freespotsLabel.text = String(offer.freeSpots)
     
