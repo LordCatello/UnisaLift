@@ -78,6 +78,8 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         self.tabBarController?.tabBar.isHidden = true
         
         applications = PersistenceManager.fetchOfferApplications(offer: offer)
+        
+        OfferApplicationTableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
