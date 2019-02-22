@@ -25,7 +25,6 @@ class DettagliRichiesteViewController: UIViewController {
         if(application.state == 2) {
             application.offer!.freeSpots = application.offer!.freeSpots + 1
         }
-        
         PersistenceManager.deleteApplication(application: application)
         
         self.navigationController?.popViewController(animated: true)
