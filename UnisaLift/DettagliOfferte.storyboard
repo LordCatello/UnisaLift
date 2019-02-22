@@ -223,6 +223,9 @@
                                 <state key="normal" title="Delete Offer">
                                     <color key="titleColor" red="1" green="0.16026041447369699" blue="0.15480155239781535" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteOfferButton:" destination="t7V-SH-zxD" eventType="touchUpInside" id="hgX-pw-Hug"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aK-qA-o1V">
                                 <rect key="frame" x="32" y="183" width="45" height="28"/>
@@ -268,7 +271,6 @@
                         <outlet property="arrivo" destination="a1u-YS-XX1" id="sSj-nV-If3"/>
                         <outlet property="arrivoLabel" destination="5Kl-gB-UlE" id="Pg7-Gy-rfn"/>
                         <outlet property="dateLabel" destination="zxo-R3-xwS" id="j2e-wg-CVB"/>
-                        <outlet property="deleteOfferButton" destination="ZjD-Tj-KPT" id="WcQ-sq-nnm"/>
                         <outlet property="freespotsLabel" destination="lKr-1V-IWq" id="9vW-n6-SZb"/>
                         <outlet property="message" destination="SGl-8m-VQP" id="Jq6-Ub-jEQ"/>
                         <outlet property="partenza" destination="lvl-tN-zdb" id="gFm-h7-c2d"/>
