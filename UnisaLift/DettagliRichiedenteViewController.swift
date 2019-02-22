@@ -24,6 +24,7 @@ class DettagliRichiedenteViewController: UIViewController {
         PersistenceManager.deleteApplication(application: application)
     }
     
+    @IBOutlet weak var acceptRequestButton: UIButton!
     @IBAction func AcceptRequestButtonPressed(_ sender: Any) {
         // devo far comparire un messaggio di errore nel caso questo non accade
         // bisogna disattivare il bottone quando l'offerta è confermata
@@ -48,6 +49,10 @@ class DettagliRichiedenteViewController: UIViewController {
         applicantSurnameLabel.text = user.surname
         
         self.tabBarController?.tabBar.isHidden = true
+        if(application.state == 2) {
+            acceptRequestButton.isEnabled = false
+            acceptRequestButton.isOpaque = true
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {

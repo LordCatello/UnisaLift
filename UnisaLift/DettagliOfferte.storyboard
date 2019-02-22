@@ -345,6 +345,7 @@
                         <viewLayoutGuide key="safeArea" id="gEg-FT-S5z"/>
                     </view>
                     <connections>
+                        <outlet property="acceptRequestButton" destination="B3k-F9-Z7W" id="X0P-iW-aaR"/>
                         <outlet property="applicantImage" destination="gCP-lT-ITn" id="Oc6-Eb-Zl6"/>
                         <outlet property="applicantNameLabel" destination="Obv-Qi-5DQ" id="Mqd-nE-cXX"/>
                         <outlet property="applicantSurnameLabel" destination="Mau-k2-XLT" id="iKz-xy-7Dg"/>
