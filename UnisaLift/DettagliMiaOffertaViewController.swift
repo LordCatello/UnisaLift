@@ -34,7 +34,18 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         mycell.surnameLabel.text = application.applicant?.surname
         var profileimage = UIImage(data: application.applicant?.imageFullRes as! Data, scale:1.0)
         mycell.Profile.image = profileimage
-        
+        mycell.Profile.layer.borderWidth = 1
+        mycell.Profile.layer.masksToBounds = false
+        mycell.Profile.layer.borderColor = UIColor.black.cgColor
+        mycell.Profile.layer.cornerRadius = mycell.Profile.frame.height/2
+        mycell.Profile.clipsToBounds = true
+        mycell.layer.shadowColor = UIColor.lightGray.cgColor
+        mycell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        mycell.layer.shadowRadius = 2.0
+        mycell.layer.shadowOpacity = 1.0
+        mycell.layer.masksToBounds = false
+        mycell.layer.cornerRadius = 14
+        mycell.layer.shadowPath = UIBezierPath(roundedRect: mycell.bounds, cornerRadius: mycell.contentView.layer.cornerRadius).cgPath
         return mycell
     }
     
