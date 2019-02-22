@@ -13,7 +13,7 @@
         <!--Main-->
         <scene sceneID="2xY-yj-PwY">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="oDH-vl-DVb" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="UIViewController-pz1-Sy-VAy" storyboardName="Main" id="oDH-vl-DVb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEU-Cf-Xfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8092" y="-306"/>
@@ -87,7 +87,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eY2-8e-A41">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eY2-8e-A41">
                                             <rect key="frame" x="98" y="56" width="220" height="220"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,7 +158,6 @@
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="KHq-1X-9Gq">
                             <connections>
                                 <action selector="logoutButtonPressed:" destination="SlF-06-Fsb" id="wS6-LB-zst"/>
-                                <segue destination="oDH-vl-DVb" kind="showDetail" animates="NO" id="yhK-Aj-H9q"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="nKq-ND-5OH">
@@ -173,9 +172,11 @@
                         <outlet property="image" destination="eY2-8e-A41" id="Wmw-E6-gBS"/>
                         <outlet property="name" destination="LBx-iC-6gD" id="sJV-Oo-HQa"/>
                         <outlet property="surname" destination="HfR-ZZ-45D" id="W2n-Rv-qFW"/>
+                        <segue destination="SOC-nX-UsQ" kind="unwind" identifier="Logout" unwindAction="unwindToUserLoginWithSegue:" id="yOk-tp-kbV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgP-rQ-tcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="SOC-nX-UsQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="8273.9130434782619" y="198.88392857142856"/>
         </scene>
@@ -205,7 +206,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="711"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BrV-rr-g7f">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BrV-rr-g7f">
                                             <rect key="frame" x="21" y="36" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>

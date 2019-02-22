@@ -13,7 +13,7 @@ class ImpostazioniViewController: UIViewController {
     @IBAction func logoutButtonPressed(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.userLogged = nil
-        performSegue(withIdentifier: "logoutSegue", sender: nil)
+        performSegue(withIdentifier: "Logout", sender: nil)
     }
     
     @IBOutlet weak var image: UIImageView!

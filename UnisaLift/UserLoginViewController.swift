@@ -77,7 +77,9 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
+    @IBAction func unwindToUserLogin(segue: UIStoryboardSegue) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.EmailTextField.delegate = self
@@ -94,7 +96,9 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+        EmailTextField.text = ""
+    }
 
     
     
