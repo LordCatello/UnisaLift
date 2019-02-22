@@ -39,7 +39,8 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     func createSlides() -> [OnboardingSlide] {
         
         let slide1: OnboardingSlide = Bundle.main.loadNibNamed("OnboardingSlide", owner: self, options: nil)?.first as! OnboardingSlide
-        slide1.imageView.image = UIImage(named: "ic_onboarding_1")
+        slide1.imageView.image = UIImage(named: "tutorialImages/littleIcon")
+        slide1.imageView.contentMode = .center
         slide1.labelTitle.text = "Welcome to UniLift!"
         slide1.labelDesc.text = "Get to university and back without hassle!\r\nGet a lift from your fellow students, or give them one."
         slide1.labelDesc.numberOfLines = 0
