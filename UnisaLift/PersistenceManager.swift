@@ -99,6 +99,7 @@ class PersistenceManager {
         offer.startPointLong = startPointLong
         offer.endPointLat = endPointLat
         offer.endPointLong = endPointLong
+        offer.state = 1 // verificare se funziona
         
         return offer
     }

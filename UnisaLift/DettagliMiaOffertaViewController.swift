@@ -11,6 +11,20 @@ import MapKit
 
 class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var StartLiftButton: UIButton!
+    
+    @IBAction func StartLiftButtonPressed(_ sender: Any) {
+        // devo fare in modo che le richieste confermate non siano più cancellabili
+        // devo cancellare tutte le richieste non confermate
+        // devo fare in modo che l'offerta non sia più cancellabile,
+        // oscurando magari il tasto deleteOffer
+        // devo fare in modo che il titolo del tasto cambi, in stop Ride
+        if(offer.state != 2) {
+            offer.state = 2
+            StartLiftButton.setTitle("Finish Lift", for: .normal)
+        }
+    }
+    
     @IBAction func acceptApplicationButton(_ sender: Any) {
 
     }
@@ -95,6 +109,7 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         applications = PersistenceManager.fetchOfferApplications(offer: offer)
         
         OfferApplicationTableView.reloadData()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
