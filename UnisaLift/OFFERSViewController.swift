@@ -53,10 +53,6 @@ class OFFERSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         mycell.ImageOfferta.layer.borderColor = UIColor.black.cgColor
         mycell.ImageOfferta.layer.cornerRadius = mycell.ImageOfferta.layer.frame.height/2
         mycell.ImageOfferta.clipsToBounds = true
-//        mycell.contentView.layer.cornerRadius = 2.0
-//        mycell.contentView.layer.borderWidth = 1.0
-//        mycell.contentView.layer.borderColor = UIColor.clear.cgColor
-//        mycell.contentView.layer.masksToBounds = true
         mycell.layer.shadowColor = UIColor.lightGray.cgColor
         mycell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         mycell.layer.shadowRadius = 2.0
