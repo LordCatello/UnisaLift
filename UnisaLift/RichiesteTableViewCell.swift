@@ -12,6 +12,7 @@ class RichiesteTableViewCell: UITableViewCell {
     
     @IBOutlet weak var RichiesteNomeLabel: UILabel!
     
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var RichiesteArrivoLabel: UILabel!
     @IBOutlet weak var RichiestePartenzaLabel: UILabel!
     @IBOutlet weak var RichiesteNumeroPostiLabel: UILabel!

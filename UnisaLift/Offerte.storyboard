@@ -30,7 +30,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="201.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPu-mG-giT">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPu-mG-giT">
                                                     <rect key="frame" x="20" y="11" width="82" height="82"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -108,6 +108,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ArrivoLabel" destination="Bv0-Lr-kwz" id="viD-sF-sRz"/>
+                                            <outlet property="DateLabel" destination="mjS-fM-ffY" id="m0q-Qq-zCp"/>
                                             <outlet property="ImageOfferta" destination="cPu-mG-giT" id="aCr-Py-fPl"/>
                                             <outlet property="NumeroPostiLabel" destination="fwI-mW-DYg" id="5LO-zr-fVy"/>
                                             <outlet property="OffertaNameLabel" destination="RpD-DD-SW7" id="h4P-tj-T17"/>

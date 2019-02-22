@@ -30,7 +30,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tb2-Hc-P6O">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tb2-Hc-P6O">
                                                     <rect key="frame" x="20" y="8" width="82" height="82"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -55,8 +55,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Offerer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ge-Qd-1DE">
-                                                    <rect key="frame" x="110" y="11" width="60" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ge-Qd-1DE">
+                                                    <rect key="frame" x="110" y="11" width="50" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -112,6 +112,7 @@
                                             <outlet property="RichiesteNomeLabel" destination="ftK-nA-7w0" id="aBR-9h-gbn"/>
                                             <outlet property="RichiesteNumeroPostiLabel" destination="oDv-Vw-UiL" id="uLP-jr-2lA"/>
                                             <outlet property="RichiestePartenzaLabel" destination="5pR-iM-07X" id="seq-wN-Iqn"/>
+                                            <outlet property="dateLabel" destination="jwt-ZK-L2H" id="jmZ-XF-VO2"/>
                                             <segue destination="kAm-sU-GHm" kind="show" id="0Nm-RD-HRP"/>
                                         </connections>
                                     </tableViewCell>

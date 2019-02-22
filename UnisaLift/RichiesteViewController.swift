@@ -22,9 +22,25 @@ class RichiesteViewController: UIViewController, UITableViewDelegate,UITableView
         mycell.RichiesteNomeLabel.text = application.offer?.offerer?.name
         mycell.RichiestePartenzaLabel.text = application.offer?.startPointDesc
         mycell.RichiesteArrivoLabel.text = application.offer?.endPointDesc
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy - hh:mm" // MM inserisce il mese come numero
+        
+        mycell.dateLabel.text = dateFormatter.string(from: application.offer?.startDate as! Date)
+        
         var profileimage = UIImage(data: application.offer!.offerer?.imageFullRes! as! Data, scale:1.0)
         mycell.RichiesteImageCell.image = profileimage
-        
+        mycell.RichiesteImageCell.layer.borderWidth = 1
+        mycell.RichiesteImageCell.layer.masksToBounds = false
+        mycell.RichiesteImageCell.layer.borderColor = UIColor.black.cgColor
+        mycell.RichiesteImageCell.layer.cornerRadius = mycell.RichiesteImageCell.layer.frame.height/2
+        mycell.RichiesteImageCell.clipsToBounds = true
+        mycell.layer.shadowColor = UIColor.lightGray.cgColor
+        mycell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        mycell.layer.shadowRadius = 2.0
+        mycell.layer.shadowOpacity = 1.0
+        mycell.layer.masksToBounds = false
+        mycell.layer.cornerRadius = 14
+        mycell.layer.shadowPath = UIBezierPath(roundedRect: mycell.bounds, cornerRadius: mycell.contentView.layer.cornerRadius).cgPath
         return mycell
     }
     
