@@ -11,8 +11,12 @@ import MapKit
 
 class DettagliRichiesteViewController: UIViewController {
     var application : Application!
-
+    
+    @IBOutlet weak var liftStartedLabel: UILabel!
+    
     @IBOutlet weak var image: UIImageView!
+    
+    @IBOutlet weak var deleteButton: UIButton!
     
     @IBOutlet weak var arrivoLabel: UILabel!
     @IBOutlet weak var partenzaLabel: UILabel!
@@ -20,6 +24,7 @@ class DettagliRichiesteViewController: UIViewController {
     @IBOutlet weak var seatsLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var surnameLabel: UILabel!
+    
     @IBAction func deleteApplicationButtonPressed(_ sender: Any) {
         
         if(application.state == 2) {
@@ -29,6 +34,7 @@ class DettagliRichiesteViewController: UIViewController {
         
         self.navigationController?.popViewController(animated: true)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +43,15 @@ class DettagliRichiesteViewController: UIViewController {
         image.layer.borderColor = UIColor.black.cgColor
         image.layer.cornerRadius = image.frame.height/2
         image.clipsToBounds = true
+        
+        if(application.offer!.state != 2) {
+            liftStartedLabel.isHidden = true
+        }
+        
+        if(application.offer!.state == 2) {
+            deleteButton.isHidden = true
+            liftStartedLabel.isHidden = false
+        }
         
             }
     
@@ -63,7 +78,14 @@ class DettagliRichiesteViewController: UIViewController {
     
         image.image = profileimage
         
+        if(application.offer!.state != 2) {
+            liftStartedLabel.isHidden = true
+        }
         
+        if(application.offer!.state == 2) {
+            deleteButton.isHidden = true
+            liftStartedLabel.isHidden = false
+        }
         
         self.tabBarController?.tabBar.isHidden = true
     }

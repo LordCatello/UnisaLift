@@ -317,13 +317,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8Y-nR-PC6">
-                                <rect key="frame" x="89" y="218" width="305" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpH-Fm-AkC">
                                 <rect key="frame" x="16" y="180" width="367" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -363,8 +356,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pli-GI-s6D">
+                                <rect key="frame" x="56" y="409" width="303" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.61176470589999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="tintColor" red="1" green="0.61176470589999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="End Lift">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="finishLiftButtonPressed:" destination="t7V-SH-zxD" eventType="touchUpInside" id="6fW-GI-mQr"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZc-jl-Nxd">
-                                <rect key="frame" x="55" y="394" width="303" height="40"/>
+                                <rect key="frame" x="56" y="361" width="303" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.61176470588235299" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -382,6 +394,13 @@
                                     <action selector="StartLiftButtonPressed:" destination="t7V-SH-zxD" eventType="touchUpInside" id="ePt-nB-UUG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8Y-nR-PC6">
+                                <rect key="frame" x="89" y="218" width="305" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="f0b-De-WkL"/>
@@ -392,6 +411,8 @@
                         <outlet property="arrivo" destination="a1u-YS-XX1" id="sSj-nV-If3"/>
                         <outlet property="arrivoLabel" destination="5Kl-gB-UlE" id="Pg7-Gy-rfn"/>
                         <outlet property="dateLabel" destination="zxo-R3-xwS" id="j2e-wg-CVB"/>
+                        <outlet property="deleteOfferButton" destination="ZjD-Tj-KPT" id="uc5-ix-wYh"/>
+                        <outlet property="finishLiftButton" destination="Pli-GI-s6D" id="Hnd-mY-iXA"/>
                         <outlet property="freespotsLabel" destination="lKr-1V-IWq" id="9vW-n6-SZb"/>
                         <outlet property="message" destination="SGl-8m-VQP" id="Jq6-Ub-jEQ"/>
                         <outlet property="partenza" destination="lvl-tN-zdb" id="gFm-h7-c2d"/>
@@ -516,6 +537,7 @@
                         <viewLayoutGuide key="safeArea" id="gEg-FT-S5z"/>
                     </view>
                     <connections>
+                        <outlet property="DenyRequestButton" destination="aQt-ah-e3g" id="jO9-Y7-NN0"/>
                         <outlet property="acceptRequestButton" destination="B3k-F9-Z7W" id="X0P-iW-aaR"/>
                         <outlet property="applicantImage" destination="gCP-lT-ITn" id="Oc6-Eb-Zl6"/>
                         <outlet property="applicantNameLabel" destination="Obv-Qi-5DQ" id="Mqd-nE-cXX"/>

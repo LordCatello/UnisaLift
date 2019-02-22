@@ -276,6 +276,7 @@ class PersistenceManager {
 
     // non mostra le offerte dell'utente loggato
     // non mostra le offerte che non hanno più posti liberi
+    // mostra solo le offerte con state == 1, cioè che sono in lobby e non sono partite
     static func fetchOffers(userLogged: User) -> [Offer] {
         var offers = [Offer]()
         
@@ -287,8 +288,9 @@ class PersistenceManager {
     
         let userLoggedPredicate = NSPredicate(format: "offerer != %@", userLogged)
         let freeSpotsPredicate = NSPredicate(format: "freeSpots != %i", 0)
+        let statePredicate = NSPredicate(format: "state == %i", 1)
         
-        let compoundPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [userLoggedPredicate, freeSpotsPredicate])
+        let compoundPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [userLoggedPredicate, freeSpotsPredicate, statePredicate])
         
         fetchRequest.predicate = compoundPredicate
         
@@ -359,6 +361,19 @@ class PersistenceManager {
         }
         
         context.delete(offer)
+    }
+    
+    // cancella tutte le applicasions attive (non confermate) dell'offerta
+    static func deleteActiveApplicationsOfOffer(offer: Offer) {
+        var applications = [Application]()
+        
+        applications = fetchOfferApplications(offer: offer)
+        
+        for application in applications {
+            if(application.state == 1) {
+                deleteApplication(application: application)
+            }
+        }
     }
     
     // attenzione

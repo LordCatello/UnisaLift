@@ -11,22 +11,38 @@ import MapKit
 
 class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var deleteOfferButton: UIButton!
+    
     @IBOutlet weak var StartLiftButton: UIButton!
     
     @IBAction func acceptApplicationButton(_ sender: Any) {
 
     }
     
+    @IBAction func finishLiftButtonPressed(_ sender: Any) {
+        if(offer.state == 2) {
+            PersistenceManager.deleteOffer(offer: offer)
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    @IBOutlet weak var finishLiftButton: UIButton!
+    
     @IBAction func StartLiftButtonPressed(_ sender: Any) {
+        
         // devo fare in modo che le richieste confermate non siano più cancellabili
-        // devo cancellare tutte le richieste non confermate
-        // devo fare in modo che l'offerta non sia più cancellabile,
-        // oscurando magari il tasto deleteOffer
-        // devo fare in modo che il titolo del tasto cambi, in stop Ride
         if(offer.state != 2) {
             offer.state = 2
-            StartLiftButton.setTitle("Finish Lift", for: .normal)
+
+            deleteOfferButton.isHidden = true
+            StartLiftButton.isHidden = true
+            finishLiftButton.isHidden = false
+            
+            PersistenceManager.deleteActiveApplicationsOfOffer(offer: offer)
         }
+        applications = PersistenceManager.fetchOfferApplications(offer: offer)
+        OfferApplicationTableView.reloadData()
+    
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
@@ -96,6 +112,13 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         
         if(offer.state == 2) {
             StartLiftButton.setTitle("Finish Lift", for: .normal)
+            deleteOfferButton.isHidden = true
+            StartLiftButton.isHidden = true
+            finishLiftButton.isHidden = false
+        }
+        
+        if(offer.state != 2) {
+            finishLiftButton.isHidden = true
         }
     }
     
@@ -116,6 +139,13 @@ class DettagliMiaOffertaViewController: UIViewController,UITableViewDelegate,UIT
         
         if(offer.state == 2) {
             StartLiftButton.setTitle("Finish Lift", for: .normal)
+            deleteOfferButton.isHidden = true
+            StartLiftButton.isHidden = true
+            finishLiftButton.isHidden = false
+        }
+        
+        if(offer.state != 2) {
+            finishLiftButton.isHidden = true
         }
     }
     
