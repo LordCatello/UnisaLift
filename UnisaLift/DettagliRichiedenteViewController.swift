@@ -16,12 +16,17 @@ class DettagliRichiedenteViewController: UIViewController {
     @IBOutlet weak var applicantImage: UIImageView!
     
     @IBAction func DenyRequestButtonPressed(_ sender: Any) {
-        
+        // cancello sia se la richiesta è in corso, sia se è confermata
+        // se l'application è confermata
+        if(application.state == 2) {
+            application.offer!.freeSpots = application.offer!.freeSpots + 1
+        }
+        PersistenceManager.deleteApplication(application: application)
     }
     
     @IBAction func AcceptRequestButtonPressed(_ sender: Any) {
-        // dovrei cambiare il bottone, o disabilitare quest'ultimo
         // devo far comparire un messaggio di errore nel caso questo non accade
+        // bisogna disattivare il bottone quando l'offerta è confermata
         if(application.offer!.freeSpots > 0) {
             application.state = 2
             application.offer!.freeSpots = application.offer!.freeSpots - 1
