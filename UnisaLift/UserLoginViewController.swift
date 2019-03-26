@@ -38,14 +38,18 @@ extension UIButton{
 //    }
 //}
 
-class UserLoginViewController: UIViewController, UITextFieldDelegate {
+class UserLoginViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var LoginButton: UIButton!
     
     var user: User!
     var emailField: String!
 
+
+    @IBOutlet weak var firstCell: UITableViewCell!
+    @IBOutlet weak var lastCell: UITableViewCell!
     @IBOutlet weak var EmailTextField: UITextField!
+    @IBOutlet weak var PasswordTextField: UITextField!
     
     @IBAction func LoginButtonPressed(_ sender: Any) {
         emailField = EmailTextField.text!
@@ -77,14 +81,15 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    @IBAction func unwindToUserLogin(segue: UIStoryboardSegue) {
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        lastCell.separatorInset = UIEdgeInsets(top: 0, left: lastCell.bounds.size.width, bottom: 0, right: 0)
+        
         self.EmailTextField.delegate = self
-//        EmailTextField.setBottomBorder()
-       
+        self.PasswordTextField.delegate = self
+        
         let id = PersistenceManager.fetchProgressiveID()
         
         // creo un id progressivo che inizia con 0
@@ -92,15 +97,17 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
             PersistenceManager.newProgressiveID()
         }
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         EmailTextField.text = ""
     }
 
     
+    
+    @IBAction func tapOnView(_ sender: Any) {
+        EmailTextField.resignFirstResponder()
+        PasswordTextField.resignFirstResponder()
+    }
     
     // MARK: - Navigation
 
@@ -119,5 +126,6 @@ class UserLoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
  
-
+    
+    
 }
