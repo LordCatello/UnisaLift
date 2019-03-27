@@ -162,7 +162,6 @@
                         <outlet property="EmailTextField" destination="9JH-FN-hXn" id="nDL-xj-5P8"/>
                         <outlet property="LoginButton" destination="0R4-Ly-Ve9" id="dFY-Po-Grl"/>
                         <outlet property="PasswordTextField" destination="3aQ-yl-fMc" id="Z82-jZ-Hig"/>
-                        <outlet property="firstCell" destination="PAO-rB-vHp" id="wod-fi-fEO"/>
                         <outlet property="lastCell" destination="pBI-hd-h5M" id="8eZ-uU-phd"/>
                         <segue destination="L8l-4Q-kZa" kind="show" identifier="Registrazione" id="fvC-sp-caJ"/>
                         <segue destination="2N2-aE-1he" kind="showDetail" identifier="Home" id="Rim-qz-U8b"/>
@@ -538,7 +537,7 @@
         <image name="profile" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4t9-b3-Rc6"/>
+        <segue reference="I37-jI-1G1"/>
         <segue reference="Rim-qz-U8b"/>
     </inferredMetricsTieBreakers>
 </document>
